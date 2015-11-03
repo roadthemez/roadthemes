@@ -44,7 +44,7 @@ switch($bloglayout) {
 		
 		<header class="entry-header">
 			<div class="container">
-				<h1 class="entry-title"><?php if(isset($road_opt)) { echo esc_html($road_opt['blog_header_text']); } else { esc_html_e('Blog', 'sozo');}  ?></h1>
+				<h1 class="entry-title"><?php if(isset($road_opt)) { echo esc_html($road_opt['blog_header_text']); } else { esc_html_e('Blog', 'roadthemes');}  ?></h1>
 			</div>
 		</header>
 		
@@ -63,9 +63,9 @@ switch($bloglayout) {
 						<?php comments_template( '', true ); ?>
 						
 						<!--<nav class="nav-single">
-							<h3 class="assistive-text"><?php esc_html_e( 'Post navigation', 'sozo' ); ?></h3>
-							<span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'sozo' ) . '</span> %title' ); ?></span>
-							<span class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'sozo' ) . '</span>' ); ?></span>
+							<h3 class="assistive-text"><?php esc_html_e( 'Post navigation', 'roadthemes' ); ?></h3>
+							<span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'roadthemes' ) . '</span> %title' ); ?></span>
+							<span class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'roadthemes' ) . '</span>' ); ?></span>
 						</nav><!-- .nav-single -->
 						
 					<?php endwhile; // end of the loop. ?>

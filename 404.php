@@ -16,7 +16,7 @@ get_header();
 		<div class="container">
 			<div class="search-form-wrapper">
 				<h2><?php esc_html_e( "Oops, that page can't be found.", "roadthemes" ); ?></h2>
-				<p class="home-link"><?php esc_html_e( "Can't find what you need, Take a moment and do a search below", 'sozo' ); ?></p>
+				<p class="home-link"><?php esc_html_e( "Can't find what you need, Take a moment and do a search below", 'roadthemes' ); ?></p>
 				<?php get_search_form(); ?>
 			</div>
 		</div>

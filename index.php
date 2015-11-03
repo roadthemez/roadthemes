@@ -57,7 +57,7 @@ switch($bloglayout) {
 		
 		<header class="entry-header">
 			<div class="container">
-				<h1 class="entry-title"><?php if(isset($road_opt)) { echo esc_html($road_opt['blog_header_text']); } else { esc_html_e('Blog', 'sozo');}  ?></h1>
+				<h1 class="entry-title"><?php if(isset($road_opt)) { echo esc_html($road_opt['blog_header_text']); } else { esc_html_e('Blog', 'roadthemes');}  ?></h1>
 			</div>
 		</header>
 		<div class="row">
@@ -87,22 +87,22 @@ switch($bloglayout) {
 							// Show a different message to a logged-in user who can add posts.
 						?>
 							<header class="entry-header">
-								<h1 class="entry-title"><?php esc_html_e( 'No posts to display', 'sozo' ); ?></h1>
+								<h1 class="entry-title"><?php esc_html_e( 'No posts to display', 'roadthemes' ); ?></h1>
 							</header>
 
 							<div class="entry-content">
-								<p><?php printf( esc_html__( 'Ready to publish your first post? <a href="%s">Get started here</a>.', 'sozo' ), admin_url( 'post-new.php' ) ); ?></p>
+								<p><?php printf( esc_html__( 'Ready to publish your first post? <a href="%s">Get started here</a>.', 'roadthemes' ), admin_url( 'post-new.php' ) ); ?></p>
 							</div><!-- .entry-content -->
 
 						<?php else :
 							// Show the default message to everyone else.
 						?>
 							<header class="entry-header">
-								<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'sozo' ); ?></h1>
+								<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'roadthemes' ); ?></h1>
 							</header>
 
 							<div class="entry-content">
-								<p><?php esc_html_e( 'Apologies, but no results were found. Perhaps searching will help find a related post.', 'sozo' ); ?></p>
+								<p><?php esc_html_e( 'Apologies, but no results were found. Perhaps searching will help find a related post.', 'roadthemes' ); ?></p>
 								<?php get_search_form(); ?>
 							</div><!-- .entry-content -->
 						<?php endif; // end current_user_can() check ?>

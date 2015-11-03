@@ -45,7 +45,7 @@ switch($bloglayout) {
 		<?php RoadThemes::road_breadcrumb(); ?>
 		<header class="entry-header">
 			<div class="container">
-				<h1 class="entry-title"><?php if(isset($road_opt)) { echo esc_html($road_opt['blog_header_text']); } else { esc_html_e('Blog', 'sozo');}  ?></h1>
+				<h1 class="entry-title"><?php if(isset($road_opt)) { echo esc_html($road_opt['blog_header_text']); } else { esc_html_e('Blog', 'roadthemes');}  ?></h1>
 			</div>
 		</header>
 		<div class="row">
@@ -59,7 +59,7 @@ switch($bloglayout) {
 					<?php if ( have_posts() ) : ?>
 						
 						<header class="archive-header">
-							<h1 class="archive-title"><?php printf( esc_html__( 'Search Results for: %s', 'sozo' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+							<h1 class="archive-title"><?php printf( esc_html__( 'Search Results for: %s', 'roadthemes' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 						</header><!-- .archive-header -->
 
 						<?php /* Start the Loop */ ?>
@@ -75,11 +75,11 @@ switch($bloglayout) {
 
 						<article id="post-0" class="post no-results not-found">
 							<header class="entry-header">
-								<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'sozo' ); ?></h1>
+								<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'roadthemes' ); ?></h1>
 							</header>
 
 							<div class="entry-content">
-								<p><?php esc_html_e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'sozo' ); ?></p>
+								<p><?php esc_html_e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'roadthemes' ); ?></p>
 								<?php get_search_form(); ?>
 							</div><!-- .entry-content -->
 						</article><!-- #post-0 -->

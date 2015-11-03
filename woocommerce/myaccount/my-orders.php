@@ -23,16 +23,16 @@ $customer_orders = get_posts( apply_filters( 'woocommerce_my_account_my_orders_q
 
 if ( $customer_orders ) : ?>
 
-	<h2 class="recent-orders-title"><?php echo apply_filters( 'woocommerce_my_account_my_orders_title', esc_html__( 'Recent Orders', 'sozo' ) ); ?></h2>
+	<h2 class="recent-orders-title"><?php echo apply_filters( 'woocommerce_my_account_my_orders_title', esc_html__( 'Recent Orders', 'roadthemes' ) ); ?></h2>
 
 	<table class="shop_table shop_table_responsive my_account_orders">
 
 		<thead>
 			<tr>
-				<th class="order-number"><span class="nobr"><?php esc_html_e( 'Order', 'sozo' ); ?></span></th>
-				<th class="order-date"><span class="nobr"><?php esc_html_e( 'Date', 'sozo' ); ?></span></th>
-				<th class="order-status"><span class="nobr"><?php esc_html_e( 'Status', 'sozo' ); ?></span></th>
-				<th class="order-total"><span class="nobr"><?php esc_html_e( 'Total', 'sozo' ); ?></span></th>
+				<th class="order-number"><span class="nobr"><?php esc_html_e( 'Order', 'roadthemes' ); ?></span></th>
+				<th class="order-date"><span class="nobr"><?php esc_html_e( 'Date', 'roadthemes' ); ?></span></th>
+				<th class="order-status"><span class="nobr"><?php esc_html_e( 'Status', 'roadthemes' ); ?></span></th>
+				<th class="order-total"><span class="nobr"><?php esc_html_e( 'Total', 'roadthemes' ); ?></span></th>
 				<th class="order-actions">&nbsp;</th>
 			</tr>
 		</thead>
@@ -44,19 +44,19 @@ if ( $customer_orders ) : ?>
 				$item_count = $order->get_item_count();
 
 				?><tr class="order">
-					<td class="order-number" data-title="<?php esc_html_e( 'Order Number', 'sozo' ); ?>">
+					<td class="order-number" data-title="<?php esc_html_e( 'Order Number', 'roadthemes' ); ?>">
 						<a href="<?php echo esc_url( $order->get_view_order_url() ); ?>">
 							#<?php echo esc_html($order->get_order_number()); ?>
 						</a>
 					</td>
-					<td class="order-date" data-title="<?php esc_html_e( 'Date', 'sozo' ); ?>">
+					<td class="order-date" data-title="<?php esc_html_e( 'Date', 'roadthemes' ); ?>">
 						<time datetime="<?php echo date( 'Y-m-d', strtotime( $order->order_date ) ); ?>" title="<?php echo esc_attr( strtotime( $order->order_date ) ); ?>"><?php echo date_i18n( get_option( 'date_format' ), strtotime( $order->order_date ) ); ?></time>
 					</td>
-					<td class="order-status" data-title="<?php esc_html_e( 'Status', 'sozo' ); ?>" style="text-align:left; white-space:nowrap;">
+					<td class="order-status" data-title="<?php esc_html_e( 'Status', 'roadthemes' ); ?>" style="text-align:left; white-space:nowrap;">
 						<?php echo wc_get_order_status_name( $order->get_status() ); ?>
 					</td>
-					<td class="order-total" data-title="<?php esc_html_e( 'Total', 'sozo' ); ?>">
-						<?php echo sprintf( _n( '%s for %s item', '%s for %s items', $item_count, 'sozo' ), $order->get_formatted_order_total(), $item_count ); ?>
+					<td class="order-total" data-title="<?php esc_html_e( 'Total', 'roadthemes' ); ?>">
+						<?php echo sprintf( _n( '%s for %s item', '%s for %s items', $item_count, 'roadthemes' ), $order->get_formatted_order_total(), $item_count ); ?>
 					</td>
 					<td class="order-actions">
 						<?php
@@ -65,20 +65,20 @@ if ( $customer_orders ) : ?>
 							if ( in_array( $order->get_status(), apply_filters( 'woocommerce_valid_order_statuses_for_payment', array( 'pending', 'failed' ), $order ) ) ) {
 								$actions['pay'] = array(
 									'url'  => $order->get_checkout_payment_url(),
-									'name' => esc_html__( 'Pay', 'sozo' )
+									'name' => esc_html__( 'Pay', 'roadthemes' )
 								);
 							}
 
 							if ( in_array( $order->get_status(), apply_filters( 'woocommerce_valid_order_statuses_for_cancel', array( 'pending', 'failed' ), $order ) ) ) {
 								$actions['cancel'] = array(
 									'url'  => $order->get_cancel_order_url( wc_get_page_permalink( 'myaccount' ) ),
-									'name' => esc_html__( 'Cancel', 'sozo' )
+									'name' => esc_html__( 'Cancel', 'roadthemes' )
 								);
 							}
 
 							$actions['view'] = array(
 								'url'  => $order->get_view_order_url(),
-								'name' => esc_html__( 'View', 'sozo' )
+								'name' => esc_html__( 'View', 'roadthemes' )
 							);
 
 							$actions = apply_filters( 'woocommerce_my_account_my_orders_actions', $actions, $order );

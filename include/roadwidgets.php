@@ -5,10 +5,10 @@ class road_widgets extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'road_widgets', 
-			esc_html__('Road Widgets', 'sozo'), 
+			esc_html__('Road Widgets', 'roadthemes'), 
 
 			// Widget description
-			array( 'description' => esc_html__( 'Display recent posts, comments, popular posts', 'sozo' ), ) 
+			array( 'description' => esc_html__( 'Display recent posts, comments, popular posts', 'roadthemes' ), ) 
 		);
 	}
 
@@ -117,7 +117,7 @@ class road_widgets extends WP_Widget {
 								<?php echo get_avatar( $comment->comment_author_email, 50, '', '' ); ?>
 							</div>
 							<div class="post-info">
-								<p><?php echo esc_html($comment->comment_author); ?> <?php esc_html_e('says', 'sozo');?>:</p>
+								<p><?php echo esc_html($comment->comment_author); ?> <?php esc_html_e('says', 'roadthemes');?>:</p>
 								<a href="<?php echo get_comments_link( $comment->comment_post_ID ); ?>" title="<?php echo esc_attr($comment->comment_author) .' on '. get_the_title( $comment->comment_post_ID );?>"><?php echo RoadThemes::roadlimitStringByWord($comment->comment_content, 30, '...'); ?></a>
 							</div>
 						</div>
@@ -156,19 +156,19 @@ class road_widgets extends WP_Widget {
 		}
 		?>
 		<p>
-		<label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php esc_html_e( 'Title:', 'sozo' ); ?></label> 
+		<label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php esc_html_e( 'Title:', 'roadthemes' ); ?></label> 
 		<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-		<label for="<?php echo esc_attr($this->get_field_id( 'amount' )); ?>"><?php esc_html_e( 'Amount:', 'sozo' ); ?></label> 
+		<label for="<?php echo esc_attr($this->get_field_id( 'amount' )); ?>"><?php esc_html_e( 'Amount:', 'roadthemes' ); ?></label> 
 		<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'amount' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'amount' )); ?>" type="text" value="<?php echo esc_attr($amount); ?>" />
 		</p>
 		<p>
-		<label for="<?php echo esc_attr($this->get_field_id( 'type' )); ?>"><?php esc_html_e( 'Widget Type:', 'sozo' ); ?></label> 
+		<label for="<?php echo esc_attr($this->get_field_id( 'type' )); ?>"><?php esc_html_e( 'Widget Type:', 'roadthemes' ); ?></label> 
 		<select id="<?php echo esc_attr($this->get_field_id( 'amount' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'type' )); ?>">
-			<option value="recent_posts" <?php if($type=='recent_posts') echo 'selected="selected"';?>><?php esc_html_e('Recent Posts', 'sozo');?></option>
-			<option value="popular_posts" <?php if($type=='popular_posts') echo 'selected="selected"';?>><?php esc_html_e('Popular Posts', 'sozo');?></option>
-			<option value="recent_comments" <?php if($type=='recent_comments') echo 'selected="selected"';?>><?php esc_html_e('Recent Comments', 'sozo');?></option>
+			<option value="recent_posts" <?php if($type=='recent_posts') echo 'selected="selected"';?>><?php esc_html_e('Recent Posts', 'roadthemes');?></option>
+			<option value="popular_posts" <?php if($type=='popular_posts') echo 'selected="selected"';?>><?php esc_html_e('Popular Posts', 'roadthemes');?></option>
+			<option value="recent_comments" <?php if($type=='recent_comments') echo 'selected="selected"';?>><?php esc_html_e('Recent Comments', 'roadthemes');?></option>
 		</select>
 		</p>
 	<?php 

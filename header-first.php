@@ -64,11 +64,11 @@ if(is_ssl()){
 								}
 								?>
 								<div class="categories-menu visible-large <?php echo esc_attr($cat_menu_class); ?>">
-									<div class="catemenu-toggler"><span><?php if(isset($road_opt)) { echo esc_html($road_opt['categories_menu_label']); } else { esc_html_e('Category', 'sozo'); } ?></span><i class="fa fa-align-left"></i></div>
+									<div class="catemenu-toggler"><span><?php if(isset($road_opt)) { echo esc_html($road_opt['categories_menu_label']); } else { esc_html_e('Category', 'roadthemes'); } ?></span><i class="fa fa-align-left"></i></div>
 									<?php wp_nav_menu( array( 'theme_location' => 'categories', 'container_class' => 'categories-menu-container', 'menu_class' => 'categories-menu' ) ); ?>
 									<div class="morelesscate">
-										<span class="morecate"><i class="fa fa-plus"></i><?php if ( isset($road_opt['categories_more_label']) && $road_opt['categories_more_label']!='' ) { echo esc_html($road_opt['categories_more_label']); } else { esc_html_e('More Categories', 'sozo'); } ?></span>
-										<span class="lesscate"><i class="fa fa-minus"></i><?php if ( isset($road_opt['categories_less_label']) && $road_opt['categories_less_label']!='' ) { echo esc_html($road_opt['categories_less_label']); } else { esc_html_e('Close Menu', 'sozo'); } ?></span>
+										<span class="morecate"><i class="fa fa-plus"></i><?php if ( isset($road_opt['categories_more_label']) && $road_opt['categories_more_label']!='' ) { echo esc_html($road_opt['categories_more_label']); } else { esc_html_e('More Categories', 'roadthemes'); } ?></span>
+										<span class="lesscate"><i class="fa fa-minus"></i><?php if ( isset($road_opt['categories_less_label']) && $road_opt['categories_less_label']!='' ) { echo esc_html($road_opt['categories_less_label']); } else { esc_html_e('Close Menu', 'roadthemes'); } ?></span>
 									</div>
 								</div>
 								
@@ -116,7 +116,7 @@ if(is_ssl()){
 					<div class="col-lg-offset-2 col-xs-12">
 						<?php if( class_exists('WC_Widget_Product_Categories') && class_exists('WC_Widget_Product_Search') ) { ?>
 							<div class="header-search">
-								<div class="cate-toggler"><?php esc_html_e('All Categories', 'sozo');?></div>
+								<div class="cate-toggler"><?php esc_html_e('All Categories', 'roadthemes');?></div>
 								<?php the_widget('WC_Widget_Product_Categories', array('hierarchical' => true, 'title' => 'Categories', 'orderby' => 'order')); ?>
 								<?php the_widget('WC_Widget_Product_Search', array('title' => 'Search')); ?>
 							</div>

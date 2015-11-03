@@ -45,7 +45,7 @@ global $woocommerce;
 								<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s', $cart_item['quantity'] ) . '</span>', $cart_item, $cart_item_key ); ?>
 							</a>
 							<div class="product-details">
-								<?php echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" onclick="roadMiniCartRemove(\'%s\', \'%s\');return false;" class="remove" title="%s"><i class="fa fa-times-circle"></i></a>', esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), $cart_item_key, esc_html__( 'Remove this item', 'sozo' ) ), $cart_item_key ); ?>
+								<?php echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" onclick="roadMiniCartRemove(\'%s\', \'%s\');return false;" class="remove" title="%s"><i class="fa fa-times-circle"></i></a>', esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), $cart_item_key, esc_html__( 'Remove this item', 'roadthemes' ) ), $cart_item_key ); ?>
 								<a class="product-name" href="<?php echo esc_url(get_permalink( $product_id )); ?>"><?php echo esc_html($product_name); ?></a>
 								<?php echo WC()->cart->get_item_data( $cart_item ); ?>
 								<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s', $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
@@ -58,20 +58,20 @@ global $woocommerce;
 			</ul><!-- end product list -->
 		<?php else: ?>
 			<ul class="cart_empty <?php echo esc_attr($args['list_class']); ?>">
-				<li><?php esc_html_e( 'You have no items in your shopping cart', 'sozo' ); ?></li>
-				<li class="total"><?php esc_html_e( 'Subtotal', 'sozo' ); ?>: <?php echo WC()->cart->get_cart_subtotal(); ?></li>
+				<li><?php esc_html_e( 'You have no items in your shopping cart', 'roadthemes' ); ?></li>
+				<li class="total"><?php esc_html_e( 'Subtotal', 'roadthemes' ); ?>: <?php echo WC()->cart->get_cart_subtotal(); ?></li>
 			</ul>
 		<?php endif; ?>
 
 		<?php if ( sizeof( WC()->cart->get_cart() ) > 0 ) : ?>
 
-			<p class="total"><?php esc_html_e( 'Subtotal', 'sozo' ); ?>: <?php echo WC()->cart->get_cart_subtotal(); ?></p>
+			<p class="total"><?php esc_html_e( 'Subtotal', 'roadthemes' ); ?>: <?php echo WC()->cart->get_cart_subtotal(); ?></p>
 
 			<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
 			<p class="buttons">
-				<a href="<?php echo WC()->cart->get_checkout_url(); ?>" class="button checkout wc-forward"><?php esc_html_e( 'Checkout', 'sozo' ); ?></a>
-				<!--<a href="<?php echo WC()->cart->get_cart_url(); ?>" class="button wc-forward"><?php esc_html_e( 'View Cart', 'sozo' ); ?></a>-->
+				<a href="<?php echo WC()->cart->get_checkout_url(); ?>" class="button checkout wc-forward"><?php esc_html_e( 'Checkout', 'roadthemes' ); ?></a>
+				<!--<a href="<?php echo WC()->cart->get_cart_url(); ?>" class="button wc-forward"><?php esc_html_e( 'View Cart', 'roadthemes' ); ?></a>-->
 			</p>
 
 		<?php endif; ?>

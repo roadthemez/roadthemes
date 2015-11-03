@@ -22,8 +22,8 @@ if ( file_exists( get_template_directory().'/include/styleswitcher.php' ) ) {
 if ( file_exists( get_template_directory().'/include/wooajax.php' ) ) {
 	require_once( get_template_directory().'/include/wooajax.php' );
 }
-if ( file_exists( get_template_directory().'/include/shortcodes.php' ) ) {
-	require_once( get_template_directory().'/include/shortcodes.php' );
+if ( file_exists( get_template_directory().'/include/map_shortcodes.php' ) ) {
+	require_once( get_template_directory().'/include/map_shortcodes.php' );
 }
 Class RoadThemes {
 	/**
@@ -84,7 +84,6 @@ Class RoadThemes {
 		add_action( 'admin_head', array($this, 'road_remove_redux_ads'));
 		
 			//Theme filters
-		add_filter( 'woocommerce_get_price_html', array($this, 'road_woo_price_html'), 100, 2 );
 		add_filter( 'loop_shop_per_page', array($this, 'road_woo_change_per_page'), 20 );
 		add_filter( 'woocommerce_output_related_products_args', array($this, 'road_woo_related_products_limit'));
 		add_filter( 'get_search_form', array($this, 'road_search_form'));
@@ -106,33 +105,7 @@ Class RoadThemes {
 	* Filter callbacks
 	* ----------------
 	*/
-	//Change price html
-	function road_woo_price_html( $price, $product ){
-
-		if($product->product_type=="variable") {
-			if($product->get_variation_sale_price() && $product->get_variation_regular_price()!=$product->get_variation_sale_price()){
-				$rprice = $product->get_variation_regular_price();
-				$sprice = $product->get_variation_sale_price();
-				
-				return '<span class="special-price">'.( ( is_numeric( $sprice ) ) ? woocommerce_price( $sprice ) : $sprice ) .'</span><span class="old-price">'. ( ( is_numeric( $rprice ) ) ? woocommerce_price( $rprice ) : $rprice ) .'</span>'.$product->get_price_suffix();
-			} else {
-				$rprice = $product->get_variation_regular_price();
-				return '<span class="special-price">' . ( ( is_numeric( $rprice ) ) ? woocommerce_price( $rprice ) : $rprice ) . '</span>'.$product->get_price_suffix();
-			}
-		}
-		if ( $product->price > 0 ) {
-			if ( $product->price && isset( $product->regular_price ) && ( $product->price!=$product->regular_price )) {
-			$rprice = $product->regular_price;
-			$sprice = $product->price;
-			return '<span class="special-price">'.( ( is_numeric( $sprice ) ) ? woocommerce_price( $sprice ) : $sprice ) .'</span><span class="old-price">'. ( ( is_numeric( $rprice ) ) ? woocommerce_price( $rprice ) : $rprice ) .'</span>'.$product->get_price_suffix();
-			} else {
-			$sprice = $product->price;
-			return '<span class="special-price">' . ( ( is_numeric( $sprice ) ) ? woocommerce_price( $sprice ) : $sprice ) . '</span>'.$product->get_price_suffix();
-			}
-		} else {
-			return '<span class="special-price">0</span>'.$product->get_price_suffix();
-		}
-	}
+	
 	// Change products per page
 	function road_woo_change_per_page() {
 		global $road_opt;
@@ -160,7 +133,7 @@ Class RoadThemes {
 		if(get_search_query()!=''){
 			$search_str = get_search_query();
 		} else {
-			$search_str = esc_html__( 'Search...', 'sozo' );
+			$search_str = esc_html__( 'Search...', 'roadthemes' );
 		}
 		
 		$form = '<form role="search" method="get" id="blogsearchform" class="searchform" action="' . esc_url(home_url( '/' ) ). '" >
@@ -173,17 +146,17 @@ Class RoadThemes {
 		$form .= '<script type="text/javascript">';
 		$form .= 'jQuery(document).ready(function(){
 			jQuery("#search_input").focus(function(){
-				if(jQuery(this).val()=="'.esc_html__( 'Search...', 'sozo' ).'"){
+				if(jQuery(this).val()=="'.esc_html__( 'Search...', 'roadthemes' ).'"){
 					jQuery(this).val("");
 				}
 			});
 			jQuery("#search_input").focusout(function(){
 				if(jQuery(this).val()==""){
-					jQuery(this).val("'.esc_html__( 'Search...', 'sozo' ).'");
+					jQuery(this).val("'.esc_html__( 'Search...', 'roadthemes' ).'");
 				}
 			});
 			jQuery("#blogsearchsubmit").click(function(){
-				if(jQuery("#search_input").val()=="'.esc_html__( 'Search...', 'sozo' ).'" || jQuery("#search_input").val()==""){
+				if(jQuery("#search_input").val()=="'.esc_html__( 'Search...', 'roadthemes' ).'" || jQuery("#search_input").val()==""){
 					jQuery("#search_input").focus();
 					return false;
 				}
@@ -199,7 +172,7 @@ Class RoadThemes {
 		if(get_search_query()!=''){
 			$search_str = get_search_query();
 		} else {
-			$search_str = esc_html__( 'Search product...', 'sozo' );
+			$search_str = esc_html__( 'Search product...', 'roadthemes' );
 		}
 		
 		$form = '<form role="search" method="get" id="searchform" action="'.esc_url( home_url( '/'  ) ).'">';
@@ -212,17 +185,17 @@ Class RoadThemes {
 		$form .= '<script type="text/javascript">';
 		$form .= 'jQuery(document).ready(function(){
 			jQuery("#ws").focus(function(){
-				if(jQuery(this).val()=="'.esc_html__( 'Search product...', 'sozo' ).'"){
+				if(jQuery(this).val()=="'.esc_html__( 'Search product...', 'roadthemes' ).'"){
 					jQuery(this).val("");
 				}
 			});
 			jQuery("#ws").focusout(function(){
 				if(jQuery(this).val()==""){
-					jQuery(this).val("'.esc_html__( 'Search product...', 'sozo' ).'");
+					jQuery(this).val("'.esc_html__( 'Search product...', 'roadthemes' ).'");
 				}
 			});
 			jQuery("#wsearchsubmit").click(function(){
-				if(jQuery("#ws").val()=="'.esc_html__( 'Search product...', 'sozo' ).'" || jQuery("#ws").val()==""){
+				if(jQuery("#ws").val()=="'.esc_html__( 'Search product...', 'roadthemes' ).'" || jQuery("#ws").val()==""){
 					jQuery("#ws").focus();
 					return false;
 				}
@@ -359,9 +332,9 @@ Class RoadThemes {
 		 *
 		 * Translations can be added to the /languages/ directory.
 		 * If you're building a theme based on Road Themes, use a find and replace
-		 * to change 'sozo' to the name of your theme in all the template files.
+		 * to change 'roadthemes' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'sozo', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'roadthemes', get_template_directory() . '/languages' );
 
 		// This theme styles the visual editor with editor-style.css to match the theme style.
 		add_editor_style();
@@ -373,10 +346,10 @@ Class RoadThemes {
 		add_theme_support( 'post-formats', array( 'image', 'gallery', 'video', 'audio' ) );
 
 		// Register menus
-		register_nav_menu( 'primary', esc_html__( 'Primary Menu', 'sozo' ) );
-		register_nav_menu( 'categories', esc_html__( 'Categories Menu', 'sozo' ) );
-		register_nav_menu( 'topmenu', esc_html__( 'Top Menu', 'sozo' ) );
-		register_nav_menu( 'mobilemenu', esc_html__( 'Mobile Menu', 'sozo' ) );
+		register_nav_menu( 'primary', esc_html__( 'Primary Menu', 'roadthemes' ) );
+		register_nav_menu( 'categories', esc_html__( 'Categories Menu', 'roadthemes' ) );
+		register_nav_menu( 'topmenu', esc_html__( 'Top Menu', 'roadthemes' ) );
+		register_nav_menu( 'mobilemenu', esc_html__( 'Mobile Menu', 'roadthemes' ) );
 
 		/*
 		 * This theme supports custom background color and image,
@@ -627,9 +600,9 @@ Class RoadThemes {
 	 */
 	function road_widgets_init() {
 		register_sidebar( array(
-			'name' => esc_html__( 'Blog Sidebar', 'sozo' ),
+			'name' => esc_html__( 'Blog Sidebar', 'roadthemes' ),
 			'id' => 'sidebar-1',
-			'description' => esc_html__( 'Sidebar on blog page', 'sozo' ),
+			'description' => esc_html__( 'Sidebar on blog page', 'roadthemes' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title"><span>',
@@ -637,9 +610,9 @@ Class RoadThemes {
 		) );
 		
 		register_sidebar( array(
-			'name' => esc_html__( 'Shop Sidebar', 'sozo' ),
+			'name' => esc_html__( 'Shop Sidebar', 'roadthemes' ),
 			'id' => 'sidebar-shop',
-			'description' => esc_html__( 'Sidebar on shop page (only sidebar shop layout)', 'sozo' ),
+			'description' => esc_html__( 'Sidebar on shop page (only sidebar shop layout)', 'roadthemes' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title"><span>',
@@ -647,9 +620,9 @@ Class RoadThemes {
 		) );
 
 		register_sidebar( array(
-			'name' => esc_html__( 'Pages Sidebar', 'sozo' ),
+			'name' => esc_html__( 'Pages Sidebar', 'roadthemes' ),
 			'id' => 'sidebar-page',
-			'description' => esc_html__( 'Sidebar on content pages', 'sozo' ),
+			'description' => esc_html__( 'Sidebar on content pages', 'roadthemes' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title"><span>',
@@ -668,7 +641,7 @@ Class RoadThemes {
 		$value = get_post_meta( $post->ID, '_road_meta_value_key', true );
 
 		echo '<label for="road_post_intro">';
-		esc_html_e( 'This content will be used to replace the featured image, use shortcode here', 'sozo' );
+		esc_html_e( 'This content will be used to replace the featured image, use shortcode here', 'roadthemes' );
 		echo '</label><br />';
 		//echo '<textarea id="road_post_intro" name="road_post_intro" rows="5" cols="50" />' . esc_attr( $value ) . '</textarea>';
 		wp_editor( $value, 'road_post_intro', $settings = array() );
@@ -683,7 +656,7 @@ Class RoadThemes {
 
 			add_meta_box(
 				'road_post_intro_section',
-				esc_html__( 'Post featured content', 'sozo' ),
+				esc_html__( 'Post featured content', 'roadthemes' ),
 				'RoadThemes::road_meta_box_callback',
 				$screen
 			);
@@ -890,13 +863,13 @@ Class RoadThemes {
 		/* translators: If there are characters in your language that are not supported
 		 * by Open Sans, translate this to 'off'. Do not translate into your own language.
 		 */
-		if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'sozo' ) ) {
+		if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'roadthemes' ) ) {
 			$subsets = 'latin,latin-ext';
 
 			/* translators: To add an additional Open Sans character subset specific to your language,
 			 * translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your own language.
 			 */
-			$subset = _x( 'no-subset', 'Open Sans font: add new subset (greek, cyrillic, vietnamese)', 'sozo' );
+			$subset = _x( 'no-subset', 'Open Sans font: add new subset (greek, cyrillic, vietnamese)', 'roadthemes' );
 
 			if ( 'cyrillic' == $subset )
 				$subsets .= ',cyrillic,cyrillic-ext';
@@ -927,9 +900,9 @@ Class RoadThemes {
 
 		if ( $wp_query->max_num_pages > 1 ) : ?>
 			<nav id="<?php echo esc_attr($html_id); ?>" class="navigation" role="navigation">
-				<h3 class="assistive-text"><?php esc_html_e( 'Post navigation', 'sozo' ); ?></h3>
-				<div class="nav-previous"><?php next_posts_link( esc_html__( '<span class="meta-nav">&larr;</span> Older posts', 'sozo' ) ); ?></div>
-				<div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts <span class="meta-nav">&rarr;</span>', 'sozo' ) ); ?></div>
+				<h3 class="assistive-text"><?php esc_html_e( 'Post navigation', 'roadthemes' ); ?></h3>
+				<div class="nav-previous"><?php next_posts_link( esc_html__( '<span class="meta-nav">&larr;</span> Older posts', 'roadthemes' ) ); ?></div>
+				<div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts <span class="meta-nav">&rarr;</span>', 'roadthemes' ) ); ?></div>
 			</nav>
 		<?php endif;
 	}
@@ -944,8 +917,8 @@ Class RoadThemes {
 			'format' => '?paged=%#%',
 			'current' => max( 1, get_query_var('paged') ),
 			'total' => $wp_query->max_num_pages,
-			'prev_text'    => esc_html__('Previous', 'sozo'),
-			'next_text'    =>esc_html__('Next', 'sozo'),
+			'prev_text'    => esc_html__('Previous', 'roadthemes'),
+			'next_text'    =>esc_html__('Next', 'roadthemes'),
 		) );
 	}
 	/**
@@ -966,7 +939,7 @@ Class RoadThemes {
 			// Display trackbacks differently than normal comments.
 		?>
 		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-			<p><?php esc_html_e( 'Pingback:', 'sozo' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( esc_html__( '(Edit)', 'sozo' ), '<span class="edit-link">', '</span>' ); ?></p>
+			<p><?php esc_html_e( 'Pingback:', 'roadthemes' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( esc_html__( '(Edit)', 'roadthemes' ), '<span class="edit-link">', '</span>' ); ?></p>
 		<?php
 				break;
 			default :
@@ -985,25 +958,25 @@ Class RoadThemes {
 							printf( '<cite><b class="fn">%1$s</b> %2$s</cite>',
 								get_comment_author_link(),
 								// If current post author is also comment author, make it known visually.
-								( $comment->user_id === $post->post_author ) ? '<span>' . esc_html__( 'Post author', 'sozo' ) . '</span>' : ''
+								( $comment->user_id === $post->post_author ) ? '<span>' . esc_html__( 'Post author', 'roadthemes' ) . '</span>' : ''
 							);
 							printf( '<time datetime="%1$s">%2$s</time>',
 								get_comment_time( 'c' ),
 								/* translators: 1: date, 2: time */
-								sprintf( esc_html__( '%1$s at %2$s', 'sozo' ), get_comment_date(), get_comment_time() )
+								sprintf( esc_html__( '%1$s at %2$s', 'roadthemes' ), get_comment_date(), get_comment_time() )
 							);
 						?>
 						<div class="reply">
-							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => esc_html__( 'Reply', 'sozo' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => esc_html__( 'Reply', 'roadthemes' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 						</div><!-- .reply -->
 					</header><!-- .comment-meta -->
 					<?php if ( '0' == $comment->comment_approved ) : ?>
-						<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'sozo' ); ?></p>
+						<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'roadthemes' ); ?></p>
 					<?php endif; ?>
 
 					<section class="comment-content comment">
 						<?php comment_text(); ?>
-						<?php edit_comment_link( esc_html__( 'Edit', 'sozo' ), '<p class="edit-link">', '</p>' ); ?>
+						<?php edit_comment_link( esc_html__( 'Edit', 'roadthemes' ), '<p class="edit-link">', '</p>' ); ?>
 					</section><!-- .comment-content -->
 				</div>
 			</article><!-- #comment-## -->
@@ -1023,37 +996,37 @@ Class RoadThemes {
 	static function road_entry_meta() {
 		
 		// Translators: used between list items, there is a space after the comma.
-		$tag_list = get_the_tag_list( '', esc_html__( ', ', 'sozo' ) );
+		$tag_list = get_the_tag_list( '', esc_html__( ', ', 'roadthemes' ) );
 
 		$num_comments = (int)get_comments_number();
 		$write_comments = '';
 		if ( comments_open() ) {
 			if ( $num_comments == 0 ) {
-				$comments = esc_html__('0 comments', 'sozo');
+				$comments = esc_html__('0 comments', 'roadthemes');
 			} elseif ( $num_comments > 1 ) {
-				$comments = $num_comments . esc_html__(' comments', 'sozo');
+				$comments = $num_comments . esc_html__(' comments', 'roadthemes');
 			} else {
-				$comments = esc_html__('1 comment', 'sozo');
+				$comments = esc_html__('1 comment', 'roadthemes');
 			}
 			$write_comments = '<a href="' . get_comments_link() .'">'. $comments.'</a>';
 		}
 
-		$utility_text = esc_html__( '%1$s / Tags: %2$s', 'sozo' );
+		$utility_text = esc_html__( '%1$s / Tags: %2$s', 'roadthemes' );
 
 		printf( $utility_text, $write_comments, $tag_list);
 	}
 	static function road_entry_meta_small() {
 		
 		// Translators: used between list items, there is a space after the comma.
-		$categories_list = get_the_category_list( esc_html__( ', ', 'sozo' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'roadthemes' ) );
 
 		$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( esc_html__( 'View all posts by %s', 'sozo' ), get_the_author() ) ),
+			esc_attr( sprintf( esc_html__( 'View all posts by %s', 'roadthemes' ), get_the_author() ) ),
 			get_the_author()
 		);
 		
-		$utility_text = esc_html__( 'Posted by %1$s / %2$s', 'sozo' );
+		$utility_text = esc_html__( 'Posted by %1$s / %2$s', 'roadthemes' );
 
 		printf( $utility_text, $author, $categories_list );
 		
@@ -1071,16 +1044,16 @@ Class RoadThemes {
 		$write_comments = '';
 		if ( comments_open() ) {
 			if ( $num_comments == 0 ) {
-				$comments = esc_html__('<span>0</span> comments', 'sozo');
+				$comments = esc_html__('<span>0</span> comments', 'roadthemes');
 			} elseif ( $num_comments > 1 ) {
-				$comments = '<span>'.$num_comments .'</span>'. esc_html__(' comments', 'sozo');
+				$comments = '<span>'.$num_comments .'</span>'. esc_html__(' comments', 'roadthemes');
 			} else {
-				$comments = esc_html__('<span>1</span> comment', 'sozo');
+				$comments = esc_html__('<span>1</span> comment', 'roadthemes');
 			}
 			$write_comments = '<a href="' . get_comments_link() .'">'. $comments.'</a>';
 		}
 		
-		$utility_text = esc_html__( '%1$s', 'sozo' );
+		$utility_text = esc_html__( '%1$s', 'roadthemes' );
 		
 		printf( $utility_text, $write_comments );
 	}
@@ -1095,10 +1068,24 @@ Class RoadThemes {
 				'slug'               => 'roadthemes-helper',
 				'source'             => get_template_directory() . '/plugins/roadthemes-helper.zip',
 				'required'           => true,
-				'version'            => '1.0.0',
-				'force_activation'   => false,
-				'force_deactivation' => false,
-				'external_url'       => '',
+			),
+			array(
+				'name'               => 'Mega Main Menu',
+				'slug'               => 'mega_main_menu',
+				'source'             => get_template_directory() . '/plugins/mega_main_menu.zip',
+				'required'           => true,
+			),
+			array(
+				'name'               => 'Revolution Slider',
+				'slug'               => 'revslider',
+				'source'             => get_template_directory() . '/plugins/revslider.zip',
+				'required'           => true,
+			),
+			array(
+				'name'               => 'Visual Composer',
+				'slug'               => 'js_composer',
+				'source'             => get_template_directory() . '/plugins/js_composer.zip',
+				'required'           => true,
 			),
 			
 			// Plugins from the WordPress Plugin Repository.
@@ -1106,18 +1093,16 @@ Class RoadThemes {
 				'name'               => 'Redux Framework',
 				'slug'               => 'redux-framework',
 				'required'           => true,
-				'force_activation'   => false,
-				'force_deactivation' => false,
 			),
 			array(
 				'name'      => 'Contact Form 7',
 				'slug'      => 'contact-form-7',
-				'required'  => true,
+				'required'  => false,
 			),
 			array(
 				'name'      => 'MailPoet Newsletters',
 				'slug'      => 'wysija-newsletters',
-				'required'  => true,
+				'required'  => false,
 			),
 			array(
 				'name'      => 'Projects',
@@ -1127,7 +1112,7 @@ Class RoadThemes {
 			array(
 				'name'      => 'Shortcodes Ultimate',
 				'slug'      => 'shortcodes-ultimate',
-				'required'  => true,
+				'required'  => false,
 			),
 			array(
 				'name'      => 'Simple Local Avatars',
@@ -1137,7 +1122,7 @@ Class RoadThemes {
 			array(
 				'name'      => 'Testimonials',
 				'slug'      => 'testimonials-by-woothemes',
-				'required'  => true,
+				'required'  => false,
 			),
 			array(
 				'name'      => 'TinyMCE Advanced',
@@ -1152,7 +1137,7 @@ Class RoadThemes {
 			array(
 				'name'      => 'WooCommerce',
 				'slug'      => 'woocommerce',
-				'required'  => true,
+				'required'  => false,
 			),
 			array(
 				'name'      => 'YITH WooCommerce Compare',
@@ -1187,23 +1172,23 @@ Class RoadThemes {
 			'is_automatic' => false,                   // Automatically activate plugins after installation or not.
 			'message'      => '',                      // Message to output right before the plugins table.
 			'strings'      => array(
-				'page_title'                      => esc_html__( 'Install Required Plugins', 'sozo' ),
-				'menu_title'                      => esc_html__( 'Install Plugins', 'sozo' ),
-				'installing'                      => esc_html__( 'Installing Plugin: %s', 'sozo' ), // %s = plugin name.
-				'oops'                            => esc_html__( 'Something went wrong with the plugin API.', 'sozo' ),
-				'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'sozo' ), // %1$s = plugin name(s).
-				'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'sozo' ), // %1$s = plugin name(s).
-				'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'sozo' ), // %1$s = plugin name(s).
-				'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'sozo' ), // %1$s = plugin name(s).
-				'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'sozo' ), // %1$s = plugin name(s).
-				'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'sozo' ), // %1$s = plugin name(s).
-				'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'sozo' ), // %1$s = plugin name(s).
-				'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'sozo' ), // %1$s = plugin name(s).
-				'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'sozo' ),
-				'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'sozo' ),
-				'return'                          => esc_html__( 'Return to Required Plugins Installer', 'sozo' ),
-				'plugin_activated'                => esc_html__( 'Plugin activated successfully.', 'sozo' ),
-				'complete'                        => esc_html__( 'All plugins installed and activated successfully. %s', 'sozo' ), // %s = dashboard link.
+				'page_title'                      => esc_html__( 'Install Required Plugins', 'roadthemes' ),
+				'menu_title'                      => esc_html__( 'Install Plugins', 'roadthemes' ),
+				'installing'                      => esc_html__( 'Installing Plugin: %s', 'roadthemes' ), // %s = plugin name.
+				'oops'                            => esc_html__( 'Something went wrong with the plugin API.', 'roadthemes' ),
+				'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'roadthemes' ), // %1$s = plugin name(s).
+				'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'roadthemes' ), // %1$s = plugin name(s).
+				'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'roadthemes' ), // %1$s = plugin name(s).
+				'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'roadthemes' ), // %1$s = plugin name(s).
+				'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'roadthemes' ), // %1$s = plugin name(s).
+				'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'roadthemes' ), // %1$s = plugin name(s).
+				'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'roadthemes' ), // %1$s = plugin name(s).
+				'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'roadthemes' ), // %1$s = plugin name(s).
+				'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'roadthemes' ),
+				'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'roadthemes' ),
+				'return'                          => esc_html__( 'Return to Required Plugins Installer', 'roadthemes' ),
+				'plugin_activated'                => esc_html__( 'Plugin activated successfully.', 'roadthemes' ),
+				'complete'                        => esc_html__( 'All plugins installed and activated successfully. %s', 'roadthemes' ), // %s = dashboard link.
 				'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
 			)
 		);

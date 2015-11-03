@@ -49,7 +49,7 @@ switch($bloglayout) {
 		<?php RoadThemes::road_breadcrumb(); ?>
 		<header class="entry-header">
 			<div class="container">
-				<h1 class="entry-title"><?php if(isset($road_opt)) { echo esc_html($road_opt['blog_header_text']); } else { esc_html_e('Blog', 'sozo');}  ?></h1>
+				<h1 class="entry-title"><?php if(isset($road_opt)) { echo esc_html($road_opt['blog_header_text']); } else { esc_html_e('Blog', 'roadthemes');}  ?></h1>
 			</div>
 		</header>
 		<div class="row">
@@ -71,7 +71,7 @@ switch($bloglayout) {
 						?>
 
 						<header class="archive-header">
-							<h1 class="archive-title"><?php printf( esc_html__( 'Author Archives: %s', 'sozo' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
+							<h1 class="archive-title"><?php printf( esc_html__( 'Author Archives: %s', 'roadthemes' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
 						</header><!-- .archive-header -->
 
 						<?php
@@ -100,7 +100,7 @@ switch($bloglayout) {
 								?>
 							</div><!-- .author-avatar -->
 							<div class="author-description">
-								<h2><?php printf( esc_html__( 'About %s', 'sozo' ), get_the_author() ); ?></h2>
+								<h2><?php printf( esc_html__( 'About %s', 'roadthemes' ), get_the_author() ); ?></h2>
 								<p><?php the_author_meta( 'description' ); ?></p>
 							</div><!-- .author-description	-->
 						</div><!-- .author-info -->

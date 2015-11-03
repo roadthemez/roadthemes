@@ -14,15 +14,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 $customer_id = get_current_user_id();
 
 if ( ! wc_ship_to_billing_address_only() && get_option( 'woocommerce_calc_shipping' ) !== 'no' ) {
-	$page_title = apply_filters( 'woocommerce_my_account_my_address_title', esc_html__( 'My Addresses', 'sozo' ) );
+	$page_title = apply_filters( 'woocommerce_my_account_my_address_title', esc_html__( 'My Addresses', 'roadthemes' ) );
 	$get_addresses    = apply_filters( 'woocommerce_my_account_get_addresses', array(
-		'billing' => esc_html__( 'Billing Address', 'sozo' ),
-		'shipping' => esc_html__( 'Shipping Address', 'sozo' )
+		'billing' => esc_html__( 'Billing Address', 'roadthemes' ),
+		'shipping' => esc_html__( 'Shipping Address', 'roadthemes' )
 	), $customer_id );
 } else {
-	$page_title = apply_filters( 'woocommerce_my_account_my_address_title', esc_html__( 'My Address', 'sozo' ) );
+	$page_title = apply_filters( 'woocommerce_my_account_my_address_title', esc_html__( 'My Address', 'roadthemes' ) );
 	$get_addresses    = apply_filters( 'woocommerce_my_account_get_addresses', array(
-		'billing' =>  esc_html__( 'Billing Address', 'sozo' )
+		'billing' =>  esc_html__( 'Billing Address', 'roadthemes' )
 	), $customer_id );
 }
 
@@ -32,7 +32,7 @@ $col = 1;
 <h2><?php echo esc_html($page_title); ?></h2>
 
 <p class="myaccount_address">
-	<?php echo apply_filters( 'woocommerce_my_account_my_address_description', esc_html__( 'The following addresses will be used on the checkout page by default.', 'sozo' ) ); ?>
+	<?php echo apply_filters( 'woocommerce_my_account_my_address_description', esc_html__( 'The following addresses will be used on the checkout page by default.', 'roadthemes' ) ); ?>
 </p>
 
 <?php if ( ! wc_ship_to_billing_address_only() && get_option( 'woocommerce_calc_shipping' ) !== 'no' ) echo '<div class="col2-set addresses">'; ?>
@@ -42,7 +42,7 @@ $col = 1;
 	<div class="col-<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; ?> address">
 		<header class="title">
 			<h3><?php echo esc_html($title); ?></h3>
-			<a href="<?php echo wc_get_endpoint_url( 'edit-address', $name ); ?>" class="edit"><?php esc_html_e( 'Edit', 'sozo' ); ?></a>
+			<a href="<?php echo wc_get_endpoint_url( 'edit-address', $name ); ?>" class="edit"><?php esc_html_e( 'Edit', 'roadthemes' ); ?></a>
 		</header>
 		<address>
 			<?php
@@ -61,7 +61,7 @@ $col = 1;
 				$formatted_address = WC()->countries->get_formatted_address( $address );
 
 				if ( ! $formatted_address )
-					esc_html_e( 'You have not set up this type of address yet.', 'sozo' );
+					esc_html_e( 'You have not set up this type of address yet.', 'roadthemes' );
 				else
 					echo ''.$formatted_address;
 			?>

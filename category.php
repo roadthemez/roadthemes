@@ -49,7 +49,7 @@ switch($bloglayout) {
 		<?php RoadThemes::road_breadcrumb(); ?>
 		<header class="entry-header">
 			<div class="container">
-				<h1 class="entry-title"><?php if(isset($road_opt)) { echo esc_html($road_opt['blog_header_text']); } else { esc_html_e('Blog', 'sozo');}  ?></h1>
+				<h1 class="entry-title"><?php if(isset($road_opt)) { echo esc_html($road_opt['blog_header_text']); } else { esc_html_e('Blog', 'roadthemes');}  ?></h1>
 			</div>
 		</header>
 		<div class="row">
@@ -63,7 +63,7 @@ switch($bloglayout) {
 				
 					<?php if ( have_posts() ) : ?>
 						<header class="archive-header">
-							<h1 class="archive-title"><?php printf( esc_html__( 'Category Archives: %s', 'sozo' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?></h1>
+							<h1 class="archive-title"><?php printf( esc_html__( 'Category Archives: %s', 'roadthemes' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?></h1>
 
 						<?php if ( category_description() ) : // Show an optional category description ?>
 							<div class="archive-meta"><?php echo category_description(); ?></div>

@@ -14,8 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <table class="shop_table woocommerce-checkout-review-order-table">
 	<thead>
 		<tr>
-			<th class="product-name"><?php esc_html_e( 'Product', 'sozo' ); ?></th>
-			<th class="product-total"><?php esc_html_e( 'Total', 'sozo' ); ?></th>
+			<th class="product-name"><?php esc_html_e( 'Product', 'roadthemes' ); ?></th>
+			<th class="product-total"><?php esc_html_e( 'Total', 'roadthemes' ); ?></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<tfoot>
 
 		<tr class="cart-subtotal">
-			<th><?php esc_html_e( 'Cart Subtotal', 'sozo' ); ?></th>
+			<th><?php esc_html_e( 'Cart Subtotal', 'roadthemes' ); ?></th>
 			<td><?php wc_cart_totals_subtotal_html(); ?></td>
 		</tr>
 
@@ -94,7 +94,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
 
 		<tr class="order-total">
-			<th><?php esc_html_e( 'Order Total', 'sozo' ); ?></th>
+			<th><?php esc_html_e( 'Order Total', 'roadthemes' ); ?></th>
 			<td><?php wc_cart_totals_order_total_html(); ?></td>
 		</tr>
 

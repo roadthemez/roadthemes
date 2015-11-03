@@ -55,8 +55,8 @@ if($road_postcount == 1){
 			
 			<?php if ( is_single() ) : ?>
 				<div class="entry-content">
-					<?php the_content( esc_html__( 'Continue reading <span class="meta-nav">&rarr;</span>', 'sozo' ) ); ?>
-					<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'sozo' ), 'after' => '</div>', 'pagelink' => '<span>%</span>' ) ); ?>
+					<?php the_content( esc_html__( 'Continue reading <span class="meta-nav">&rarr;</span>', 'roadthemes' ) ); ?>
+					<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'roadthemes' ), 'after' => '</div>', 'pagelink' => '<span>%</span>' ) ); ?>
 				</div>
 			<?php else : ?>
 				<div class="entry-summary">

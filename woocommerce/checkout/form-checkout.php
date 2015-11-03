@@ -17,7 +17,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 
 // If checkout registration is disabled and not logged in, the user cannot checkout
 if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_user_logged_in() ) {
-	echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', esc_html__( 'You must be logged in to checkout.', 'sozo' ) );
+	echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', esc_html__( 'You must be logged in to checkout.', 'roadthemes' ) );
 	return;
 }
 
@@ -46,7 +46,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 		</div>
 		<div class="col-xs-12 col-md-6">
 			<div class="order-box">
-				<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'sozo' ); ?></h3>
+				<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'roadthemes' ); ?></h3>
 				
 				<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 

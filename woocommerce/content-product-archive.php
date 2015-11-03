@@ -58,10 +58,10 @@ if($road_shopclass=='shop-fullwidth') {
 	<div class="product-wrapper">
 		<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 		<?php if ( $product->is_on_sale() ) : ?>
-			<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale"><span class="sale-bg"></span><span class="sale-text">' . esc_html__( 'Sale', 'sozo' ) . '</span></span>', $post, $product ); ?>
+			<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale"><span class="sale-bg"></span><span class="sale-text">' . esc_html__( 'Sale', 'roadthemes' ) . '</span></span>', $post, $product ); ?>
 		<?php endif; ?>
 		<div class="quickviewbtn">
-			<a class="detail-link quickview fa fa-external-link" data-quick-id="<?php the_ID();?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php esc_html_e('Quick View', 'sozo');?></a>
+			<a class="detail-link quickview fa fa-external-link" data-quick-id="<?php the_ID();?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php esc_html_e('Quick View', 'roadthemes');?></a>
 		</div>
 		<div class="list-col4 <?php if($road_viewmode=='list-view'){ echo ' col-xs-12 col-sm-4';} ?>">
 			<div class="product-image">
@@ -134,7 +134,7 @@ if($road_shopclass=='shop-fullwidth') {
 							echo do_shortcode('[yith_compare_button]');
 						} ?>
 						<div class="quickviewbtn">
-							<a class="detail-link quickview fa fa-external-link" data-quick-id="<?php the_ID();?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php esc_html_e('Quick View', 'sozo');?></a>
+							<a class="detail-link quickview fa fa-external-link" data-quick-id="<?php the_ID();?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php esc_html_e('Quick View', 'roadthemes');?></a>
 						</div>
 					</div>
 				</div>

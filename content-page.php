@@ -17,6 +17,6 @@
 		
 		<div class="entry-content">
 			<?php the_content(); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'sozo' ), 'after' => '</div>', 'pagelink' => '<span>%</span>' ) ); ?>
+			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'roadthemes' ), 'after' => '</div>', 'pagelink' => '<span>%</span>' ) ); ?>
 		</div>
 	</article>

@@ -93,8 +93,8 @@ if (!class_exists('Road_Theme_Config')) {
         function dynamic_section($sections) {
             //$sections = array();
             $sections[] = array(
-                'title' => esc_html__('Section via hook', 'sozo'),
-                'desc' => esc_html__('<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'sozo'),
+                'title' => esc_html__('Section via hook', 'roadthemes'),
+                'desc' => esc_html__('<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'roadthemes'),
                 'icon' => 'el-icon-paper-clip',
                 // Leave this as a blank section, no options just some intro text set above.
                 'fields' => array()
@@ -172,31 +172,31 @@ if (!class_exists('Road_Theme_Config')) {
             $screenshot     = $this->theme->get_screenshot();
             $class          = $screenshot ? 'has-screenshot' : '';
 
-            $customize_title = sprintf(esc_html__('Customize &#8220;%s&#8221;', 'sozo'), $this->theme->display('Name'));
+            $customize_title = sprintf(esc_html__('Customize &#8220;%s&#8221;', 'roadthemes'), $this->theme->display('Name'));
             
             ?>
             <div id="current-theme" class="<?php echo esc_attr($class); ?>">
             <?php if ($screenshot) : ?>
                 <?php if (current_user_can('edit_theme_options')) : ?>
                         <a href="<?php echo wp_customize_url(); ?>" class="load-customize hide-if-no-customize" title="<?php echo esc_attr($customize_title); ?>">
-                            <img src="<?php echo esc_url($screenshot); ?>" alt="<?php esc_attr_e('Current theme preview', 'sozo'); ?>" />
+                            <img src="<?php echo esc_url($screenshot); ?>" alt="<?php esc_attr_e('Current theme preview', 'roadthemes'); ?>" />
                         </a>
                 <?php endif; ?>
-                    <img class="hide-if-customize" src="<?php echo esc_url($screenshot); ?>" alt="<?php esc_attr_e('Current theme preview', 'sozo'); ?>" />
+                    <img class="hide-if-customize" src="<?php echo esc_url($screenshot); ?>" alt="<?php esc_attr_e('Current theme preview', 'roadthemes'); ?>" />
                 <?php endif; ?>
 
                 <h4><?php echo esc_html($this->theme->display('Name')); ?></h4>
 
                 <div>
                     <ul class="theme-info">
-                        <li><?php printf(esc_html__('By %s', 'sozo'), $this->theme->display('Author')); ?></li>
-                        <li><?php printf(esc_html__('Version %s', 'sozo'), $this->theme->display('Version')); ?></li>
-                        <li><?php echo '<strong>' . esc_html__('Tags', 'sozo') . ':</strong> '; ?><?php printf($this->theme->display('Tags')); ?></li>
+                        <li><?php printf(esc_html__('By %s', 'roadthemes'), $this->theme->display('Author')); ?></li>
+                        <li><?php printf(esc_html__('Version %s', 'roadthemes'), $this->theme->display('Version')); ?></li>
+                        <li><?php echo '<strong>' . esc_html__('Tags', 'roadthemes') . ':</strong> '; ?><?php printf($this->theme->display('Tags')); ?></li>
                     </ul>
                     <p class="theme-description"><?php echo esc_html($this->theme->display('Description')); ?></p>
             <?php
             if ($this->theme->parent()) {
-                printf(' <p class="howto">' . esc_html__('This <a href="%1$s">child theme</a> requires its parent theme, %2$s.', 'sozo') . '</p>', esc_html__('http://codex.wordpress.org/Child_Themes', 'sozo'), $this->theme->parent()->display('Name'));
+                printf(' <p class="howto">' . esc_html__('This <a href="%1$s">child theme</a> requires its parent theme, %2$s.', 'roadthemes') . '</p>', esc_html__('http://codex.wordpress.org/Child_Themes', 'roadthemes'), $this->theme->parent()->display('Name'));
             }
             ?>
 
@@ -212,33 +212,33 @@ if (!class_exists('Road_Theme_Config')) {
            
             // General
             $this->sections[] = array(
-                'title'     => esc_html__('General', 'sozo'),
-                'desc'      => esc_html__('General theme options', 'sozo'),
+                'title'     => esc_html__('General', 'roadthemes'),
+                'desc'      => esc_html__('General theme options', 'roadthemes'),
                 'icon'      => 'el-icon-cog',
                 'fields'    => array(
 
                     array(
                         'id'        => 'logo_main',
                         'type'      => 'media',
-                        'title'     => esc_html__('Logo', 'sozo'),
+                        'title'     => esc_html__('Logo', 'roadthemes'),
                         'compiler'  => 'true',
                         'mode'      => false,
-                        'desc'      => esc_html__('Upload logo here.', 'sozo'),
+                        'desc'      => esc_html__('Upload logo here.', 'roadthemes'),
                     ),
 					array(
                         'id'        => 'opt-favicon',
                         'type'      => 'media',
-                        'title'     => esc_html__('Favicon', 'sozo'),
+                        'title'     => esc_html__('Favicon', 'roadthemes'),
                         'compiler'  => 'true',
                         'mode'      => false,
-                        'desc'      => esc_html__('Upload favicon here.', 'sozo'),
+                        'desc'      => esc_html__('Upload favicon here.', 'roadthemes'),
                     ),
                 ),
             );
 			// Background
             $this->sections[] = array(
-                'title'     => esc_html__('Background', 'sozo'),
-                'desc'      => esc_html__('Use this section to upload background images, select background color', 'sozo'),
+                'title'     => esc_html__('Background', 'roadthemes'),
+                'desc'      => esc_html__('Use this section to upload background images, select background color', 'roadthemes'),
                 'icon'      => 'el-icon-picture',
                 'fields'    => array(
 					
@@ -246,23 +246,23 @@ if (!class_exists('Road_Theme_Config')) {
                         'id'        => 'background_opt',
                         'type'      => 'background',
                         'output'    => array('body'),
-                        'title'     => esc_html__('Body Background', 'sozo'),
-                        'subtitle'  => esc_html__('Body background with image, color. Only work with box layout', 'sozo'),
+                        'title'     => esc_html__('Body Background', 'roadthemes'),
+                        'subtitle'  => esc_html__('Body background with image, color. Only work with box layout', 'roadthemes'),
 						'default'   => '#ffffff',
                     ),
                 ),
             );
 			// Colors
             $this->sections[] = array(
-                'title'     => esc_html__('Colors', 'sozo'),
-                'desc'      => esc_html__('Color options', 'sozo'),
+                'title'     => esc_html__('Colors', 'roadthemes'),
+                'desc'      => esc_html__('Color options', 'roadthemes'),
                 'icon'      => 'el-icon-tint',
                 'fields'    => array(
 					array(
                         'id'        => 'primary_color',
                         'type'      => 'color',
-                        'title'     => esc_html__('Primary Color', 'sozo'),
-                        'subtitle'  => esc_html__('Pick a color for primary color (default: #ff7572).', 'sozo'),
+                        'title'     => esc_html__('Primary Color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for primary color (default: #ff7572).', 'roadthemes'),
 						'transparent' => false,
                         'default'   => '#ff7572',
                         'validate'  => 'color',
@@ -272,8 +272,8 @@ if (!class_exists('Road_Theme_Config')) {
                         'id'        => 'sale_color',
                         'type'      => 'color',
                         //'output'    => array(),
-                        'title'     => esc_html__('Sale Label BG Color', 'sozo'),
-                        'subtitle'  => esc_html__('Pick a color for bg sale label (default: #ffffff).', 'sozo'),
+                        'title'     => esc_html__('Sale Label BG Color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for bg sale label (default: #ffffff).', 'roadthemes'),
 						'transparent' => true,
                         'default'   => '#ffffff',
                         'validate'  => 'color',
@@ -283,8 +283,8 @@ if (!class_exists('Road_Theme_Config')) {
                         'id'        => 'saletext_color',
                         'type'      => 'color',
                         //'output'    => array(),
-                        'title'     => esc_html__('Sale Label Text Color', 'sozo'),
-                        'subtitle'  => esc_html__('Pick a color for sale label text (default: #ff7572).', 'sozo'),
+                        'title'     => esc_html__('Sale Label Text Color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for sale label text (default: #ff7572).', 'roadthemes'),
 						'transparent' => false,
                         'default'   => '#ff7572',
                         'validate'  => 'color',
@@ -294,8 +294,8 @@ if (!class_exists('Road_Theme_Config')) {
                         'id'        => 'rate_color',
                         'type'      => 'color',
                         //'output'    => array(),
-                        'title'     => esc_html__('Rating Star Color', 'sozo'),
-                        'subtitle'  => esc_html__('Pick a color for star of rating (default: #e74c3c).', 'sozo'),
+                        'title'     => esc_html__('Rating Star Color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for star of rating (default: #e74c3c).', 'roadthemes'),
 						'transparent' => false,
                         'default'   => '#e74c3c',
                         'validate'  => 'color',
@@ -305,15 +305,15 @@ if (!class_exists('Road_Theme_Config')) {
 			
 			//Header
 			$this->sections[] = array(
-                'title'     => esc_html__('Header', 'sozo'),
-                'desc'      => esc_html__('Header options', 'sozo'),
+                'title'     => esc_html__('Header', 'roadthemes'),
+                'desc'      => esc_html__('Header options', 'roadthemes'),
                 'icon'      => 'el-icon-tasks',
                 'fields'    => array(
 
 					array(
                         'id'        => 'header_layout',
                         'type'      => 'select',
-                        'title'     => esc_html__('Header Layout', 'sozo'),
+                        'title'     => esc_html__('Header Layout', 'roadthemes'),
                        'customizer_only'   => false,
 
                         //Must provide key => value pairs for select options
@@ -326,49 +326,49 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
                         'id'        => 'welcome_message',
                         'type'      => 'text',
-                        'title'     => esc_html__('Welcome message', 'sozo'),
+                        'title'     => esc_html__('Welcome message', 'roadthemes'),
                         'default'   => 'Deal of the day SOZO? '
                     ),
 					array(
                         'id'        => 'images_top_bar',
                         'type'      => 'media',
-                        'title'     => esc_html__('Images Top Bar', 'sozo'),
+                        'title'     => esc_html__('Images Top Bar', 'roadthemes'),
                         'compiler'  => 'true',
                         'mode'      => false,
-                        'desc'      => esc_html__('Upload image here.', 'sozo'),
+                        'desc'      => esc_html__('Upload image here.', 'roadthemes'),
                     ),
 					array(
                         'id'        => 'images_top_bar_link',
                         'type'      => 'text',
-                        'title'     => esc_html__('Link for image on top bar', 'sozo'),
+                        'title'     => esc_html__('Link for image on top bar', 'roadthemes'),
                         'default'   => '#'
                     ),
 					array(
 						'id'       => 'top_menu',
 						'type'     => 'select',
 						'data'     => 'menus',
-						'title'    => esc_html__( 'Top Menu', 'sozo' ),
-						'subtitle' => esc_html__( 'Select a menu', 'sozo' ),
+						'title'    => esc_html__( 'Top Menu', 'roadthemes' ),
+						'subtitle' => esc_html__( 'Select a menu', 'roadthemes' ),
 					),
 					array(
 						'id'=>'header_shipping',
 						'type' => 'textarea',
-						'title' => esc_html__('Header Shipping', 'sozo'), 
-						'subtitle'         => esc_html__('HTML tags allowed: a, img, br, em, strong, p, ul, li', 'sozo'),
+						'title' => esc_html__('Header Shipping', 'roadthemes'), 
+						'subtitle'         => esc_html__('HTML tags allowed: a, img, br, em, strong, p, ul, li', 'roadthemes'),
 						'default' => '',
 					),
 					array(
                         'id'        => 'categories_menu_label',
                         'type'      => 'text',
-                        'title'     => esc_html__('Categories menu label', 'sozo'),
-						'subtitle'     => esc_html__('The label for categories menu', 'sozo'),
+                        'title'     => esc_html__('Categories menu label', 'roadthemes'),
+						'subtitle'     => esc_html__('The label for categories menu', 'roadthemes'),
                         'default'   => 'Category'
                     ),
 					array(
 						'id'        => 'categories_menu_items',
 						'type'      => 'slider',
-						'title'     => esc_html__('Number of items', 'sozo'),
-						'desc'      => esc_html__('Number of menu items level 1 to show, default value: 8', 'sozo'),
+						'title'     => esc_html__('Number of items', 'roadthemes'),
+						'desc'      => esc_html__('Number of menu items level 1 to show, default value: 8', 'roadthemes'),
 						"default"   => 8,
 						"min"       => 1,
 						"step"      => 1,
@@ -378,43 +378,43 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
                         'id'        => 'categories_more_label',
                         'type'      => 'text',
-                        'title'     => esc_html__('More Categories label', 'sozo'),
-						'subtitle'     => esc_html__('The label for more categories button', 'sozo'),
+                        'title'     => esc_html__('More Categories label', 'roadthemes'),
+						'subtitle'     => esc_html__('The label for more categories button', 'roadthemes'),
                         'default'   => 'More Categories'
                     ),
 					array(
                         'id'        => 'categories_less_label',
                         'type'      => 'text',
-                        'title'     => esc_html__('Less Categories label', 'sozo'),
-						'subtitle'     => esc_html__('The label for less categories button', 'sozo'),
+                        'title'     => esc_html__('Less Categories label', 'roadthemes'),
+						'subtitle'     => esc_html__('The label for less categories button', 'roadthemes'),
                         'default'   => 'Close Menu'
                     ),
 					array(
                         'id'        => 'categories_menu_home',
                         'type'      => 'switch',
-                        'title'     => esc_html__('Home Categories Menu', 'sozo'),
-						'subtitle'     => esc_html__('Always show categories menu on home page', 'sozo'),
+                        'title'     => esc_html__('Home Categories Menu', 'roadthemes'),
+						'subtitle'     => esc_html__('Always show categories menu on home page', 'roadthemes'),
 						'default'   => true,
                     ),
 					array(
                         'id'        => 'categories_menu_sub',
                         'type'      => 'switch',
-                        'title'     => esc_html__('Inner Categories Menu', 'sozo'),
-						'subtitle'     => esc_html__('Always show categories menu on inner pages', 'sozo'),
+                        'title'     => esc_html__('Inner Categories Menu', 'roadthemes'),
+						'subtitle'     => esc_html__('Always show categories menu on inner pages', 'roadthemes'),
 						'default'   => false,
                     ),
 					array(
                         'id'        => 'mobile_menu_label',
                         'type'      => 'text',
-                        'title'     => esc_html__('Mobile menu label', 'sozo'),
-						'subtitle'     => esc_html__('The label for mobile menu (example: Menu, Go to...', 'sozo'),
+                        'title'     => esc_html__('Mobile menu label', 'roadthemes'),
+						'subtitle'     => esc_html__('The label for mobile menu (example: Menu, Go to...', 'roadthemes'),
                         'default'   => 'Menu'
                     ),
 					array(
                         'id'        => 'countdown_date',
                         'type'      => 'text',
-                        'title'     => esc_html__('Countdown Date', 'sozo'),
-						'subtitle'     => esc_html__('Enter date for the countdown (format: Y/m/d. Example: 2016/08/15', 'sozo'),
+                        'title'     => esc_html__('Countdown Date', 'roadthemes'),
+						'subtitle'     => esc_html__('Enter date for the countdown (format: Y/m/d. Example: 2016/08/15', 'roadthemes'),
                         'default'   => ''
                     ),
                 ),
@@ -422,24 +422,24 @@ if (!class_exists('Road_Theme_Config')) {
 			
 			//Footer
 			$this->sections[] = array(
-                'title'     => esc_html__('Footer', 'sozo'),
-                'desc'      => esc_html__('Footer options', 'sozo'),
+                'title'     => esc_html__('Footer', 'roadthemes'),
+                'desc'      => esc_html__('Footer options', 'roadthemes'),
                 'icon'      => 'el-icon-cog',
                 'fields'    => array(
 
 					 array(
                         'id'        => 'logo_footer',
                         'type'      => 'media',
-                        'title'     => esc_html__('Footer Logo', 'sozo'),
+                        'title'     => esc_html__('Footer Logo', 'roadthemes'),
                         'compiler'  => 'true',
                         'mode'      => false,
-                        'desc'      => esc_html__('Upload logo here.', 'sozo'),
+                        'desc'      => esc_html__('Upload logo here.', 'roadthemes'),
                     ),
 					array(
 						'id'               => 'copyright',
 						'type'             => 'editor',
-						'title'    => esc_html__('Copyright information', 'sozo'),
-						'subtitle'         => esc_html__('HTML tags allowed: a, br, em, strong', 'sozo'),
+						'title'    => esc_html__('Copyright information', 'roadthemes'),
+						'subtitle'         => esc_html__('HTML tags allowed: a, br, em, strong', 'roadthemes'),
 						'default'          => 'COPYRIGHT © 2015 ROADTHEMES. ALL RIGHTS RESERVED',
 						'args'   => array(
 							'teeny'            => true,
@@ -450,8 +450,8 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
 						'id'               => 'payment_icons',
 						'type'             => 'editor',
-						'title'    => esc_html__('Payment icons', 'sozo'),
-						'subtitle'         => esc_html__('HTML tags allowed: a, img', 'sozo'),
+						'title'    => esc_html__('Payment icons', 'roadthemes'),
+						'subtitle'         => esc_html__('HTML tags allowed: a, img', 'roadthemes'),
 						'default'          => '',
 						'args'   => array(
 							'teeny'            => true,
@@ -463,20 +463,20 @@ if (!class_exists('Road_Theme_Config')) {
             );
 			$this->sections[] = array(
 				'icon'       => 'el-icon-website',
-				'title'      => esc_html__( 'Newsletter', 'sozo' ),
+				'title'      => esc_html__( 'Newsletter', 'roadthemes' ),
 				'subsection' => true,
 				'fields'     => array(
 					array(
                         'id'        => 'newsletter_title',
                         'type'      => 'text',
-                        'title'     => esc_html__('Newsletter title', 'sozo'),
+                        'title'     => esc_html__('Newsletter title', 'roadthemes'),
                         'default'   => 'Newsletter'
                     ),
 					array(
 						'id'       => 'newsletter_form',
 						'type'     => 'text',
-						'title'    => esc_html__('Newsletter form ID', 'sozo'),
-						'subtitle' => esc_html__('The form ID of MailPoet plugin.', 'sozo'),
+						'title'    => esc_html__('Newsletter form ID', 'roadthemes'),
+						'subtitle' => esc_html__('The form ID of MailPoet plugin.', 'roadthemes'),
 						'validate' => 'numeric',
 						'msg'      => 'Please enter a form ID',
 						'default'  => '1'
@@ -485,16 +485,16 @@ if (!class_exists('Road_Theme_Config')) {
 			);
 			$this->sections[] = array(
 				'icon'       => 'el-icon-website',
-				'title'      => esc_html__( 'Social Icons', 'sozo' ),
+				'title'      => esc_html__( 'Social Icons', 'roadthemes' ),
 				'subsection' => true,
 				'fields'     => array(
 					
 					array(
 						'id'       => 'social_icons',
 						'type'     => 'sortable',
-						'title'    => esc_html__('Social Icons', 'sozo'),
-						'subtitle' => esc_html__('Enter social links', 'sozo'),
-						'desc'     => esc_html__('Drag/drop to re-arrange', 'sozo'),
+						'title'    => esc_html__('Social Icons', 'roadthemes'),
+						'subtitle' => esc_html__('Enter social links', 'roadthemes'),
+						'desc'     => esc_html__('Drag/drop to re-arrange', 'roadthemes'),
 						'mode'     => 'text',
 						'options'  => array(
 							'facebook'     => '',
@@ -529,14 +529,14 @@ if (!class_exists('Road_Theme_Config')) {
 			);
 			$this->sections[] = array(
 				'icon'       => 'el-icon-website',
-				'title'      => esc_html__( 'Contact Us', 'sozo' ),
+				'title'      => esc_html__( 'Contact Us', 'roadthemes' ),
 				'subsection' => true,
 				'fields'     => array(
 					array(
 						'id'=>'contact_us',
 						'type' => 'editor',
-						'title' => esc_html__('Contact Us', 'sozo'), 
-						'subtitle'         => esc_html__('HTML tags allowed: a, img, br, em, strong, p, ul, li', 'sozo'),
+						'title' => esc_html__('Contact Us', 'roadthemes'), 
+						'subtitle'         => esc_html__('HTML tags allowed: a, img, br, em, strong, p, ul, li', 'roadthemes'),
 						'default' => '',
 						'args'   => array(
 							'teeny'            => true,
@@ -548,44 +548,44 @@ if (!class_exists('Road_Theme_Config')) {
 			
 			$this->sections[] = array(
 				'icon'       => 'el-icon-website',
-				'title'      => esc_html__( 'Menus', 'sozo' ),
+				'title'      => esc_html__( 'Menus', 'roadthemes' ),
 				'subsection' => true,
 				'fields'     => array(
 					array(
 						'id'       => 'footer_menu1',
 						'type'     => 'select',
 						'data'     => 'menus',
-						'title'    => esc_html__( 'Menu #1', 'sozo' ),
-						'subtitle' => esc_html__( 'Select a menu', 'sozo' ),
+						'title'    => esc_html__( 'Menu #1', 'roadthemes' ),
+						'subtitle' => esc_html__( 'Select a menu', 'roadthemes' ),
 					),
 					array(
 						'id'       => 'footer_menu2',
 						'type'     => 'select',
 						'data'     => 'menus',
-						'title'    => esc_html__( 'Menu #2', 'sozo' ),
-						'subtitle' => esc_html__( 'Select a menu', 'sozo' ),
+						'title'    => esc_html__( 'Menu #2', 'roadthemes' ),
+						'subtitle' => esc_html__( 'Select a menu', 'roadthemes' ),
 					),
 					array(
 						'id'       => 'footer_menu3',
 						'type'     => 'select',
 						'data'     => 'menus',
-						'title'    => esc_html__( 'Menu #3', 'sozo' ),
-						'subtitle' => esc_html__( 'Select a menu', 'sozo' ),
+						'title'    => esc_html__( 'Menu #3', 'roadthemes' ),
+						'subtitle' => esc_html__( 'Select a menu', 'roadthemes' ),
 					),
 				)
 			);
 			
 			//Fonts
 			$this->sections[] = array(
-                'title'     => esc_html__('Fonts', 'sozo'),
-                'desc'      => esc_html__('Fonts options', 'sozo'),
+                'title'     => esc_html__('Fonts', 'roadthemes'),
+                'desc'      => esc_html__('Fonts options', 'roadthemes'),
                 'icon'      => 'el-icon-font',
                 'fields'    => array(
 
                     array(
                         'id'            => 'bodyfont',
                         'type'          => 'typography',
-                        'title'         => esc_html__('Body font', 'sozo'),
+                        'title'         => esc_html__('Body font', 'roadthemes'),
                         //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
                         'google'        => true,    // Disable google fonts. Won't work if you haven't defined your google api key
                         'font-backup'   => true,    // Select a backup non-google font in addition to a google font
@@ -602,7 +602,7 @@ if (!class_exists('Road_Theme_Config')) {
                         'output'        => array('body'), // An array of CSS selectors to apply this font style to dynamically
                         //'compiler'      => array('h2.site-description-compiler'), // An array of CSS selectors to apply this font style to dynamically
                         'units'         => 'px', // Defaults to px
-                        'subtitle'      => esc_html__('Main body font.', 'sozo'),
+                        'subtitle'      => esc_html__('Main body font.', 'roadthemes'),
                         'default'       => array(
                             'color'         => '#6e6e6e',
                             'font-weight'    => '300',
@@ -615,7 +615,7 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
                         'id'            => 'headingfont',
                         'type'          => 'typography',
-                        'title'         => esc_html__('Heading font', 'sozo'),
+                        'title'         => esc_html__('Heading font', 'roadthemes'),
                         //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
                         'google'        => true,    // Disable google fonts. Won't work if you haven't defined your google api key
                         'font-backup'   => false,    // Select a backup non-google font in addition to a google font
@@ -632,7 +632,7 @@ if (!class_exists('Road_Theme_Config')) {
                         //'output'        => array('h1, h2, h3, h4, h5, h6'), // An array of CSS selectors to apply this font style to dynamically
                         //'compiler'      => array('h2.site-description-compiler'), // An array of CSS selectors to apply this font style to dynamically
                         'units'         => 'px', // Defaults to px
-                        'subtitle'      => esc_html__('Heading font.', 'sozo'),
+                        'subtitle'      => esc_html__('Heading font.', 'roadthemes'),
                         'default'       => array(
 							'color'         => '#444444',
                             'font-weight'    => '700',
@@ -643,7 +643,7 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
                         'id'            => 'menufont',
                         'type'          => 'typography',
-                        'title'         => esc_html__('Menu font', 'sozo'),
+                        'title'         => esc_html__('Menu font', 'roadthemes'),
                         //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
                         'google'        => true,    // Disable google fonts. Won't work if you haven't defined your google api key
                         'font-backup'   => false,    // Select a backup non-google font in addition to a google font
@@ -660,7 +660,7 @@ if (!class_exists('Road_Theme_Config')) {
                         //'output'        => array('h1, h2, h3, h4, h5, h6'), // An array of CSS selectors to apply this font style to dynamically
                         //'compiler'      => array('h2.site-description-compiler'), // An array of CSS selectors to apply this font style to dynamically
                         'units'         => 'px', // Defaults to px
-                        'subtitle'      => esc_html__('Menu font.', 'sozo'),
+                        'subtitle'      => esc_html__('Menu font.', 'roadthemes'),
                         'default'       => array(
                             'color'         => '#fff',
                             'font-weight'    => '700',
@@ -674,15 +674,15 @@ if (!class_exists('Road_Theme_Config')) {
 			
 			// Layout
             $this->sections[] = array(
-                'title'     => esc_html__('Layout', 'sozo'),
-                'desc'      => esc_html__('Select page layout: Box or Full Width', 'sozo'),
+                'title'     => esc_html__('Layout', 'roadthemes'),
+                'desc'      => esc_html__('Select page layout: Box or Full Width', 'roadthemes'),
                 'icon'      => 'el-icon-align-justify',
                 'fields'    => array(
 					array(
 						'id'       => 'page_layout',
 						'type'     => 'select',
 						'multi'    => false,
-						'title'    => esc_html__('Page Layout', 'sozo'),
+						'title'    => esc_html__('Page Layout', 'roadthemes'),
 						'options'  => array(
 							'full' => 'Full Width',
 							'box' => 'Box'
@@ -692,8 +692,8 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
                         'id'        => 'preset_option',
                         'type'      => 'select',
-                        'title'     => esc_html__('Preset', 'sozo'),
-						'subtitle'      => esc_html__('Select a preset to quickly apply pre-defined colors and fonts', 'sozo'),
+                        'title'     => esc_html__('Preset', 'roadthemes'),
+						'subtitle'      => esc_html__('Select a preset to quickly apply pre-defined colors and fonts', 'roadthemes'),
                        'customizer_only'   => false,
                         'options'   => array(
 							'1' => 'Use options',
@@ -704,8 +704,8 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
                         'id'        => 'enable_sswitcher',
                         'type'      => 'switch',
-                        'title'     => esc_html__('Show Style Switcher', 'sozo'),
-						'subtitle'     => esc_html__('The style switcher is only for preview on front-end', 'sozo'),
+                        'title'     => esc_html__('Show Style Switcher', 'roadthemes'),
+						'subtitle'     => esc_html__('The style switcher is only for preview on front-end', 'roadthemes'),
 						'default'   => false,
                     ),
                 ),
@@ -713,15 +713,15 @@ if (!class_exists('Road_Theme_Config')) {
 			
 			//Brand logos
 			$this->sections[] = array(
-                'title'     => esc_html__('Brand Logos', 'sozo'),
-                'desc'      => esc_html__('Upload brand logos and links', 'sozo'),
+                'title'     => esc_html__('Brand Logos', 'roadthemes'),
+                'desc'      => esc_html__('Upload brand logos and links', 'roadthemes'),
                 'icon'      => 'el-icon-briefcase',
                 'fields'    => array(
 					array(
 						'id'        => 'brandnumber',
 						'type'      => 'slider',
-						'title'     => esc_html__('Number of logos per page', 'sozo'),
-						'desc'      => esc_html__('Number of logos per page, default value: 6', 'sozo'),
+						'title'     => esc_html__('Number of logos per page', 'roadthemes'),
+						'desc'      => esc_html__('Number of logos per page, default value: 6', 'roadthemes'),
 						"default"   => 6,
 						"min"       => 1,
 						"step"      => 1,
@@ -731,14 +731,14 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
 						'id'       => 'brandscroll',
 						'type'     => 'switch',
-						'title'    => esc_html__('Auto scroll', 'sozo'),
+						'title'    => esc_html__('Auto scroll', 'roadthemes'),
 						'default'  => true,
 					),
 					array(
 						'id'        => 'brandscrollnumber',
 						'type'      => 'slider',
-						'title'     => esc_html__('Scroll amount', 'sozo'),
-						'desc'      => esc_html__('Number of logos to scroll one time, default value: 2', 'sozo'),
+						'title'     => esc_html__('Scroll amount', 'roadthemes'),
+						'desc'      => esc_html__('Number of logos to scroll one time, default value: 2', 'roadthemes'),
 						"default"   => 2,
 						"min"       => 1,
 						"step"      => 1,
@@ -748,8 +748,8 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
 						'id'        => 'brandpause',
 						'type'      => 'slider',
-						'title'     => esc_html__('Pause in (seconds)', 'sozo'),
-						'desc'      => esc_html__('Pause time, default value: 3000', 'sozo'),
+						'title'     => esc_html__('Pause in (seconds)', 'roadthemes'),
+						'desc'      => esc_html__('Pause time, default value: 3000', 'roadthemes'),
 						"default"   => 3000,
 						"min"       => 1000,
 						"step"      => 500,
@@ -759,8 +759,8 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
 						'id'        => 'brandanimate',
 						'type'      => 'slider',
-						'title'     => esc_html__('Animate in (seconds)', 'sozo'),
-						'desc'      => esc_html__('Animate time, default value: 2000', 'sozo'),
+						'title'     => esc_html__('Animate in (seconds)', 'roadthemes'),
+						'desc'      => esc_html__('Animate time, default value: 2000', 'roadthemes'),
 						"default"   => 2000,
 						"min"       => 300,
 						"step"      => 100,
@@ -770,12 +770,12 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
 						'id'          => 'brand_logos',
 						'type'        => 'slides',
-						'title'       => esc_html__('Logos', 'sozo'),
-						'desc'        => esc_html__('Upload logo image and enter logo link.', 'sozo'),
+						'title'       => esc_html__('Logos', 'roadthemes'),
+						'desc'        => esc_html__('Upload logo image and enter logo link.', 'roadthemes'),
 						'placeholder' => array(
-							'title'           => esc_html__('Title', 'sozo'),
-							'description'     => esc_html__('Description', 'sozo'),
-							'url'             => esc_html__('Link', 'sozo'),
+							'title'           => esc_html__('Title', 'roadthemes'),
+							'description'     => esc_html__('Description', 'roadthemes'),
+							'url'             => esc_html__('Link', 'roadthemes'),
 						),
 					),
                 ),
@@ -783,16 +783,16 @@ if (!class_exists('Road_Theme_Config')) {
 			
 			// Sidebar
 			$this->sections[] = array(
-                'title'     => esc_html__('Sidebar', 'sozo'),
-                'desc'      => esc_html__('Sidebar options', 'sozo'),
+                'title'     => esc_html__('Sidebar', 'roadthemes'),
+                'desc'      => esc_html__('Sidebar options', 'roadthemes'),
                 'icon'      => 'el-icon-cog',
                 'fields'    => array(
 					
 					array(
 						'id'       => 'sidebarshop_pos',
 						'type'     => 'radio',
-						'title'    => esc_html__('Shop Sidebar Position', 'sozo'),
-						'subtitle'      => esc_html__('Sidebar on shop page', 'sozo'),
+						'title'    => esc_html__('Shop Sidebar Position', 'roadthemes'),
+						'subtitle'      => esc_html__('Sidebar on shop page', 'roadthemes'),
 						'options'  => array(
 							'left' => 'Left',
 							'right' => 'Right'),
@@ -801,8 +801,8 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
 						'id'       => 'sidebarse_pos',
 						'type'     => 'radio',
-						'title'    => esc_html__('Secondary Sidebar Position', 'sozo'),
-						'subtitle'      => esc_html__('Sidebar on pages', 'sozo'),
+						'title'    => esc_html__('Secondary Sidebar Position', 'roadthemes'),
+						'subtitle'      => esc_html__('Sidebar on pages', 'roadthemes'),
 						'options'  => array(
 							'left' => 'Left',
 							'right' => 'Right'),
@@ -811,8 +811,8 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
 						'id'       => 'sidebarblog_pos',
 						'type'     => 'radio',
-						'title'    => esc_html__('Blog Sidebar Position', 'sozo'),
-						'subtitle'      => esc_html__('Sidebar on Blog pages', 'sozo'),
+						'title'    => esc_html__('Blog Sidebar Position', 'roadthemes'),
+						'subtitle'      => esc_html__('Sidebar on Blog pages', 'roadthemes'),
 						'options'  => array(
 							'left' => 'Left',
 							'right' => 'Right'),
@@ -823,14 +823,14 @@ if (!class_exists('Road_Theme_Config')) {
 			
 			// Portfolio
             $this->sections[] = array(
-                'title'     => esc_html__('Portfolio', 'sozo'),
-                'desc'      => esc_html__('Use this section to select options for portfolio', 'sozo'),
+                'title'     => esc_html__('Portfolio', 'roadthemes'),
+                'desc'      => esc_html__('Use this section to select options for portfolio', 'roadthemes'),
                 'icon'      => 'el-icon-bookmark',
                 'fields'    => array(
 					array(
 						'id'        => 'portfolio_columns',
 						'type'      => 'slider',
-						'title'     => esc_html__('Portfolio Columns', 'sozo'),
+						'title'     => esc_html__('Portfolio Columns', 'roadthemes'),
 						"default"   => 3,
 						"min"       => 2,
 						"step"      => 1,
@@ -840,8 +840,8 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
 						'id'        => 'portfolio_per_page',
 						'type'      => 'slider',
-						'title'     => esc_html__('Projects per page', 'sozo'),
-						'desc'      => esc_html__('Amount of projects per page on portfolio page', 'sozo'),
+						'title'     => esc_html__('Projects per page', 'roadthemes'),
+						'desc'      => esc_html__('Amount of projects per page on portfolio page', 'roadthemes'),
 						"default"   => 12,
 						"min"       => 4,
 						"step"      => 1,
@@ -851,7 +851,7 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
                         'id'        => 'related_project_title',
                         'type'      => 'text',
-                        'title'     => esc_html__('Related projects title', 'sozo'),
+                        'title'     => esc_html__('Related projects title', 'roadthemes'),
                         'default'   => 'Related Projects'
                     ),
                 ),
@@ -859,14 +859,14 @@ if (!class_exists('Road_Theme_Config')) {
 			
 			// Product
             $this->sections[] = array(
-                'title'     => esc_html__('Product', 'sozo'),
-                'desc'      => esc_html__('Use this section to select options for product', 'sozo'),
+                'title'     => esc_html__('Product', 'roadthemes'),
+                'desc'      => esc_html__('Use this section to select options for product', 'roadthemes'),
                 'icon'      => 'el-icon-tags',
                 'fields'    => array(
 					array(
                         'id'        => 'shop_layout',
                         'type'      => 'select',
-                        'title'     => esc_html__('Shop Layout', 'sozo'),
+                        'title'     => esc_html__('Shop Layout', 'roadthemes'),
                        'customizer_only'   => false,
                         'options'   => array(
 							'sidebar' => 'Sidebar',
@@ -877,7 +877,7 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
                         'id'        => 'default_view',
                         'type'      => 'select',
-                        'title'     => esc_html__('Shop default view', 'sozo'),
+                        'title'     => esc_html__('Shop default view', 'roadthemes'),
                        'customizer_only'   => false,
                         'options'   => array(
 							'grid-view' => 'Grid View',
@@ -888,8 +888,8 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
 						'id'        => 'product_per_page',
 						'type'      => 'slider',
-						'title'     => esc_html__('Products per page', 'sozo'),
-						'subtitle'      => esc_html__('Amount of products per page on category page', 'sozo'),
+						'title'     => esc_html__('Products per page', 'roadthemes'),
+						'subtitle'      => esc_html__('Amount of products per page on category page', 'roadthemes'),
 						"default"   => 12,
 						"min"       => 4,
 						"step"      => 1,
@@ -899,9 +899,9 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
 						'id'        => 'product_per_row',
 						'type'      => 'slider',
-						'title'     => esc_html__('Product columns', 'sozo'),
-						'subtitle'      => esc_html__('Amount of product columns on category page', 'sozo'),
-						'desc'      => esc_html__('Only works with: 1, 2, 3, 4, 6', 'sozo'),
+						'title'     => esc_html__('Product columns', 'roadthemes'),
+						'subtitle'      => esc_html__('Amount of product columns on category page', 'roadthemes'),
+						'desc'      => esc_html__('Only works with: 1, 2, 3, 4, 6', 'roadthemes'),
 						"default"   => 3,
 						"min"       => 1,
 						"step"      => 1,
@@ -911,9 +911,9 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
 						'id'        => 'product_per_row_fw',
 						'type'      => 'slider',
-						'title'     => esc_html__('Product columns on full width shop', 'sozo'),
-						'subtitle'      => esc_html__('Amount of product columns on full width category page', 'sozo'),
-						'desc'      => esc_html__('Only works with: 1, 2, 3, 4, 6', 'sozo'),
+						'title'     => esc_html__('Product columns on full width shop', 'roadthemes'),
+						'subtitle'      => esc_html__('Amount of product columns on full width category page', 'roadthemes'),
+						'desc'      => esc_html__('Only works with: 1, 2, 3, 4, 6', 'roadthemes'),
 						"default"   => 4,
 						"min"       => 1,
 						"step"      => 1,
@@ -923,19 +923,19 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
 						'id'       => 'second_image',
 						'type'     => 'switch',
-						'title'    => esc_html__('Use secondary product image', 'sozo'),
+						'title'    => esc_html__('Use secondary product image', 'roadthemes'),
 						'default'  => false,
 					),
 					array(
                         'id'        => 'related_title',
                         'type'      => 'text',
-                        'title'     => esc_html__('Related products title', 'sozo'),
+                        'title'     => esc_html__('Related products title', 'roadthemes'),
                         'default'   => 'Related Products'
                     ),
 					array(
 						'id'        => 'related_amount',
 						'type'      => 'slider',
-						'title'     => esc_html__('Number of related products', 'sozo'),
+						'title'     => esc_html__('Number of related products', 'roadthemes'),
 						"default"   => 6,
 						"min"       => 4,
 						"step"      => 1,
@@ -945,39 +945,39 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
                         'id'        => 'upsells_title',
                         'type'      => 'text',
-                        'title'     => esc_html__('Up-Sells title', 'sozo'),
+                        'title'     => esc_html__('Up-Sells title', 'roadthemes'),
                         'default'   => 'Up-Sells'
                     ),
 					array(
                         'id'        => 'crosssells_title',
                         'type'      => 'text',
-                        'title'     => esc_html__('Cross-Sells title', 'sozo'),
+                        'title'     => esc_html__('Cross-Sells title', 'roadthemes'),
                         'default'   => 'Cross-Sells'
                     ),
 					array(
                         'id'        => 'detail_link_text',
                         'type'      => 'text',
-                        'title'     => esc_html__('View details text', 'sozo'),
+                        'title'     => esc_html__('View details text', 'roadthemes'),
                         'default'   => 'View details'
                     ),
 					array(
                         'id'        => 'quickview_link_text',
                         'type'      => 'text',
-                        'title'     => esc_html__('View all features text', 'sozo'),
-						'desc'      => esc_html__('This is the text on quick view box', 'sozo'),
+                        'title'     => esc_html__('View all features text', 'roadthemes'),
+						'desc'      => esc_html__('This is the text on quick view box', 'roadthemes'),
                         'default'   => 'See all features'
                     ),
 					array(
 						'id'=>'share_head_code',
 						'type' => 'textarea',
-						'title' => esc_html__('ShareThis/AddThis head tag', 'sozo'), 
+						'title' => esc_html__('ShareThis/AddThis head tag', 'roadthemes'), 
 						'desc' => esc_html__('Paste your ShareThis or AddThis head tag here', 'redux-framework-demo'),
 						'default' => '',
 					),
 					array(
 						'id'=>'share_code',
 						'type' => 'textarea',
-						'title' => esc_html__('ShareThis/AddThis code', 'sozo'), 
+						'title' => esc_html__('ShareThis/AddThis code', 'roadthemes'), 
 						'desc' => esc_html__('Paste your ShareThis or AddThis code here', 'redux-framework-demo'),
 						'default' => ''
 					),
@@ -986,20 +986,20 @@ if (!class_exists('Road_Theme_Config')) {
 			
 			// Blog options
             $this->sections[] = array(
-                'title'     => esc_html__('Blog', 'sozo'),
-                'desc'      => esc_html__('Use this section to select options for blog', 'sozo'),
+                'title'     => esc_html__('Blog', 'roadthemes'),
+                'desc'      => esc_html__('Use this section to select options for blog', 'roadthemes'),
                 'icon'      => 'el-icon-file',
                 'fields'    => array(
 					array(
                         'id'        => 'blog_header_text',
                         'type'      => 'text',
-                        'title'     => esc_html__('Blog header text', 'sozo'),
+                        'title'     => esc_html__('Blog header text', 'roadthemes'),
                         'default'   => 'Blog'
                     ),
 					array(
                         'id'        => 'blog_layout',
                         'type'      => 'select',
-                        'title'     => esc_html__('Blog Layout', 'sozo'),
+                        'title'     => esc_html__('Blog Layout', 'roadthemes'),
                        'customizer_only'   => false,
                         'options'   => array(
 							'nosidebar' => 'No Sidebar',
@@ -1010,13 +1010,13 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
                         'id'        => 'readmore_text',
                         'type'      => 'text',
-                        'title'     => esc_html__('Read more text', 'sozo'),
+                        'title'     => esc_html__('Read more text', 'roadthemes'),
                         'default'   => 'read more'
                     ),
 					array(
 						'id'        => 'excerpt_length',
 						'type'      => 'slider',
-						'title'     => esc_html__('Excerpt length on blog page', 'sozo'),
+						'title'     => esc_html__('Excerpt length on blog page', 'roadthemes'),
 						"default"   => 22,
 						"min"       => 10,
 						"step"      => 2,
@@ -1026,14 +1026,14 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
 						'id'       => 'blogscroll',
 						'type'     => 'switch',
-						'title'    => esc_html__('Latest posts auto scroll', 'sozo'),
+						'title'    => esc_html__('Latest posts auto scroll', 'roadthemes'),
 						'default'  => false,
 					),
 					array(
 						'id'        => 'blogpause',
 						'type'      => 'slider',
-						'title'     => esc_html__('Pause in (seconds)', 'sozo'),
-						'desc'      => esc_html__('Pause time, default value: 3000', 'sozo'),
+						'title'     => esc_html__('Pause in (seconds)', 'roadthemes'),
+						'desc'      => esc_html__('Pause time, default value: 3000', 'roadthemes'),
 						"default"   => 3000,
 						"min"       => 1000,
 						"step"      => 500,
@@ -1043,8 +1043,8 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
 						'id'        => 'bloganimate',
 						'type'      => 'slider',
-						'title'     => esc_html__('Animate in (seconds)', 'sozo'),
-						'desc'      => esc_html__('Animate time, default value: 2000', 'sozo'),
+						'title'     => esc_html__('Animate in (seconds)', 'roadthemes'),
+						'desc'      => esc_html__('Animate time, default value: 2000', 'roadthemes'),
 						"default"   => 2000,
 						"min"       => 300,
 						"step"      => 100,
@@ -1056,22 +1056,22 @@ if (!class_exists('Road_Theme_Config')) {
 			
 			// Contact Map
             $this->sections[] = array(
-                'title'     => esc_html__('Contact Map', 'sozo'),
-                'desc'      => esc_html__('Use this section to select options for Google Map on contact page', 'sozo'),
+                'title'     => esc_html__('Contact Map', 'roadthemes'),
+                'desc'      => esc_html__('Use this section to select options for Google Map on contact page', 'roadthemes'),
                 'icon'      => 'el-icon-map-marker',
                 'fields'    => array(
 					array(
                         'id'        => 'enable_map',
                         'type'      => 'switch',
-                        'title'     => esc_html__('Show map', 'sozo'),
-						'subtitle'     => esc_html__('Show map on contact page', 'sozo'),
+                        'title'     => esc_html__('Show map', 'roadthemes'),
+						'subtitle'     => esc_html__('Show map on contact page', 'roadthemes'),
 						'default'   => true,
                     ),
 					array(
 						'id'       => 'address_by',
 						'type'     => 'radio',
-						'title'    => esc_html__('Locate by', 'sozo'),
-						'subtitle'      => esc_html__('Locate marker by address or coordinate', 'sozo'),
+						'title'    => esc_html__('Locate by', 'roadthemes'),
+						'subtitle'      => esc_html__('Locate marker by address or coordinate', 'roadthemes'),
 						'options'  => array(
 							'address' => 'Address',
 							'coordinate' => 'Coordinate'
@@ -1081,8 +1081,8 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
 						'id'               => 'map_desc',
 						'type'             => 'editor',
-						'title'    => esc_html__('Map description', 'sozo'),
-						'subtitle' => esc_html__('The text on map popup', 'sozo'),
+						'title'    => esc_html__('Map description', 'roadthemes'),
+						'subtitle' => esc_html__('The text on map popup', 'roadthemes'),
 						'default'          => '',
 						'args'   => array(
 							'teeny'            => true,
@@ -1093,25 +1093,25 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
                         'id'        => 'map_lat',
                         'type'      => 'text',
-                        'title'     => esc_html__('Latitude', 'sozo'),
+                        'title'     => esc_html__('Latitude', 'roadthemes'),
                         'default'   => '51.50657'
                     ),
 					array(
                         'id'        => 'map_long',
                         'type'      => 'text',
-                        'title'     => esc_html__('Longtitude', 'sozo'),
+                        'title'     => esc_html__('Longtitude', 'roadthemes'),
                         'default'   => '-0.13408'
                     ),
 					array(
                         'id'        => 'map_address',
                         'type'      => 'text',
-                        'title'     => esc_html__('Address', 'sozo'),
+                        'title'     => esc_html__('Address', 'roadthemes'),
                         'default'   => 'Pall Mall, London England'
                     ),
 					array(
 						'id'        => 'map_zoom',
 						'type'      => 'slider',
-						'title'     => esc_html__('Zoom level', 'sozo'),
+						'title'     => esc_html__('Zoom level', 'roadthemes'),
 						"default"   => 17,
 						"min"       => 0,
 						"step"      => 1,
@@ -1121,25 +1121,25 @@ if (!class_exists('Road_Theme_Config')) {
 					array(
                         'id'        => 'map_marker',
                         'type'      => 'media',
-                        'title'     => esc_html__('Marker', 'sozo'),
+                        'title'     => esc_html__('Marker', 'roadthemes'),
                         'compiler'  => 'true',
                         'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                        'desc'      => esc_html__('Upload marker image here, the image size is 32x47 pixels.', 'sozo'),
+                        'desc'      => esc_html__('Upload marker image here, the image size is 32x47 pixels.', 'roadthemes'),
                     ),
                 ),
             );
 			
 			// Custom CSS
             $this->sections[] = array(
-                'title'     => esc_html__('Custom CSS', 'sozo'),
-                'desc'      => esc_html__('Add your Custom CSS code', 'sozo'),
+                'title'     => esc_html__('Custom CSS', 'roadthemes'),
+                'desc'      => esc_html__('Add your Custom CSS code', 'roadthemes'),
                 'icon'      => 'el-icon-pencil',
                 'fields'    => array(
 					array(
 						'id'       => 'custom_css',
 						'type'     => 'ace_editor',
-						'title'    => esc_html__('CSS Code', 'sozo'),
-						'subtitle' => esc_html__('Paste your CSS code here.', 'sozo'),
+						'title'    => esc_html__('CSS Code', 'roadthemes'),
+						'subtitle' => esc_html__('Paste your CSS code here.', 'roadthemes'),
 						'mode'     => 'css',
 						'theme'    => 'monokai', //chrome
 						'default'  => ""
@@ -1149,33 +1149,33 @@ if (!class_exists('Road_Theme_Config')) {
 			
 			// Less Compiler
             $this->sections[] = array(
-                'title'     => esc_html__('Less Compiler', 'sozo'),
-                'desc'      => esc_html__('Turn on this option to apply all theme options. Turn of when you have finished changing theme options and your site is ready.', 'sozo'),
+                'title'     => esc_html__('Less Compiler', 'roadthemes'),
+                'desc'      => esc_html__('Turn on this option to apply all theme options. Turn of when you have finished changing theme options and your site is ready.', 'roadthemes'),
                 'icon'      => 'el-icon-wrench',
                 'fields'    => array(
 					array(
                         'id'        => 'enable_less',
                         'type'      => 'switch',
-                        'title'     => esc_html__('Enable Less Compiler', 'sozo'),
+                        'title'     => esc_html__('Enable Less Compiler', 'roadthemes'),
 						'default'   => true,
                     ),
                 ),
             );
 			
             $theme_info  = '<div class="redux-framework-section-desc">';
-            $theme_info .= '<p class="redux-framework-theme-data description theme-uri">' . esc_html__('<strong>Theme URL:</strong> ', 'sozo') . '<a href="' . $this->theme->get('ThemeURI') . '" target="_blank">' . $this->theme->get('ThemeURI') . '</a></p>';
-            $theme_info .= '<p class="redux-framework-theme-data description theme-author">' . esc_html__('<strong>Author:</strong> ', 'sozo') . $this->theme->get('Author') . '</p>';
-            $theme_info .= '<p class="redux-framework-theme-data description theme-version">' . esc_html__('<strong>Version:</strong> ', 'sozo') . $this->theme->get('Version') . '</p>';
+            $theme_info .= '<p class="redux-framework-theme-data description theme-uri">' . esc_html__('<strong>Theme URL:</strong> ', 'roadthemes') . '<a href="' . $this->theme->get('ThemeURI') . '" target="_blank">' . $this->theme->get('ThemeURI') . '</a></p>';
+            $theme_info .= '<p class="redux-framework-theme-data description theme-author">' . esc_html__('<strong>Author:</strong> ', 'roadthemes') . $this->theme->get('Author') . '</p>';
+            $theme_info .= '<p class="redux-framework-theme-data description theme-version">' . esc_html__('<strong>Version:</strong> ', 'roadthemes') . $this->theme->get('Version') . '</p>';
             $theme_info .= '<p class="redux-framework-theme-data description theme-description">' . $this->theme->get('Description') . '</p>';
             $tabs = $this->theme->get('Tags');
             if (!empty($tabs)) {
-                $theme_info .= '<p class="redux-framework-theme-data description theme-tags">' . esc_html__('<strong>Tags:</strong> ', 'sozo') . implode(', ', $tabs) . '</p>';
+                $theme_info .= '<p class="redux-framework-theme-data description theme-tags">' . esc_html__('<strong>Tags:</strong> ', 'roadthemes') . implode(', ', $tabs) . '</p>';
             }
             $theme_info .= '</div>';
 
             $this->sections[] = array(
-                'title'     => esc_html__('Import / Export', 'sozo'),
-                'desc'      => esc_html__('Import and Export your Redux Framework settings from file, text or URL.', 'sozo'),
+                'title'     => esc_html__('Import / Export', 'roadthemes'),
+                'desc'      => esc_html__('Import and Export your Redux Framework settings from file, text or URL.', 'roadthemes'),
                 'icon'      => 'el-icon-refresh',
                 'fields'    => array(
                     array(
@@ -1190,8 +1190,8 @@ if (!class_exists('Road_Theme_Config')) {
 
             $this->sections[] = array(
                 'icon'      => 'el-icon-info-sign',
-                'title'     => esc_html__('Theme Information', 'sozo'),
-                //'desc'      => esc_html__('<p class="description">This is the Description. Again HTML is allowed</p>', 'sozo'),
+                'title'     => esc_html__('Theme Information', 'roadthemes'),
+                //'desc'      => esc_html__('<p class="description">This is the Description. Again HTML is allowed</p>', 'roadthemes'),
                 'fields'    => array(
                     array(
                         'id'        => 'opt-raw-info',
@@ -1207,18 +1207,18 @@ if (!class_exists('Road_Theme_Config')) {
             // Custom page help tabs, displayed using the help API. Tabs are shown in order of definition.
             $this->args['help_tabs'][] = array(
                 'id'        => 'redux-help-tab-1',
-                'title'     => esc_html__('Theme Information 1', 'sozo'),
-                'content'   => esc_html__('<p>This is the tab content, HTML is allowed.</p>', 'sozo')
+                'title'     => esc_html__('Theme Information 1', 'roadthemes'),
+                'content'   => esc_html__('<p>This is the tab content, HTML is allowed.</p>', 'roadthemes')
             );
 
             $this->args['help_tabs'][] = array(
                 'id'        => 'redux-help-tab-2',
-                'title'     => esc_html__('Theme Information 2', 'sozo'),
-                'content'   => esc_html__('<p>This is the tab content, HTML is allowed.</p>', 'sozo')
+                'title'     => esc_html__('Theme Information 2', 'roadthemes'),
+                'content'   => esc_html__('<p>This is the tab content, HTML is allowed.</p>', 'roadthemes')
             );
 
             // Set the help sidebar
-            $this->args['help_sidebar'] = esc_html__('<p>This is the sidebar content, HTML is allowed.</p>', 'sozo');
+            $this->args['help_sidebar'] = esc_html__('<p>This is the sidebar content, HTML is allowed.</p>', 'roadthemes');
         }
 
         /**
@@ -1238,8 +1238,8 @@ if (!class_exists('Road_Theme_Config')) {
                 'display_version'   => $theme->get('Version'),  // Version that appears at the top of your panel
                 'menu_type'         => 'menu',                  //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
                 'allow_sub_menu'    => true,                    // Show the sections below the admin menu item or not
-                'menu_title'        => esc_html__('Theme Options', 'sozo'),
-                'page_title'        => esc_html__('Theme Options', 'sozo'),
+                'menu_title'        => esc_html__('Theme Options', 'roadthemes'),
+                'page_title'        => esc_html__('Theme Options', 'roadthemes'),
                 
                 // You will need to generate a Google API key to use this feature.
                 // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
@@ -1339,13 +1339,13 @@ if (!class_exists('Road_Theme_Config')) {
                 } else {
                     $v = str_replace('-', '_', $this->args['opt_name']);
                 }
-                //$this->args['intro_text'] = sprintf(esc_html__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'sozo'), $v);
+                //$this->args['intro_text'] = sprintf(esc_html__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'roadthemes'), $v);
             } else {
-                //$this->args['intro_text'] = esc_html__('<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'sozo');
+                //$this->args['intro_text'] = esc_html__('<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'roadthemes');
             }
 
             // Add content after the form.
-            //$this->args['footer_text'] = esc_html__('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'sozo');
+            //$this->args['footer_text'] = esc_html__('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'roadthemes');
         }
 
     }

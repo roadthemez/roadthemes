@@ -17,7 +17,7 @@ global $post, $wpdb, $road_opt;
 <div class="main-container full-width">
 	<div class="entry-header">
 		<div class="container">
-			<h1 class="entry-title"><?php esc_html_e('Portfolio', 'sozo');?></h1>
+			<h1 class="entry-title"><?php esc_html_e('Portfolio', 'roadthemes');?></h1>
 		</div>
 	</div>
 	<div class="container">

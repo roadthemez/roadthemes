@@ -47,7 +47,7 @@ switch($bloglayout) {
 		<?php RoadThemes::road_breadcrumb(); ?>
 		<header class="entry-header">
 			<div class="container">
-				<h1 class="entry-title"><?php if(isset($road_opt)) { echo esc_html($road_opt['blog_header_text']); } else { esc_html_e('Blog', 'sozo');}  ?></h1>
+				<h1 class="entry-title"><?php if(isset($road_opt)) { echo esc_html($road_opt['blog_header_text']); } else { esc_html_e('Blog', 'roadthemes');}  ?></h1>
 			</div>
 		</header>
 		<div class="row">
@@ -116,7 +116,7 @@ switch($bloglayout) {
 								</div>
 								<div class="entry-description">
 									<?php the_content(); ?>
-									<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'sozo' ), 'after' => '</div>' ) ); ?>
+									<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'roadthemes' ), 'after' => '</div>' ) ); ?>
 								</div><!-- .entry-description -->
 
 							</div><!-- .entry-content -->
@@ -132,7 +132,7 @@ switch($bloglayout) {
 									<footer class="entry-meta">
 										<?php
 											$metadata = wp_get_attachment_metadata();
-											printf( esc_html__( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>.', 'sozo' ),
+											printf( esc_html__( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>.', 'roadthemes' ),
 												esc_attr( get_the_date( 'c' ) ),
 												esc_html( get_the_date() ),
 												esc_url( wp_get_attachment_url() ),
@@ -143,7 +143,7 @@ switch($bloglayout) {
 												get_the_title( $post->post_parent )
 											);
 										?>
-										<?php edit_post_link( esc_html__( 'Edit', 'sozo' ), '<span class="edit-link">', '</span>' ); ?>
+										<?php edit_post_link( esc_html__( 'Edit', 'roadthemes' ), '<span class="edit-link">', '</span>' ); ?>
 									</footer><!-- .entry-meta -->
 								</div>
 							</div>

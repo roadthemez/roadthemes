@@ -135,7 +135,7 @@ function get_productinfo() {
 	$product = get_product( $productid );
 	$quantity = intval( $_POST['data']['quantity'] );
 	?>
-	<h3><?php esc_html_e('Product is added to cart', 'sozo');?></h3>
+	<h3><?php esc_html_e('Product is added to cart', 'roadthemes');?></h3>
 	<div class="product-wrapper">
 		<div class="product-image">
 			<?php echo wp_kses($product->get_image('shop_thumbnail'), array(
@@ -163,7 +163,7 @@ function get_productinfo() {
 		</div>
 	</div>
 	<div class="buttons">
-		<a class="button" href="<?php echo get_permalink( wc_get_page_id( 'cart' ) );?>"><?php esc_html_e('View Cart', 'sozo');?></a>
+		<a class="button" href="<?php echo get_permalink( wc_get_page_id( 'cart' ) );?>"><?php esc_html_e('View Cart', 'roadthemes');?></a>
 	</div>
 	<?php
 	die();

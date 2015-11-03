@@ -18,7 +18,7 @@ get_header( 'projects' ); ?>
 <div class="main-container full-width">
 	<div class="entry-header">
 		<div class="container">
-			<h1 class="entry-title"><?php esc_html_e('Portfolio', 'sozo');?></h1>
+			<h1 class="entry-title"><?php esc_html_e('Portfolio', 'roadthemes');?></h1>
 		</div>
 	</div>
 	<div class="container">
@@ -71,7 +71,7 @@ get_header( 'projects' ); ?>
 					do_action( 'projects_before_loop' );
 				?>
 				<div class="filter-options btn-group">
-					<button data-group="all" class="btn active btn--warning"><?php esc_html_e('All', 'sozo');?></button>
+					<button data-group="all" class="btn active btn--warning"><?php esc_html_e('All', 'roadthemes');?></button>
 					<?php 
 					$datagroups = array();
 					

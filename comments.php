@@ -28,7 +28,7 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : ?>
 		<h3 class="comments-title">
 			<?php
-				printf( _n( '1 comment', '%1$s comments', get_comments_number(), 'sozo' ),
+				printf( _n( '1 comment', '%1$s comments', get_comments_number(), 'roadthemes' ),
 					number_format_i18n( get_comments_number() ) );
 			?>
 		</h3>
@@ -48,7 +48,7 @@ if ( post_password_required() )
 		 * But we only want the note on posts and pages that had comments in the first place.
 		 */
 		if ( ! comments_open() && get_comments_number() ) : ?>
-		<p class="nocomments"><?php esc_html_e( 'Comments are closed.' , 'sozo' ); ?></p>
+		<p class="nocomments"><?php esc_html_e( 'Comments are closed.' , 'roadthemes' ); ?></p>
 		<?php endif; ?>
 
 	<?php endif; // have_comments() ?>

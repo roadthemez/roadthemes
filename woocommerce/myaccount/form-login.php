@@ -26,16 +26,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<form method="post" class="login">
 				<div class="form-fields">
-					<h2><?php esc_html_e( 'Login', 'sozo' ); ?></h2>
+					<h2><?php esc_html_e( 'Login', 'roadthemes' ); ?></h2>
 					
 					<?php do_action( 'woocommerce_login_form_start' ); ?>
 
 					<p class="form-row form-row-wide">
-						<label for="username"><?php esc_html_e( 'Username or email address', 'sozo' ); ?> <span class="required">*</span></label>
+						<label for="username"><?php esc_html_e( 'Username or email address', 'roadthemes' ); ?> <span class="required">*</span></label>
 						<input type="text" class="input-text" name="username" id="username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>" />
 					</p>
 					<p class="form-row form-row-wide">
-						<label for="password"><?php esc_html_e( 'Password', 'sozo' ); ?> <span class="required">*</span></label>
+						<label for="password"><?php esc_html_e( 'Password', 'roadthemes' ); ?> <span class="required">*</span></label>
 						<input class="input-text" type="password" name="password" id="password" />
 					</p>
 
@@ -44,11 +44,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class="form-action">
 					<?php wp_nonce_field( 'woocommerce-login' ); ?>
 					<p class="lost_password">
-						<a href="<?php echo esc_url( wc_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'sozo' ); ?></a>
+						<a href="<?php echo esc_url( wc_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'roadthemes' ); ?></a>
 					</p>
-					<input type="submit" class="button" name="login" value="<?php esc_html_e( 'Login', 'sozo' ); ?>" /> 
+					<input type="submit" class="button" name="login" value="<?php esc_html_e( 'Login', 'roadthemes' ); ?>" /> 
 					<label for="rememberme" class="inline">
-						<input name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php esc_html_e( 'Remember me', 'sozo' ); ?>
+						<input name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php esc_html_e( 'Remember me', 'roadthemes' ); ?>
 					</label>
 				</div>
 
@@ -64,35 +64,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<form method="post" class="register">
 				<div class="form-fields">
-					<h2><?php esc_html_e( 'Register', 'sozo' ); ?></h2>
+					<h2><?php esc_html_e( 'Register', 'roadthemes' ); ?></h2>
 					
 					<?php do_action( 'woocommerce_register_form_start' ); ?>
 
 					<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
 
 						<p class="form-row form-row-wide">
-							<label for="reg_username"><?php esc_html_e( 'Username', 'sozo' ); ?> <span class="required">*</span></label>
+							<label for="reg_username"><?php esc_html_e( 'Username', 'roadthemes' ); ?> <span class="required">*</span></label>
 							<input type="text" class="input-text" name="username" id="reg_username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>" />
 						</p>
 
 					<?php endif; ?>
 
 					<p class="form-row form-row-wide">
-						<label for="reg_email"><?php esc_html_e( 'Email address', 'sozo' ); ?> <span class="required">*</span></label>
+						<label for="reg_email"><?php esc_html_e( 'Email address', 'roadthemes' ); ?> <span class="required">*</span></label>
 						<input type="email" class="input-text" name="email" id="reg_email" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" />
 					</p>
 
 					<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 			
 						<p class="form-row form-row-wide">
-							<label for="reg_password"><?php esc_html_e( 'Password', 'sozo' ); ?> <span class="required">*</span></label>
+							<label for="reg_password"><?php esc_html_e( 'Password', 'roadthemes' ); ?> <span class="required">*</span></label>
 							<input type="password" class="input-text" name="password" id="reg_password" />
 						</p>
 
 					<?php endif; ?>
 
 					<!-- Spam Trap -->
-					<div style="<?php echo ( ( is_rtl() ) ? 'right' : 'left' ); ?>: -999em; position: absolute;"><label for="trap"><?php esc_html_e( 'Anti-spam', 'sozo' ); ?></label><input type="text" name="email_2" id="trap" tabindex="-1" /></div>
+					<div style="<?php echo ( ( is_rtl() ) ? 'right' : 'left' ); ?>: -999em; position: absolute;"><label for="trap"><?php esc_html_e( 'Anti-spam', 'roadthemes' ); ?></label><input type="text" name="email_2" id="trap" tabindex="-1" /></div>
 
 					<?php do_action( 'woocommerce_register_form' ); ?>
 					<?php do_action( 'register_form' ); ?>
@@ -101,7 +101,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 				<div class="form-action">
 					<?php wp_nonce_field( 'woocommerce-register' ); ?>
-					<input type="submit" class="button" name="register" value="<?php esc_html_e( 'Register', 'sozo' ); ?>" />
+					<input type="submit" class="button" name="register" value="<?php esc_html_e( 'Register', 'roadthemes' ); ?>" />
 				</div>
 			</form>
 

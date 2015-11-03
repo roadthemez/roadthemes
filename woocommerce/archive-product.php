@@ -93,9 +93,9 @@ if(isset($_GET['view']) && $_GET['view']=='list-view'){
 								
 								<div class="toolbar">
 									<div class="view-mode">
-										<label><?php esc_html_e('View on', 'sozo');?></label>
-										<a href="#" class="grid <?php if($road_viewmode=='grid-view'){ echo ' active';} ?>" title="<?php echo esc_attr__( 'Grid', 'sozo' ); ?>"><i class="fa fa-th"></i></a>
-										<a href="#" class="list <?php if($road_viewmode=='list-view'){ echo ' active';} ?>" title="<?php echo esc_attr__( 'List', 'sozo' ); ?>"><i class="fa fa-th-list"></i></a>
+										<label><?php esc_html_e('View on', 'roadthemes');?></label>
+										<a href="#" class="grid <?php if($road_viewmode=='grid-view'){ echo ' active';} ?>" title="<?php echo esc_attr__( 'Grid', 'roadthemes' ); ?>"><i class="fa fa-th"></i></a>
+										<a href="#" class="list <?php if($road_viewmode=='list-view'){ echo ' active';} ?>" title="<?php echo esc_attr__( 'List', 'roadthemes' ); ?>"><i class="fa fa-th-list"></i></a>
 									</div>
 									<?php
 										/**

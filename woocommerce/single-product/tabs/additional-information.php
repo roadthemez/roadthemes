@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 
-$heading = apply_filters( 'woocommerce_product_additional_information_heading', esc_html__( 'Additional Information', 'sozo' ) );
+$heading = apply_filters( 'woocommerce_product_additional_information_heading', esc_html__( 'Additional Information', 'roadthemes' ) );
 ?>
 
 <?php $product->list_attributes(); ?>
