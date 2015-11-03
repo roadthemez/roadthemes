@@ -25,6 +25,19 @@ if ( file_exists( get_template_directory().'/include/wooajax.php' ) ) {
 if ( file_exists( get_template_directory().'/include/map_shortcodes.php' ) ) {
 	require_once( get_template_directory().'/include/map_shortcodes.php' );
 }
+if ( file_exists( get_template_directory().'/include/lessc.inc.php' ) ) {
+	require_once( get_template_directory().'/include/lessc.inc.php' );
+}
+if ( file_exists( get_template_directory().'/include/lesscompiler.php' ) ) {
+	require_once( get_template_directory().'/include/lesscompiler.php' );
+}
+if ( file_exists( get_template_directory().'/include/blogsharing.php' ) ) {
+	require_once( get_template_directory().'/include/blogsharing.php' );
+}
+if ( file_exists( get_template_directory().'/include/productsharing.php' ) ) {
+	require_once( get_template_directory().'/include/productsharing.php' );
+}
+	
 Class RoadThemes {
 	/**
 	* Constructor
@@ -892,6 +905,29 @@ Class RoadThemes {
 			}
 		}
 	}
+	static function road_excerpt_by_id($post, $length = 10, $tags = '<a><em><strong>') {
+ 
+		if(is_int($post)) {
+			// get the post object of the passed ID
+			$post = get_post($post);
+		} elseif(!is_object($post)) {
+			return false;
+		}
+	 
+		if(has_excerpt($post->ID)) {
+			$the_excerpt = $post->post_excerpt;
+			return apply_filters('the_content', $the_excerpt);
+		} else {
+			$the_excerpt = $post->post_content;
+		}
+	 
+		$the_excerpt = strip_shortcodes(strip_tags($the_excerpt), $tags);
+		$the_excerpt = preg_split('/\b/', $the_excerpt, $length * 2+1);
+		$excerpt_waste = array_pop($the_excerpt);
+		$the_excerpt = implode($the_excerpt);
+	 
+		return apply_filters('the_content', $the_excerpt);
+	}
 	/**
 	 * Return the Google font stylesheet URL if available.
 	 *
@@ -1108,12 +1144,6 @@ Class RoadThemes {
 	function road_register_required_plugins() {
 
 		$plugins = array(
-			array(
-				'name'               => 'RoadThemes Helper',
-				'slug'               => 'roadthemes-helper',
-				'source'             => get_template_directory() . '/plugins/roadthemes-helper.zip',
-				'required'           => true,
-			),
 			array(
 				'name'               => 'Mega Main Menu',
 				'slug'               => 'mega_main_menu',

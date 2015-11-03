@@ -54,7 +54,7 @@ function road_latestposts_shortcode( $atts ) {
 							$html.='<span class="post-date"><span class="day">'.get_the_date('d', $post->ID).'</span><span class="month">'.get_the_date('M', $post->ID).'</span></span>';
 							
 							$html.='<div class="post-excerpt">';
-								$html.=road_excerpt_by_id($post, $length = $atts['length']);
+								$html.= RoadThemes::road_excerpt_by_id($post, $length = $atts['length']);
 							$html.='</div>';
 							
 						$html.='</div>';

@@ -1275,6 +1275,43 @@ if (!class_exists('Road_Theme_Config')) {
                 ),
             );
 			
+			// Testimonials options
+            $this->sections[] = array(
+                'title'     => __('Testimonials', 'redux-framework'),
+                'desc'      => __('Use this section to select options for Testimonials', 'redux-framework'),
+                'icon'      => 'el-icon-comment',
+                'fields'    => array(
+					array(
+						'id'       => 'testiscroll',
+						'type'     => 'switch',
+						'title'    => __('Auto scroll', 'redux-framework'),
+						'default'  => false,
+					),
+					array(
+						'id'        => 'testipause',
+						'type'      => 'slider',
+						'title'     => __('Pause in (seconds)', 'redux-framework'),
+						'desc'      => __('Pause time, default value: 3000', 'redux-framework'),
+						"default"   => 3000,
+						"min"       => 1000,
+						"step"      => 500,
+						"max"       => 10000,
+						'display_value' => 'text'
+					),
+					array(
+						'id'        => 'testianimate',
+						'type'      => 'slider',
+						'title'     => __('Animate in (seconds)', 'redux-framework'),
+						'desc'      => __('Animate time, default value: 2000', 'redux-framework'),
+						"default"   => 2000,
+						"min"       => 300,
+						"step"      => 100,
+						"max"       => 5000,
+						'display_value' => 'text'
+					),
+                ),
+            );
+			
 			// Contact Map
             $this->sections[] = array(
                 'title'     => esc_html__('Contact Map', 'roadthemes'),

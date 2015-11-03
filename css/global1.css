@@ -1434,7 +1434,7 @@ body.quickview {
   color: #666666;
 }
 .header-container .header .horizontal-menu div.nav-menu > ul li a {
-  color: #dd9933;
+  color: #666666;
   display: block;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -1517,7 +1517,7 @@ body.quickview {
   color: #666666;
 }
 .header-container .header .horizontal-menu .primary-menu-container ul.nav-menu li a {
-  color: #dd9933;
+  color: #666666;
   display: block;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -1640,7 +1640,7 @@ body.quickview {
   border-radius: 3px;
 }
 .header-container .header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul > li > a.item_link .link_text {
-  color: #dd9933;
+  color: #666666;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 300;
@@ -1651,7 +1651,7 @@ body.quickview {
   transition: all 0.4s ease;
 }
 .header-container .header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul > li > a.item_link i {
-  color: #dd9933;
+  color: #666666;
   font-size: 20px;
   padding-right: 9px;
 }
@@ -2024,7 +2024,7 @@ body.quickview {
   background-color: #ff7572;
   background-image: none;
   border-bottom: 1px solid #ff5c59;
-  color: #dd9933;
+  color: #666666;
   display: block;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -2064,7 +2064,7 @@ body.quickview {
   background-color: #ff7572;
   background-image: none;
   border-bottom: 1px solid #ff5c59;
-  color: #dd9933;
+  color: #666666;
   display: block;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -2093,7 +2093,7 @@ body.quickview {
 .header-container .header .morelesscate span {
   background-color: #ff7572 !important;
   background-image: none;
-  color: #dd9933;
+  color: #666666;
   cursor: pointer;
   display: block;
   font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -2113,7 +2113,7 @@ body.quickview {
   height: 47px;
   line-height: 47px;
   padding-right: 15px;
-  color: #dd9933;
+  color: #666666;
 }
 .header-container .header .morelesscate span.lesscate {
   display: none;
