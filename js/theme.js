@@ -93,12 +93,12 @@
 		//Category Menu
 		jQuery('.catemenu-toggler').on('click', function(){
 			if(jQuery('#mega_main_menu').css('display')=='none'){
-				jQuery('#mega_main_menu').css('display', 'block');
+				jQuery('#mega_main_menu').fadeIn();
 				if(!jQuery('.morelesscate').hasClass('alwayshide')){
 					jQuery('.morelesscate').css('display', 'block');
 				}
 			} else {
-				jQuery('#mega_main_menu').css('display', 'none');
+				jQuery('#mega_main_menu').fadeOut();
 				jQuery('.morelesscate').css('display', 'none');
 			}
 			//for default wordpress menu (not selected menu location)

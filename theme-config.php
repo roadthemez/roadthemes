@@ -445,13 +445,7 @@ if (!class_exists('Road_Theme_Config')) {
 				'title'      => esc_html__( 'Menu', 'roadthemes' ),
 				'subsection' => true,
 				'fields'     => array(
-					array(
-						'id'       => 'top_menu',
-						'type'     => 'select',
-						'data'     => 'menus',
-						'title'    => esc_html__( 'Top Menu', 'roadthemes' ),
-						'subtitle' => esc_html__( 'Select a menu', 'roadthemes' ),
-					),
+					
 					array(
                         'id'        => 'mobile_menu_label',
                         'type'      => 'text',

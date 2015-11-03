@@ -11,7 +11,7 @@
 	&.box-layout {
 		max-width: 1230px;
 		
-		&:after{
+		&: after{
 			clear: both;
 		    content: "";
 		    display: block;
@@ -35,7 +35,7 @@
 		.wpb_wrapper {
 		
 			& > h3 {
-				font-size:18px;
+				font-size: 18px;
 				line-height: 1;
 				font-weight: 500;
 				margin: 0;
@@ -45,12 +45,12 @@
 				padding: 0 0 15px;
 				font-family: @headingfont;
 				
-				&:after{
+				&: after{
 					content: "";
 					display: block;
 					border-bottom: 3px solid @primarycolor;
 					position: absolute;
-					left:0;
+					left: 0;
 					width: 100%;
 					bottom: -1px;
 					-webkit-transition: all 0.4s ease 0s;
@@ -130,7 +130,7 @@
 .wrapper {
 	.slick-slider {
 		.slick-list {
-			padding-top:30px;
+			padding-top: 30px;
 		}
 		.slick-slide {
 			text-align: center;
@@ -149,20 +149,20 @@
 			left: auto;
 			margin-top: -40px;
 			position: absolute;
-			top:0;
+			top: 0;
 			text-align: center;
 			text-indent: -9999px;
 			z-index: 2;
 			-webkit-transition: all 0.3s ease;
 			transition: all 0.3s ease;
 			
-			&:before {
+			&: before {
 				display: inline-block;
 				color: @headingcolor;
 				content: "\f105";
 				display: inline-block;
 				font-family: FontAwesome;
-				font-size:18px;
+				font-size: 18px;
 				height: 100%;
 				left: 0;
 				line-height: 30px;
@@ -172,20 +172,20 @@
 				width: 100%;
 			}
 			&.slick-prev{
-				right:40px;
+				right: 40px;
 				
-				&:before {
+				&: before {
 					content: "\f104";
 				}
 			}
-			&:hover {
+			&: hover {
 				border-color: @primarycolor;
-				&:before {
+				&: before {
 					color: @primarycolor;
 				}
 			}
 			&.slick-disabled {
-				&:before {
+				&: before {
 					color: @greycolor;
 				}
 			}
@@ -218,10 +218,10 @@
 					visibility: visible;
 					width: 100%;
 
-					&:hover{
+					&: hover{
 						background: @bordercolor;
 					}
-					&:before {
+					&: before {
 						display: none;
 					}
 				}
@@ -235,10 +235,7 @@
 	}
 }
 .logo {
-	text-align: center;
-	float: left;
-	padding: 12px 20px 12px 0;
-	border-right: 1px solid @bordercolor;
+
 	a {
 		display: inline-block;
 		max-width: 100%;
@@ -264,7 +261,7 @@
     width: auto;
     z-index: 2;
 	line-height: 2;
-	&:after {
+	&: after {
 		background: none;
 		border-left: 5px solid transparent;
 		border-right: 5px solid transparent;
@@ -336,7 +333,7 @@
 			height: 15px;
 			width: 68px;
 			margin: 0;
-			&:before {
+			&: before {
 				content: "\f005\f005\f005\f005\f005";
 				font-family: FontAwesome;
 				font-size: 12px;
@@ -347,7 +344,7 @@
 				height: 21px;
 				width: 120px;
 				
-				&:before {
+				&: before {
 					color: @ratecolor;
 					content: "\f005\f005\f005\f005\f005";
 					font-family: FontAwesome;
@@ -390,7 +387,7 @@
 		-webkit-transition: color 0.3s ease;
 		transition: color 0.3s ease;
 		
-		&:hover {
+		&: hover {
 			color: @primarycolor;
 		}
 	}
@@ -461,7 +458,7 @@
 			text-shadow: none;
 			text-transform: uppercase;
 	
-			&:hover {
+			&: hover {
 				background: darken(@primarycolor, 10%);
 				color: #fff;
 			}
@@ -512,7 +509,7 @@ body.quickview {
 		-webkit-transition: all 0.3s ease;
 		transition: all 0.3s ease;
 	
-		&:hover {
+		&: hover {
 			background: @primarycolor;
 		}
 		&.qvnext {
@@ -566,7 +563,7 @@ body.quickview {
 			-webkit-transition: all 0.3s ease;
 			transition: all 0.3s ease;
 			
-			&:hover {
+			&: hover {
 				border: 1px solid @primarycolor;
 				color: @primarycolor;
 			}
@@ -613,10 +610,10 @@ body.quickview {
 							visibility: visible;
 							width: 100%;
 
-							&:hover{
+							&: hover{
 								background: @bordercolor;
 							}
-							&:before {
+							&: before {
 								display: none;
 							}
 						}
@@ -683,7 +680,7 @@ body.quickview {
 				text-decoration: underline;
 				width: 100%;
 				
-				&:hover {
+				&: hover {
 					color: @primarycolor;
 				}
 			}
@@ -710,7 +707,7 @@ body.quickview {
 						margin-right: 5px;
 						margin-top: 3px;
 						
-						&:before {
+						&: before {
 							color: #b7b7b7;
 						}
 					}
@@ -721,7 +718,7 @@ body.quickview {
 						line-height: 14px;
 						text-decoration: underline;
 						
-						&:hover {
+						&: hover {
 							color: @primarycolor;
 						}
 					}
@@ -823,7 +820,7 @@ body.quickview {
 						float: left;
 						text-decoration: underline;
 						
-						&:hover {
+						&: hover {
 							color: @primarycolor;
 						}
 					}
@@ -847,7 +844,7 @@ body.quickview {
 						list-style: none;
 						margin: 0 0 5px;
 						
-						&:before {
+						&: before {
 							content: "\f00c";
 							display: inline-block;
 							font-family: FontAwesome;
@@ -891,41 +888,41 @@ body.quickview {
 						text-align: center;
 						width: 40px;
 						
-						&:hover {
+						&: hover {
 							color: #fff;
 						}
 						&.facebook {
-							&:hover {
+							&: hover {
 								background: #3B579D;
 								border: 1px solid #3B579D;
 							}
 						}
 						&.twitter {
-							&:hover {
+							&: hover {
 								background: #3ACAFF;
 								border: 1px solid #3ACAFF;
 							}
 						}
 						&.pinterest {
-							&:hover {
+							&: hover {
 								background: #CB2027;
 								border: 1px solid #CB2027;
 							}
 						}
 						&.tumblr {
-							&:hover {
+							&: hover {
 								background: #304E6C;
 								border: 1px solid #304E6C;
 							}
 						}
 						&.gplus {
-							&:hover {
+							&: hover {
 								background: #D11717;
 								border: 1px solid #D11717;
 							}
 						}
 						&.linkedin {
-							&:hover {
+							&: hover {
 								background: #0097BD;
 								border: 1px solid #0097BD;
 							}
@@ -944,6 +941,7 @@ body.quickview {
 	position: relative;
 	width: 100%;
 	z-index: 2000;
+	
 	.nav-categories{
 		height: 80px;
 		float: left;
@@ -954,42 +952,15 @@ body.quickview {
 	}
 	// Top bar
 	.top-bar {
-		min-height:80px;
+		min-height: 40px;
 		color: #fff;
+		
 		.container-fluid{
-			padding-left:0 ;
+			padding-left: 0 ;
 			padding-right: 0;
 		}
-		.images-top-bar {
-			a{
-				display: block;
-				position: absolute;
-				left: 0;
-				top: 0;
-				width: 100%;
-				z-index: 1;
-			}
-		}
 		.top-message{
-			font-size: 30px;
-			padding: 18px 18px 0 18px;
-			line-height: 1;
-			position: relative;
-			z-index: 10;
-		}
-		.countdown{
-			text-align: right;
-			padding: 18px 18px 0 18px;
-			margin-right: 10%;
-			font-size: 35px;
-			float: right;
-			position:relative;
-			z-index: 10;
-			&:before{
-				content: "\f017";
-				font-family: FontAwesome;
-				margin-right: 15px;
-			}
+			line-height: 40px;
 		}
 	}
 	//Top menu
@@ -1003,17 +974,17 @@ body.quickview {
 		border-right: 1px solid @bordercolor;
 		-webkit-transition: all 0.4s ease 0s;
    		 transition: all 0.4s ease 0s;
-		&:hover{
+		&: hover{
 			background: @submenubg;
 		}
-		&:before{
+		&: before{
 			content: "\f067";
 			font-family: FontAwesome;
 			line-height: 80px;
 			font-size: 24px;
 			color: #fff;
 		}
-		&:hover > div{
+		&: hover > div{
 			top: 100%;
 			opacity: 1;
 			visibility: visible;
@@ -1029,15 +1000,15 @@ body.quickview {
 			box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.14);
 			padding: 0px 15px;
 			background: #fff;
-			border:1px solid @bordercolor;
-			border-top:0;
+			border: 1px solid @bordercolor;
+			border-top: 0;
 			text-align: right;
 			-webkit-transition: all 0.4s ease 0s;
     		transition: all 0.4s ease 0s;
 			ul{
 				margin: 0;
 				padding: 0;
-				list-style:none;
+				list-style: none;
 				li{
 					a{
 						display: block;
@@ -1072,7 +1043,7 @@ body.quickview {
 		}
 		#lang_sel{
 			background: transparent;
-			height:auto;
+			height: auto;
 			font-family: @bodyfont;
 			li{
 				width: auto;
@@ -1088,10 +1059,10 @@ body.quickview {
 					color: #fff;
 					font-size: 13px;
 					padding-right: 5px;
-					&:after{
+					&: after{
 						content: "\f0d7";
 						font-family: FontAwesome;
-						float:right;
+						float: right;
 						color: #000;
 					}
 
@@ -1124,7 +1095,7 @@ body.quickview {
 			li{
 				float: left;
 				margin-right: 20px;
-				&:last-child{
+				&: last-child{
 					margin-right: 0;
 				}
 				i{
@@ -1132,7 +1103,7 @@ body.quickview {
 					height: 36px;
 					text-align: center;
 					line-height: 36px;
-					border:1px solid @primarycolor;
+					border: 1px solid @primarycolor;
 					border-radius: 100%;
 					color: @primarycolor;
 					font-size: 18px;
@@ -1148,45 +1119,38 @@ body.quickview {
 			position: relative;
 			
 			.cart-toggler {
-				height:80px;
+				background: @primarycolor;
+				height: 80px;
 				width: 80px;
 				text-align: center;
 				line-height: 80px;
 				font-size: 20px;
 				cursor: pointer;
 				color: #fff;
-				border-right: 1px solid @bordercolor;
-				border-left: 1px solid @bordercolor;
-				-webkit-transition: all 0.4s ease 0s;
-   				 transition: all 0.4s ease 0s;
-				&:hover{
-					background:@submenubg; 
-				}
-				a{
+
+				a {
 					color: #fff;
 					font-size: 14px;
 					font-weight: bold;
-					font-family: @headingfont;
+					
 					i{
 						margin-right: 5px;
 					}
-					&:hover{
+					&: hover{
 						color: @primarycolor;
 					}
 				}
 			}
 			.mini_cart_content {
 				background: #fff;
-				color: @headingcolor;
-				font-family: @headingfont;
-				font-size: 14px;
+				color: @textcolor;
 				height: 0;
 				overflow: hidden;
 				line-height: 1.5;
 				padding: 0;
 				position: absolute;
 				right: 0;
-				top:100%;
+				top: 100%;
 				width: 300px;
 				z-index: 12000;
 				
@@ -1237,7 +1201,7 @@ body.quickview {
 								width: 20px;
 								z-index: 1;
 							}
-							&:hover {
+							&: hover {
 								border: 1px solid @primarycolor;
 							}
 						}
@@ -1254,7 +1218,7 @@ body.quickview {
 								width: 190px;
 								text-align: left;
 								
-								&:hover {
+								&: hover {
 									color: @primarycolor;
 								}
 							}
@@ -1275,7 +1239,7 @@ body.quickview {
 								top: 15px;
 								z-index: 1;
 								
-								&:hover {
+								&: hover {
 									color: @primarycolor !important;
 								}
 							}
@@ -1360,11 +1324,11 @@ body.quickview {
 	//Header search
 	.header-search {
 		background: #fff;
-		border:2px solid @primarycolor;
+		border: 2px solid @primarycolor;
 		float: left;
 		height: 60px;
 		position: relative;
-		width:50%;
+		width: 100%;
 		margin-top: 25px;	
 		.cate-toggler {
 			color: darken(@textcolor, 10%);
@@ -1379,7 +1343,7 @@ body.quickview {
 			position: relative;
 			text-transform: capitalize;
 			
-			&:after {
+			&: after {
 				border-left: 5px solid transparent;
 				border-right: 5px solid transparent;
 				border-top: 5px solid;
@@ -1395,7 +1359,7 @@ body.quickview {
 		.widget_product_categories {
 			left: 0;
 			position: absolute;
-			top:100%;
+			top: 100%;
 			z-index: 1001;
 			
 			ul.product-categories {
@@ -1426,10 +1390,10 @@ body.quickview {
 						line-height: 26px;
 						padding-left: 20px;
 						
-						&:focus {
+						&: focus {
 							text-decoration: none;
 						}
-						&.active, &:hover {
+						&.active, &: hover {
 							background-color: lighten(@lightgreycolor, 23%);
 							background-image: linear-gradient(to bottom, lighten(@lightgreycolor, 23%) 0%, lighten(@lightgreycolor, 18%) 100%);
 							background-repeat: repeat-x;
@@ -1444,25 +1408,25 @@ body.quickview {
 						margin: 0;
 						padding-left: 10px;
 						
-						a:before {
+						a: before {
 							content: "_";
 							display: inline-block;
 							margin-right: 3px;
 						}
 						ul.children {
-							a:before {
+							a: before {
 								content: "_ _";
 								display: inline-block;
 								margin-right: 3px;
 							}
 							ul.children {
-								a:before {
+								a: before {
 									content: "_ _ _";
 									display: inline-block;
 									margin-right: 3px;
 								}
 								ul.children {
-									a:before {
+									a: before {
 										content: "_ _ _ _";
 										display: inline-block;
 										margin-right: 3px;
@@ -1498,18 +1462,18 @@ body.quickview {
 					margin: 11px 0 0;
 					outline: none;
 					padding: 0 0 0 20px;
-					width:60%;
+					width: 60%;
 					font-style: italic;
 				}
 				#wsearchsubmit {
-					background:@primarycolor;
+					background: @primarycolor;
 					border: none;
 					border-radius: 0;
-					color:#fff;
+					color: #fff;
 					display: block;
 					float: right;
 					font-size: 14px;
-					height:100%;
+					height: 100%;
 					line-height: 50px;
 					margin: 0;
 					outline: none;
@@ -1520,7 +1484,7 @@ body.quickview {
 					right: 0;
 					top: 0;
 					font-size: 24px;
-					&:hover {
+					&: hover {
 						color: lighten(@textcolor, 10%);
 					}
 				}
@@ -1533,7 +1497,7 @@ body.quickview {
 	//Header
 	.header {
 		float: left;
-		min-height:50px;
+		min-height: 50px;
 		width: 100%;
 		background: @headerbg;
 		.horizontal-menu {
@@ -1551,7 +1515,7 @@ body.quickview {
 						list-style: none;
 						position: relative;
 						
-						&:first-child {
+						&: first-child {
 							a {
 								border: none;
 							}
@@ -1561,7 +1525,7 @@ body.quickview {
 								color: @primarycolor;
 							}
 						}
-						&:hover, &.sfHover {
+						&: hover, &.sfHover {
 							& > ul {
 								display: block;
 							}
@@ -1601,7 +1565,7 @@ body.quickview {
 										background: rgba(255,255,255,0.3);
 									}
 								}
-								&:hover, &.sfHover {
+								&: hover, &.sfHover {
 									& > ul {
 										display: block;
 									}
@@ -1641,7 +1605,7 @@ body.quickview {
 						list-style: none;
 						position: relative;
 						
-						&:first-child {
+						&: first-child {
 							a {
 								border: none;
 							}
@@ -1651,7 +1615,7 @@ body.quickview {
 								background: @submenubg;
 							}
 						}
-						&:hover, &.sfHover {
+						&: hover, &.sfHover {
 							& > ul {
 								display: block;
 							}
@@ -1691,7 +1655,7 @@ body.quickview {
 										background: rgba(255,255,255,0.3);
 									}
 								}
-								&:hover, &.sfHover {
+								&: hover, &.sfHover {
 									& > ul {
 										display: block;
 									}
@@ -1738,7 +1702,7 @@ body.quickview {
 								&.nav_search_box {
 									display: none;
 								}
-								&:hover {
+								&: hover {
 									& > a {
 										&.item_link {
 											background: @submenubg;
@@ -1753,7 +1717,7 @@ body.quickview {
 									}
 								}
 								&.current-menu-ancestor, &.current-menu-item {
-									&:hover {
+									&: hover {
 										& > a {
 											&.item_link {
 												background: @submenubg;
@@ -1785,7 +1749,7 @@ body.quickview {
 									& > a {
 										&.item_link {
 											
-											&:after {
+											&: after {
 												border: none;
 												color: #fff;
 												content: "\f107";
@@ -1798,8 +1762,8 @@ body.quickview {
 												top: 0;
 												width: auto;
 											}
-											&:hover {
-												&:after {
+											&: hover {
+												&: after {
 													color: @primarycolor;
 												}
 											}
@@ -1811,9 +1775,9 @@ body.quickview {
 									&.item_link {
 										background: none;
 										line-height: 44px;
-										margin-right:1px;
+										margin-right: 1px;
 										min-height: 44px;
-										padding:0 20px;
+										padding: 0 20px;
 										border-radius: 3px;
 										.link_text {
 											color: @menucolor;
@@ -1831,13 +1795,13 @@ body.quickview {
 											font-size: @menufontsize;
 											padding-right: 9px;
 										}
-										&:before {
+										&: before {
 											background: none;
 										}
-										&:after {
+										&: after {
 											display: none;
 										}
-										&:hover {
+										&: hover {
 											.link_text {
 												color: @submenucolor;
 											}
@@ -1853,7 +1817,7 @@ body.quickview {
 												i {
 													position: absolute;
 												}
-												&:hover {
+												&: hover {
 													background: rgba(red(@primarycolor), green(@primarycolor), blue(@primarycolor), 0.4);
 												}
 											}
@@ -1865,7 +1829,7 @@ body.quickview {
 										padding: 0 10px 10px;
 										
 										.processed_image {
-											&:hover {
+											&: hover {
 												img {
 													opacity: 0.7;
 												}
@@ -2006,7 +1970,7 @@ body.quickview {
 											border-top: 1px solid lighten(@submenubg, 3%);
 											width: auto;
 											
-											&:first-child {
+											&: first-child {
 												border-top: none;
 											}
 											a.item_link {
@@ -2028,17 +1992,17 @@ body.quickview {
 													font-size: @menufontsize;
 													font-weight: normal;
 												}
-												&:focus {
+												&: focus {
 													background: none;
 												}
-												&:before {
+												&: before {
 													display: none;
 												}
-												&:hover {
+												&: hover {
 													background: lighten(@submenubg, 3%);
 												}
 											}
-											&:hover, &.current-menu-ancestor, &.current-menu-item {
+											&: hover, &.current-menu-ancestor, &.current-menu-item {
 												& > a.item_link {
 													background: lighten(@submenubg, 3%);
 												}
@@ -2075,13 +2039,13 @@ body.quickview {
 													font-size: @menufontsize;
 													font-weight: normal;
 												}
-												&:focus {
+												&: focus {
 													background: none;
 												}
-												&:before {
+												&: before {
 													display: none;
 												}
-												&:hover {
+												&: hover {
 													background: lighten(@submenubg, 3%);
 												}
 											}
@@ -2095,10 +2059,10 @@ body.quickview {
 												.link_text {
 													font-weight: bold;
 												}
-												&:before {
+												&: before {
 													display: none;
 												}
-												&:hover {
+												&: hover {
 													background: lighten(@submenubg, 3%);
 												}
 											}
@@ -2144,13 +2108,13 @@ body.quickview {
 													font-size: @menufontsize;
 													font-weight: normal;
 												}
-												&:focus {
+												&: focus {
 													background: none;
 												}
-												&:before {
+												&: before {
 													display: none;
 												}
-												&:hover {
+												&: hover {
 													background: lighten(@submenubg, 3%);
 												}
 											}
@@ -2163,10 +2127,10 @@ body.quickview {
 												.link_text {
 													font-weight: bold;
 												}
-												&:before {
+												&: before {
 													display: none;
 												}
-												&:hover {
+												&: hover {
 													background: lighten(@submenubg, 3%);
 												}
 											}
@@ -2194,7 +2158,8 @@ body.quickview {
 			width: 100%;
 			
 			.catemenu-toggler {
-				color:#fff;
+				background: @primarycolor;
+				color: #fff;
 				cursor: pointer;
 				font-family: @headingfont;
 				font-size: 15px;
@@ -2204,22 +2169,14 @@ body.quickview {
 				padding-left: 18px;
 				text-transform: uppercase;
 				width: 100%;
-				border-right: 1px solid @bordercolor;
-				border-left: 1px solid @bordercolor;
+				
 				i {
 					float: right;
 					line-height: 80px;
 					height: 80px;
 					width: 80px;
 					text-align: center;
-					border-left: 1px solid @bordercolor;
 					font-size: 24px;
-					-webkit-transition: all 0.4s ease 0s;
-   					transition: all 0.4s ease 0s;
-					&:hover{
-						background: #fff;
-						color: @greycolor;
-					}
 				}
 			}
 			#mega_main_menu {
@@ -2235,12 +2192,12 @@ body.quickview {
 				& > li {
 					list-style: none;
 					
-					&:hover {
+					&: hover {
 						& > a {
 							background-color: #313131 !important;
 						}
 					}
-					&:last-child {
+					&: last-child {
 
 						& > a {
 							//background-color: lighten(@primarycolor, 10%) !important;
@@ -2270,7 +2227,7 @@ body.quickview {
 						-webkit-transition: all 0.4s ease;
 						transition: all 0.4s ease;
 
-						&:hover {
+						&: hover {
 							background-color: #313131;
 							background-image: none;
 						}
@@ -2289,12 +2246,12 @@ body.quickview {
 					& > li {
 						list-style: none;
 						
-						&:hover {
+						&: hover {
 							& > a {
 								background-color: #313131 !important;
 							}
 						}
-						&:last-child {
+						&: last-child {
 
 							& > a {
 								//background-color: lighten(@primarycolor, 10%) !important;
@@ -2324,7 +2281,7 @@ body.quickview {
 							-webkit-transition: all 0.4s ease;
 							transition: all 0.4s ease;
 
-							&:hover {
+							&: hover {
 								background-color: #313131;
 								background-image: none;
 							}
@@ -2388,7 +2345,7 @@ body.quickview {
 						& > li {
 							background: none;
 							
-							&:hover {
+							&: hover {
 								& > a {
 									&.item_link {
 										background-color: @bordercolor;
@@ -2421,10 +2378,10 @@ body.quickview {
 										// background-color: @primarycolor;
 										background-image: none !important;
 										
-										&:before {
+										&: before {
 											display: none;
 										}
-										&:after {
+										&: after {
 											border: none;
 											content: "\f105";
 											display: inline-block;
@@ -2473,13 +2430,13 @@ body.quickview {
 										-webkit-transition: all 0.4s ease;
 										transition: all 0.4s ease;
 									}
-									&:before {
+									&: before {
 										background: none;
 									}
-									&:after {
+									&: after {
 										display: none;
 									}
-									&:hover {
+									&: hover {
 										background-color: @bordercolor;
 										background-image: none;
 									}
@@ -2499,7 +2456,7 @@ body.quickview {
 										border-bottom: 1px solid @bordercolor;
 										width: 100%;
 										
-										&:last-child {
+										&: last-child {
 											border-bottom: none;
 										}
 										a.item_link {
@@ -2523,13 +2480,13 @@ body.quickview {
 												padding-right: 9px;
 												position: static;
 											}
-											&:focus {
+											&: focus {
 												background: none;
 											}
-											&:before {
+											&: before {
 												display: none;
 											}
-											&:hover {
+											&: hover {
 												background: none;
 												
 												.link_text {
@@ -2540,7 +2497,7 @@ body.quickview {
 												}
 											}
 										}
-										&:hover, &.current-menu-ancestor, &.current-menu-item, &.current-product-ancestor {
+										&: hover, &.current-menu-ancestor, &.current-menu-item, &.current-product-ancestor {
 											& > a.item_link {
 												background: none;
 												
@@ -2591,13 +2548,13 @@ body.quickview {
 												padding-right: 9px;
 												position: static;
 											}
-											&:focus {
+											&: focus {
 												background: none;
 											}
-											&:before {
+											&: before {
 												display: none;
 											}
-											&:hover {
+											&: hover {
 												background: none;
 												
 												.link_text {
@@ -2627,10 +2584,10 @@ body.quickview {
 												height: 47px;
 												line-height: 47px;
 											}
-											&:before {
+											&: before {
 												display: none;
 											}
-											&:hover {
+											&: hover {
 												.link_text {
 													color: @primarycolor;
 												}
@@ -2692,7 +2649,7 @@ body.quickview {
 													margin: 0;
 													width: 100%;
 													
-													&:first-child {
+													&: first-child {
 														margin-left: 0;
 													}
 												}
@@ -2709,7 +2666,7 @@ body.quickview {
 														-webkit-transition: -webkit-transform 0.3s ease;
 														transition: transform 0.3s ease;
 													}
-													&:before {
+													&: before {
 														background: #000;
 														content: "";
 														display: block;
@@ -2723,12 +2680,12 @@ body.quickview {
 														width: 100%;
 														z-index: 1;
 													}
-													&:hover {
+													&: hover {
 														img {
 															-webkit-transform: scale(1.05);
 															transform: scale(1.05);
 														}
-														&:before {
+														&: before {
 															opacity: 0.2;
 														}
 													}
@@ -2758,13 +2715,13 @@ body.quickview {
 												padding-right: 9px;
 												position: static;
 											}
-											&:focus {
+											&: focus {
 												background: none;
 											}
-											&:before {
+											&: before {
 												display: none;
 											}
-											&:hover {
+											&: hover {
 												background: none;
 												
 												.link_text {
@@ -2794,10 +2751,10 @@ body.quickview {
 												height: 47px;
 												line-height: 47px;
 											}
-											&:before {
+											&: before {
 												display: none;
 											}
-											&:hover {
+											&: hover {
 												.link_text {
 													color: @primarycolor;
 												}
@@ -2867,7 +2824,7 @@ body.quickview {
 }
 // Footer default
 .footer {
-	background:@footerbg;
+	background: @footerbg;
     float: left;
     width: 100%;
 	
@@ -2896,7 +2853,7 @@ body.quickview {
 	a {
 		color: @footercolor;
 		
-		&:hover {
+		&: hover {
 			color: @primarycolor;
 		}
 	}
@@ -2925,17 +2882,17 @@ body.quickview {
 						font-size: 18px;
 						margin-right: 15px;
 					}
-					&:nth-child(2){
+					&: nth-child(2){
 						i{
 							background: #be9f7a;
 						}
 					}
-					&:nth-child(3){
+					&: nth-child(3){
 						i{
 							background: #b2ccbf;
 						}
 					}
-					&:nth-child(4){
+					&: nth-child(4){
 						i{
 							background: #f1bb7c;
 						}
@@ -2969,7 +2926,7 @@ body.quickview {
 						
 						.wysija-paragraph {
 							float: left;
-							width:100%;
+							width: 100%;
 							
 							.wysija-input {
 								color: @lightgreycolor;
@@ -2977,7 +2934,7 @@ body.quickview {
 								font-style: italic;
 								height: 40px;
 								padding: 0 90px 0 10px;
-								border:1px solid #5f5f5f;
+								border: 1px solid #5f5f5f;
 								background: #4b4b4b;
 								width: 100%;
 							}
@@ -2987,7 +2944,7 @@ body.quickview {
 									border-radius: 5px;
 									position: relative;
 									
-									&:before {
+									&: before {
 										background: #8e2121;
 										border-left: 1px solid #bbbbbb;
 										border-top: 1px solid #bbbbbb;
@@ -3011,13 +2968,13 @@ body.quickview {
 							color: #fff;
 							font-size: 14px;
 							font-weight: bold;
-							height:40px;
+							height: 40px;
 							margin: 0;
 							text-transform: uppercase;
 							-webkit-transition: all 0.3s ease;
 							transition: all 0.3s ease;
 							
-							&:hover {
+							&: hover {
 								background: darken(@primarycolor, 10%);
 							}
 						}
@@ -3028,7 +2985,7 @@ body.quickview {
 	}
 	.footer-bottom {
 		float: left;
-		padding:15px 0;
+		padding: 15px 0;
 		border-top: 1px solid @bordercolor;
 		width: 100%;
 		p {
@@ -3045,7 +3002,7 @@ body.quickview {
 			margin-top: 10px;
 			.social-icons{
 				margin: 0;
-				padding:0;
+				padding: 0;
 				list-style: none;
 				li{
 					display: inline-block;
@@ -3059,10 +3016,10 @@ body.quickview {
 						height: 30px;
 						text-align: center;
 						line-height: 30px;
-						border:2px solid #555555;
+						border: 2px solid #555555;
 						margin-left: 10px;
 						border-radius: 100%;
-						&:hover{
+						&: hover{
 							background: @primarycolor;
 							color: #fff;
 						}
@@ -3077,7 +3034,7 @@ body.quickview {
 			margin: 10px 0 0;
 			a{
 				color: #fff;
-				&:hover{
+				&: hover{
 					color: @primarycolor;
 				}
 			}
@@ -3190,7 +3147,7 @@ body.quickview {
 			color: @greycolor;
 			display: inline-block;
 			font-weight: normal;
-			&:hover {
+			&: hover {
 				color: @primarycolor;
 			}
 		}
@@ -3257,9 +3214,9 @@ body.quickview {
 				text-align: center;
 				line-height: 40px;
 				border: 1px solid @bordercolor;
-				&:hover, &.active {
-					color:#fff;
-					background:@primarycolor;
+				&: hover, &.active {
+					color: #fff;
+					background: @primarycolor;
 					border-color: @primarycolor;
 				}
 			}
@@ -3313,7 +3270,7 @@ body.quickview {
 							b {
 								background: none;
 								
-								&:before {
+								&: before {
 									content: "\f107";
 									font-family: FontAwesome;
 									font-size: 16px;
@@ -3385,14 +3342,14 @@ body.quickview {
 							font-weight: 700;
 							background-color: @primarycolor;
 						}
-						&:hover {
+						&: hover {
 							color: #fff;
 							background-color: @primarycolor;
 						}
 						&.next, &.prev {
 							position: relative;
 							
-							&:before {
+							&: before {
 								background: #fff;
 								content: "\f054";
 								font-family: FontAwesome;
@@ -3404,12 +3361,12 @@ body.quickview {
 								top: 0;
 								width: 100%;
 							}
-							&:hover {
+							&: hover {
 								color: @headingcolor;
 							}
 						}
 						&.prev {
-							&:before {
+							&: before {
 								content: "\f053";
 							}
 						}
@@ -3455,7 +3412,7 @@ body.quickview {
 					text-decoration: underline;
 					text-transform: uppercase;
 					
-					&:hover {
+					&: hover {
 						text-decoration: none;
 					}
 				}
@@ -3480,9 +3437,9 @@ body.quickview {
 				position: relative;
 				width: 100%;
 				border: 1px solid @bordercolor;
-				padding:8px 10px;
+				padding: 8px 10px;
 				text-align: left;
-				&:hover {
+				&: hover {
 					border: 1px solid @primarycolor;
 					.product-image {
 						a {
@@ -3551,7 +3508,7 @@ body.quickview {
 							color: @greycolor;
 							font-size: 17px;
 							margin-left: 10px;
-							font-weight:500;
+							font-weight: 500;
 							text-decoration: line-through;
 						}
 					}
@@ -3590,15 +3547,15 @@ body.quickview {
 								line-height: 34px;
 								background: none;
 								border: 1px solid @bordercolor;
-								color:@textcolor;
+								color: @textcolor;
 								font-size: 12px;
 								padding: 0 10px 0 0;
-								&:before{
+								&: before{
 									content: "\f07a";
 									font-family: FontAwesome;
 									margin: 0 5px 0 10px;
 								}
-								&:hover, &.added {
+								&: hover, &.added {
 									background: @primarycolor;
 									border-color: @primarycolor;
 									color: #fff;
@@ -3636,11 +3593,11 @@ body.quickview {
 								    text-indent: -9999px;
 								    border: 1px solid @bordercolor;
 								    display: inline-block;
-								    margin:0 7px 5px 0;
+								    margin: 0 7px 5px 0;
 								    border-radius: 0;
-								    color:@textcolor;
-								    &:before{
-										content:"\f08a";
+								    color: @textcolor;
+								    &: before{
+										content: "\f08a";
 										font-family: FontAwesome;
 										font-size: 15px;
 										text-indent: 0;
@@ -3651,7 +3608,7 @@ body.quickview {
 										bottom: 0;
 										margin: auto;
 								    }
-								&:hover {
+								&: hover {
 									color: #fff;
 									background: @primarycolor;
 									border-color: @primarycolor;
@@ -3660,7 +3617,7 @@ body.quickview {
 							.yith-wcwl-wishlistexistsbrowse, .yith-wcwl-wishlistaddedbrowse {
 								a {
 									color: @primarycolor;
-									&:hover {
+									&: hover {
 										color: #fff;
 										background: @primarycolor;
 										border-color: @primarycolor;
@@ -3681,12 +3638,12 @@ body.quickview {
 							    text-indent: -9999px;
 							    border: 1px solid @bordercolor;
 							    display: inline-block;
-							    margin:0 0 5px 0;
+							    margin: 0 0 5px 0;
 							    padding: 0;
 							    border-radius: 0;
 							    background: none;
-							    color:@textcolor;
-							    &:before{
+							    color: @textcolor;
+							    &: before{
 									content: "\f080";
 									font-family: FontAwesome;
 									font-size: 15px;
@@ -3699,14 +3656,14 @@ body.quickview {
 									margin: auto;
 							    }
 								
-								&:hover {
+								&: hover {
 									color: #fff;
 									background: @primarycolor;
 									border-color: @primarycolor;
 								}
 								&.added {
 									color: @primarycolor;
-									&:hover {
+									&: hover {
 										color: #fff;
 										background: @primarycolor;
 										border-color: @primarycolor;
@@ -3721,7 +3678,7 @@ body.quickview {
 		&.grid-view {
 			.item-col {
 				.product-wrapper {
-					&:hover {
+					&: hover {
 						.quickviewbtn{
 							.quickview{
 								-moz-transform: translateY(0px);
@@ -3760,10 +3717,10 @@ body.quickview {
 							transform: translateY(-50px);
 							visibility: hidden;
 							opacity: 0;
-							&:hover{
+							&: hover{
 								background: darken(@primarycolor, 10%);
 							}
-						    &:before{
+						    &: before{
 								font-size: 15px;
 								text-indent: 0;
 								position: absolute;
@@ -3804,7 +3761,7 @@ body.quickview {
 							.actions{
 								.add-to-links{
 									.quickviewbtn{
-										display:block;
+										display: block;
 										float: left;
 										position: relative;
 										.quickview{
@@ -3816,17 +3773,17 @@ body.quickview {
 										    text-indent: -9999px;
 										    border: 1px solid @bordercolor;
 										    display: inline-block;
-										    margin:0 0 5px 7px;
+										    margin: 0 0 5px 7px;
 										    padding: 0;
 										    border-radius: 0;
 										    background: none;
-										    color:@textcolor;
-										    &:hover {
+										    color: @textcolor;
+										    &: hover {
 												color: #fff;
 												background: @primarycolor;
 												border-color: @primarycolor;
 											}
-										    &:before{
+										    &: before{
 												font-size: 15px;
 												text-indent: 0;
 												position: absolute;
@@ -3843,13 +3800,13 @@ body.quickview {
 						}
 					}
 					.product-name {
-						font-size:25px;
+						font-size: 25px;
 					}
 					.ratings{
 						margin: 10px 0;
 					}
 					.product-desc {
-						line-height:20px;
+						line-height: 20px;
 						margin: 0 0 30px;
 					}
 				}
@@ -3886,14 +3843,14 @@ body.quickview {
 						right: 25px;
 						left: auto;
 					}
-					&:hover{
+					&: hover{
 						border-color: @bordercolor;
 					}
-					&:before {
+					&: before {
 						display: none;
 					}
 				}
-				&:hover{
+				&: hover{
 					button.slick-prev{
 						left: 25px;
 					}
@@ -3950,7 +3907,7 @@ body.quickview {
 					-webkit-transition: all 0.4s ease;
 					transition: all 0.4s ease;
 					
-					&:hover {
+					&: hover {
 						border: 1px solid darkien(@primarycolor, 10%);
 						color: darkien(@primarycolor, 10%);
 					}
@@ -3994,7 +3951,7 @@ body.quickview {
 					}
 				}
 				#slider-prev, #slider-next {
-					background:none;
+					background: none;
 					border: 1px solid @bordercolor;
 					display: block !important;
 					font-size: 22px;
@@ -4007,7 +3964,7 @@ body.quickview {
 					transition: all 0.4s ease;
 					top: 40px;
 					left: 15px;
-					&:hover {
+					&: hover {
 						background: @primarycolor;
 						color: #fff;
 					}
@@ -4030,7 +3987,7 @@ body.quickview {
 			width: 100%;
 			padding: 0 20px;
 			h1.product_title {
-				font-size:24px;
+				font-size: 24px;
 				margin: 0 0 10px;
 			}
 			.roadtip{
@@ -4040,7 +3997,7 @@ body.quickview {
 				margin: 0 0 10px;
 				.price {
 					color: @primarycolor;
-					font-size:24px;
+					font-size: 24px;
 					font-weight: 500;
 					margin: 0;
 					.special-price {
@@ -4049,7 +4006,7 @@ body.quickview {
 					.old-price {
 						display: inline-block;
 						color: @greycolor;
-						font-size:18px;
+						font-size: 18px;
 						text-decoration: line-through;
 						
 						.amount {
@@ -4121,7 +4078,7 @@ body.quickview {
 						float: left;
 						margin-top: 10px;
 						
-						&:hover {
+						&: hover {
 							color: @primarycolor;
 						}
 					}
@@ -4195,7 +4152,7 @@ body.quickview {
 					background: @primarycolor;
 					font-size: 24px;
 					font-weight: 700;
-					&:hover{
+					&: hover{
 						background: @greycolor;
 					}
 				}
@@ -4229,13 +4186,13 @@ body.quickview {
 				text-transform: capitalize;
 				font-weight: normal;
 				color: @textcolor;
-				&:before{
+				&: before{
 					content: "\f080";
 					font-family: FontAwesome;
 					margin-right: 5px;
 				}
-				&:hover{
-					background-color:@primarycolor;
+				&: hover{
+					background-color: @primarycolor;
 					color: #fff;
 					border-color: @primarycolor;
 				}
@@ -4255,13 +4212,13 @@ body.quickview {
 					padding: 0 10px;
 					border-radius: 0;
 					font-weight: normal;
-					&:before{
+					&: before{
 						content: "\f08a";
 						font-family: FontAwesome;
 						margin-right: 5px;
 					}
-					&:hover{
-						background-color:@primarycolor;
+					&: hover{
+						background-color: @primarycolor;
 						color: #fff;
 						border-color: @primarycolor;
 					}
@@ -4291,7 +4248,7 @@ body.quickview {
 						font-weight: 400;
 						text-transform: none;
 					}
-					a:hover {
+					a: hover {
 						color: @primarycolor;
 					}
 				}
@@ -4320,9 +4277,9 @@ body.quickview {
 				ul.tabs {
 					float: left;
 					margin: 0;
-					width:25%;
+					width: 25%;
 					padding: 0;
-					&:before {
+					&: before {
 						display: none;
 					}
 					
@@ -4336,10 +4293,10 @@ body.quickview {
 						line-height: 1;
 						list-style: none;
 						margin: 0;
-						padding:15px;
+						padding: 15px;
 						border-bottom: 1px solid @bordercolor;
 						text-align: right;
-						&:before, &:after {
+						&: before, &: after {
 							display: none;
 						}
 						a {
@@ -4350,7 +4307,7 @@ body.quickview {
 							text-decoration: none;
 							text-shadow: none;
 							text-transform: uppercase;
-							&:hover {
+							&: hover {
 								color: @primarycolor;
 							}
 						}
@@ -4369,7 +4326,7 @@ body.quickview {
 					float: left;
 					margin: 0;
 					padding: 20px;
-					width:65%;
+					width: 65%;
 					min-height: 195px;
 					border-left: 1px solid @bordercolor;
 					h2 {
@@ -4435,7 +4392,7 @@ body.quickview {
 										margin-left: 80px;
 										position: relative;
 										
-										&:before {
+										&: before {
 											background: #fff;
 											border-bottom: 1px solid @bordercolor;
 											border-left: 1px solid @bordercolor;
@@ -4490,38 +4447,38 @@ body.quickview {
 										border: none;
 										line-height: 14px;
 										
-										&:after {
+										&: after {
 											color: @lightgreycolor;
 											font-family: FontAwesome;
 											font-weight: normal;
 										}
 										&.star-1 {
-											&:after {
+											&: after {
 												content: "\f006";
 											}
 										}
 										&.star-2 {
-											&:after {
+											&: after {
 												content: "\f006\f006";
 											}
 										}
 										&.star-3 {
-											&:after {
+											&: after {
 												content: "\f006\f006\f006";
 											}
 										}
 										&.star-4 {
-											&:after {
+											&: after {
 												content: "\f006\f006\f006\f006";
 											}
 										}
 										&.star-5 {
-											&:after {
+											&: after {
 												content: "\f006\f006\f006\f006\f006";
 											}
 										}
-										&.active, &:hover {
-											&:after {
+										&.active, &: hover {
+											&: after {
 												color: @ratecolor;
 											}
 										}
@@ -4551,7 +4508,7 @@ body.quickview {
 					padding: 0 0 10px;
 					font-size: 18px;
 					font-weight: 500;
-					&:after{
+					&: after{
 						content: "";
 						position: absolute;
 						width: 100px;
@@ -4593,7 +4550,7 @@ body.quickview {
 					padding: 0 0 10px;
 					font-size: 18px;
 					font-weight: 500;
-					&:after{
+					&: after{
 						content: "";
 						position: absolute;
 						width: 100px;
@@ -4637,7 +4594,7 @@ body.quickview {
 							}
 						}
 					}
-					&:last-child{
+					&: last-child{
 						border-bottom: 0;
 						margin: 0;
 						padding: 0;
@@ -4663,7 +4620,7 @@ body.quickview {
 			text-align: center;
 			text-transform: uppercase;
 			
-			&:after {
+			&: after {
 				background: @primarycolor;
 				bottom: 0;
 				content: "";
@@ -4706,7 +4663,7 @@ body.quickview {
 					margin: 0;
 					padding-left: 40px;
 					
-					&:first-child {
+					&: first-child {
 						padding-left: 0;
 					}
 					a {
@@ -4746,7 +4703,7 @@ body.quickview {
 				font-size: 70px;
 				position: relative;
 				
-				&:after {
+				&: after {
 					background: #fff;
 					content: "";
 					height: 1px;
@@ -4772,7 +4729,7 @@ body.quickview {
 					margin: 0;
 					padding-left: 40px;
 					
-					&:first-child {
+					&: first-child {
 						padding-left: 0;
 					}
 					a {
@@ -4781,7 +4738,7 @@ body.quickview {
 						font-family: @headingfont;
 						font-weight: 700;
 						
-						&:hover {
+						&: hover {
 							color: @primarycolor;
 						}
 					}
@@ -4988,7 +4945,7 @@ body.quickview {
 						text-align: center;
 					}
 				}
-				.cart_item:hover {
+				.cart_item: hover {
 					background: lighten(@bordercolor, 8%);
 				}
 				a.remove {
@@ -4997,7 +4954,7 @@ body.quickview {
 					display: inline-block;
 					font-size: 20px;
 					
-					&:hover {
+					&: hover {
 						color: @primarycolor !important;
 					}
 				}
@@ -5160,7 +5117,7 @@ body.quickview {
 						padding: 0 30px;
 						text-transform: none;
 						
-						&:hover {
+						&: hover {
 							background: darken(@primarycolor, 10%);
 						}
 					}
@@ -5378,7 +5335,7 @@ body.quickview {
 							text-shadow: none;
 							width: 100%;
 							
-							&:after {
+							&: after {
 								display: none;
 							}
 						}
@@ -5399,7 +5356,7 @@ body.quickview {
 							padding: 0;
 							width: 100%;
 							
-							&:hover {
+							&: hover {
 								background: darken(@primarycolor, 10%);
 							}
 						}
@@ -5426,7 +5383,7 @@ body.quickview {
 					color: #fff;
 					margin-left: 6px;
 					
-					&:hover {
+					&: hover {
 						background: darken(@headingcolor, 10%);
 					}
 				}
@@ -5466,13 +5423,13 @@ body.quickview {
 				}
 			}
 			.checkout-done {
-				& > p:first-child {
+				& > p: first-child {
 					font-family: @headingfont;
 					font-size: 20px;
 					font-weight: 700;
 					line-height: 1.35;
 					
-					&:before {
+					&: before {
 						content: "\f00c";
 						display: inline-block;
 						font-family: FontAwesome;
@@ -5759,7 +5716,7 @@ body.quickview {
 							padding: 10px;
 							position: relative;
 							
-							:before {
+							: before {
 								background: #fff;
 								border-bottom: 1px solid #ececec;
 								border-left: 1px solid #ececec;
@@ -5809,7 +5766,7 @@ body.quickview {
 					position: relative;
 					text-indent: -9999px;
 					
-					&:after {
+					&: after {
 						content: "\f054";
 						display: inline-block;
 						font-family: FontAwesome;
@@ -5823,7 +5780,7 @@ body.quickview {
 					}
 				}
 				.prev {
-					&:after {
+					&: after {
 						content: "\f053";
 					}
 				}
@@ -6040,7 +5997,7 @@ body.quickview {
 			text-align: left;
 			text-transform: none;
 			padding: 0;
-			&:after {
+			&: after {
 				display: none;
 			}
 		}
@@ -6090,7 +6047,7 @@ body.quickview {
 			a {
 				color: @greycolor;
 				
-				&:hover {
+				&: hover {
 					color: @primarycolor;
 				}
 			}
@@ -6109,7 +6066,7 @@ body.quickview {
 			a {
 				color: @greycolor;
 				
-				&:hover {
+				&: hover {
 					color: @primarycolor;
 				}
 			}
@@ -6143,7 +6100,7 @@ body.quickview {
 					list-style: none;
 					position: relative;
 					
-					&:first-child {
+					&: first-child {
 						border-left: none;
 					}
 					.roadtip {
@@ -6157,27 +6114,27 @@ body.quickview {
 						text-align: center;
 						
 						&.facebook {
-							&:hover {
+							&: hover {
 								color: #3B579D;
 							}
 						}
 						&.twitter {
-							&:hover {
+							&: hover {
 								color: #3ACAFF;
 							}
 						}
 						&.pinterest {
-							&:hover {
+							&: hover {
 								color: #CB2027;
 							}
 						}
 						&.gplus {
-							&:hover {
+							&: hover {
 								color: #D11717;
 							}
 						}
 						&.linkedin {
-							&:hover {
+							&: hover {
 								color: #0097BD;
 							}
 						}
@@ -6210,7 +6167,7 @@ body.quickview {
 		.moretag {
 			color: @primarycolor;
 			
-			&:hover {
+			&: hover {
 				color: @primarycolor;
 			}
 		}
@@ -6218,7 +6175,7 @@ body.quickview {
 			.newer {
 				float: left;
 				
-				a:before {
+				a: before {
 					content: "\f177";
 					display: inline-block;
 					font-family: FontAwesome;
@@ -6229,7 +6186,7 @@ body.quickview {
 			.older {
 				float: right;
 
-				a:after {
+				a: after {
 					content: "\f178";
 					display: inline-block;
 					font-family: FontAwesome;
@@ -6247,7 +6204,7 @@ body.quickview {
 			text-align: center;
 			width: 100%;
 			
-			&:before {
+			&: before {
 				background: @primarycolor;
 				content: "";
 				display: block;
@@ -6267,7 +6224,7 @@ body.quickview {
 				font-size: 12px;
 				padding: 0 8px;
 				
-				&:hover {
+				&: hover {
 					color: @darkcolor;
 				}
 				&.current {
@@ -6290,7 +6247,7 @@ body.quickview {
 				padding: 0 8px;
 				text-transform: uppercase;
 				
-				&:hover {
+				&: hover {
 					color: @primarycolor;
 					border-bottom: 2px solid @primarycolor;
 				}
@@ -6339,7 +6296,7 @@ body.quickview {
 							padding: 10px;
 							position: relative;
 							
-							:before {
+							: before {
 								background: #fff;
 								border-bottom: 1px solid #ececec;
 								border-left: 1px solid #ececec;
@@ -6389,7 +6346,7 @@ body.quickview {
 					position: relative;
 					text-indent: -9999px;
 					
-					&:after {
+					&: after {
 						content: "\f054";
 						display: inline-block;
 						font-family: FontAwesome;
@@ -6403,7 +6360,7 @@ body.quickview {
 					}
 				}
 				.prev {
-					&:after {
+					&: after {
 						content: "\f053";
 					}
 				}
@@ -6453,7 +6410,7 @@ body.quickview {
 			a {
 				color: @greycolor;
 				
-				&:hover {
+				&: hover {
 					color: @primarycolor;
 				}
 			}
@@ -6479,7 +6436,7 @@ body.quickview {
 			-webkit-transition: all 0.4s ease;
 			transition: all 0.4s ease;
 			
-			&:hover {
+			&: hover {
 				background: @greycolor;
 			}
 		}
@@ -6532,14 +6489,14 @@ body.quickview {
 					.entry-title {
 						color: @headingcolor;
 						
-						&:after {
+						&: after {
 							max-width: 180px;
 						}
 					}
 				}
 			}
 			.comments-area {
-				max-width:60%;
+				max-width: 60%;
 				float: right;
 				padding: 0 50px;
 			}
@@ -6561,13 +6518,13 @@ body.quickview {
 			}
 		}
 		.contact-desc .wpb_text_column {
-			color:#fff;
+			color: #fff;
 			line-height: 2;
 			padding: 0 90px;
 			h2{
 				color: #fff;
 				font-weight: bold;
-				font-size:70px;
+				font-size: 70px;
 				padding: 10px;
 				margin-bottom: 10px;
 				background: @primarycolor;
@@ -6580,7 +6537,7 @@ body.quickview {
 			display: block;
 			margin: 0 -10px;
 			
-			&:after {
+			&: after {
 				clear: both;
 				content: "";
 				display: table;
@@ -6641,7 +6598,7 @@ body.quickview {
 			padding: 0 36px;
 			text-transform: uppercase;
 			
-			&:hover {
+			&: hover {
 				background: @greycolor;
 			}
 		}
@@ -6693,7 +6650,7 @@ body.quickview {
 							padding: 10px;
 							position: relative;
 							
-							:before {
+							: before {
 								background: #fff;
 								border-bottom: 1px solid #ececec;
 								border-left: 1px solid #ececec;
@@ -6714,10 +6671,10 @@ body.quickview {
 								.comment-reply-link {
 									color: #999;
 									
-									&:hover {
+									&: hover {
 										color: @primarycolor;
 									}
-									&:after {
+									&: after {
 										content: "\f112";
 										display: inline-block;
 										font-family: FontAwesome;
@@ -6823,7 +6780,7 @@ body.quickview {
 					background: @primarycolor;
 					color: #fff;
 					font-size: 18px;
-					&:hover{
+					&: hover{
 						background: darken(@primarycolor, 10%);
 					}
 				}
@@ -6848,7 +6805,7 @@ body.quickview {
 					position: relative;
 					display: inline-block;
 					padding: 0 0 5px;
-					&:after{
+					&: after{
 						content: "";
 						height: 2px;
 						width: 110%;
@@ -6869,7 +6826,7 @@ body.quickview {
 			}
 			ul.product-categories, ul.menu {
 				li{
-					&:before{
+					&: before{
 						content: "\f111";
 						font: normal normal normal 12px/1 FontAwesome;
 						margin-right: 10px;
@@ -6901,7 +6858,7 @@ body.quickview {
 						padding-bottom: 25px;
 						position: relative;
 						
-						&:after {
+						&: after {
 							background: @primarycolor;
 							bottom: 0;
 							content: "";
@@ -6970,7 +6927,7 @@ body.quickview {
 			padding: 0 0 10px;
 			position: relative;
 			
-			&:after {
+			&: after {
 				background: @primarycolor;
 				bottom: 0;
 				content: "";
@@ -7015,7 +6972,7 @@ body.quickview {
 			a {
 				font-size: 13px;
 				
-				&:hover {
+				&: hover {
 					color: @primarycolor;
 				}
 			}
@@ -7032,7 +6989,7 @@ body.quickview {
 					color: #fff;
 					padding: 5px 10px;
 					
-					&:before {
+					&: before {
 						background: none;
 						color: #fff;
 						content: "\f00d";
@@ -7040,7 +6997,7 @@ body.quickview {
 						margin-right: 8px;
 						top: -2px;
 					}
-					&:hover {
+					&: hover {
 						background: @greycolor;
 					}
 				}
@@ -7053,7 +7010,7 @@ body.quickview {
 		margin: 0 0 40px;
 		width: 100%;
 		
-		&:last-child {
+		&: last-child {
 			margin-bottom: 0;
 		}
 		.widget_content {
@@ -7089,11 +7046,11 @@ body.quickview {
 					background: none;
 					cursor: default;
 					
-					&:hover {
+					&: hover {
 						background: none;
 					}
 				}
-				&:hover {
+				&: hover {
 					background: #eee;
 				}
 			}
@@ -7103,7 +7060,7 @@ body.quickview {
 			.su-spoiler {
 				border-bottom: 1px solid @bordercolor;
 				
-				&:hover {
+				&: hover {
 					.su-spoiler-icon {
 						background: @primarycolor;
 					}
@@ -7170,7 +7127,7 @@ body.quickview {
 			}
 			.price_slider_wrapper {
 				float: left;
-				margin-top:30px;
+				margin-top: 30px;
 				padding: 0;
 				width: 75%;
 				
@@ -7198,7 +7155,7 @@ body.quickview {
 						background: #fff;
 						border: 3px solid @primarycolor;
 						
-						&:last-child {
+						&: last-child {
 							margin-left: -9px;
 						}
 						&.ui-state-hover {
@@ -7280,7 +7237,7 @@ body.quickview {
 				
 				li {
 					a {
-						&:before {
+						&: before {
 							display: none;
 						}
 					}
@@ -7299,7 +7256,7 @@ body.quickview {
 						text-indent: 9999px;
 						width: 18px;
 						
-						&:after {
+						&: after {
 							content: "\f00d";
 							display: inline-block;
 							font-family: FontAwesome;
@@ -7310,7 +7267,7 @@ body.quickview {
 							top: 3px;
 							width: 100%;
 						}
-						&:hover {
+						&: hover {
 							color: @primarycolor !important;
 						}
 					}
@@ -7413,13 +7370,13 @@ body.quickview {
 					margin: 20px 0 0;
 					padding: 15px 0 0;
 					
-					&:first-child {
+					&: first-child {
 						border: none;
 						margin: 0;
 						padding: 0;
 					}
 					a {
-						&:before {
+						&: before {
 							display: none;
 						}
 					}
@@ -7436,7 +7393,7 @@ body.quickview {
 								border: 2px solid transparent;
 								display: inline-block;
 								
-								&:hover {
+								&: hover {
 									border: 2px solid @primarycolor;
 									padding-left: 0;
 								}
@@ -7451,7 +7408,7 @@ body.quickview {
 								margin: 0 0 5px;
 								
 								a {
-									&:hover {
+									&: hover {
 										color: @primarycolor;
 										padding-left: 0;
 									}
@@ -7470,7 +7427,7 @@ body.quickview {
 								font-family: @bodyfont;
 								font-size: 11px;
 									
-								&:hover {
+								&: hover {
 									color: @primarycolor;
 									padding-left: 0;
 								}
@@ -7499,7 +7456,7 @@ body.quickview {
 						line-height: 12px;
 						width: 100%;
 						
-						&:before {
+						&: before {
 							content: "\f073";
 							display: inline-block;
 							font-family: FontAwesome;
@@ -7554,7 +7511,7 @@ body.quickview {
 		opacity: 1;
 		visibility: visible;
 	}
-	&:hover {
+	&: hover {
 		background: url("../images/back-top.png") no-repeat center center @primarycolor;
 	}
 }
@@ -7597,7 +7554,7 @@ body.quickview {
 		-webkit-transition: all 0.3s ease;
 		transition: all 0.3s ease;
 
-		&:hover {
+		&: hover {
 			color: @primarycolor;
 		}
 		&.active {
@@ -7605,7 +7562,7 @@ body.quickview {
 			box-shadow: none;
 			color: #fff;
 		}
-		&:active, &:focus {
+		&: active, &: focus {
 			box-shadow: none;
 			outline: none;
 		}
@@ -7625,7 +7582,7 @@ body.quickview {
 			overflow: hidden;
 			position: relative;
 			
-			&:after {
+			&: after {
 				background: url('../images/portfolio-shadow.png') repeat-x center bottom;
 				content: "";
 				height: 100%;
@@ -7670,12 +7627,12 @@ body.quickview {
 				-webkit-transition: all 0.5s ease;
 				transition: all 0.5s ease;
 			}
-			&:hover {
+			&: hover {
 				img {
 					-webkit-transform: scale(1.05);
 					transform: scale(1.05);
 				}
-				&:after {
+				&: after {
 					opacity: 1;
 				}
 				.project-info {
@@ -7692,7 +7649,7 @@ body.quickview {
 	text-align: center;
     width: 100%;
 	
-	&:before {
+	&: before {
 		background: @primarycolor;
 		content: "";
 		display: block;
@@ -7723,7 +7680,7 @@ body.quickview {
 				font-size: 12px;
 				line-height: 34px;
 				
-				&:hover {
+				&: hover {
 					color: @darkcolor;
 				}
 				&.current {
@@ -7733,7 +7690,7 @@ body.quickview {
 				&.next, &.prev {
 					position: relative;
 					
-					&:before {
+					&: before {
 						background: #fff;
 						content: "\f054";
 						font-family: FontAwesome;
@@ -7745,12 +7702,12 @@ body.quickview {
 						top: 0;
 						width: 100%;
 					}
-					&:hover {
+					&: hover {
 						color: @primarycolor;
 					}
 				}
 				&.prev {
-					&:before {
+					&: before {
 						content: "\f053";
 					}
 				}
@@ -7774,7 +7731,7 @@ body.quickview {
 				overflow: hidden;
 				position: relative;
 				
-				&:after {
+				&: after {
 					background: url('../images/portfolio-shadow.png') repeat-x center bottom;
 					content: "";
 					height: 100%;
@@ -7819,12 +7776,12 @@ body.quickview {
 					-webkit-transition: all 0.5s ease;
 					transition: all 0.5s ease;
 				}
-				&:hover {
+				&: hover {
 					img {
 						-webkit-transform: scale(1.05);
 						transform: scale(1.05);
 					}
-					&:after {
+					&: after {
 						opacity: 1;
 					}
 					.project-info {
@@ -7848,7 +7805,7 @@ body.quickview {
 					-webkit-transition: all 0.4s ease;
 					transition: all 0.4s ease;
 				}
-				&:hover {
+				&: hover {
 					img {
 						-webkit-transform: scale(1.2) rotate(3deg);
 						transform: scale(1.2) rotate(3deg);
@@ -7909,43 +7866,43 @@ body.quickview {
 							width: 48px;
 							
 							&.facebook {
-								&:hover {
+								&: hover {
 									color: #3B579D;
 									border: 2px solid #3B579D;
 								}
 							}
 							&.twitter {
-								&:hover {
+								&: hover {
 									color: #3ACAFF;
 									border: 2px solid #3ACAFF;
 								}
 							}
 							&.instagram {
-								&:hover {
+								&: hover {
 									color: #99755B;
 									border: 2px solid #99755B;
 								}
 							}
 							&.pinterest {
-								&:hover {
+								&: hover {
 									color: #CB2027;
 									border: 2px solid #CB2027;
 								}
 							}
 							&.tumblr {
-								&:hover {
+								&: hover {
 									color: #304E6C;
 									border: 2px solid #304E6C;
 								}
 							}
 							&.google-plus {
-								&:hover {
+								&: hover {
 									color: #D11717;
 									border: 2px solid #D11717;
 								}
 							}
 							&.linkedin {
-								&:hover {
+								&: hover {
 									color: #0097BD;
 									border: 2px solid #0097BD;
 								}
@@ -7977,7 +7934,7 @@ body.quickview {
 					text-transform: uppercase;
 					width: 100%;
 					
-					&:after {
+					&: after {
 						display: none;
 					}
 				}
@@ -8003,7 +7960,7 @@ body.quickview {
 				a {
 					color: @primarycolor;
 					
-					&:hover {
+					&: hover {
 						color: @textcolor;
 					}
 				}
@@ -8060,7 +8017,7 @@ body.quickview {
 					-webkit-transition: all 0.8s ease;
 					transition: all 0.8s ease;
 				}
-				&:hover {
+				&: hover {
 					.shadow {
 						width: 100%;
 					}
