@@ -1,5 +1,7 @@
 /* Global style of theme */
 
+@import 'variables.less';
+
 //Page layout
 .wrapper {
     margin: 0 auto;
@@ -236,7 +238,7 @@
 	text-align: center;
 	float: left;
 	padding: 12px 20px 12px 0;
-	border-right: 1px solid @borderheader;
+	border-right: 1px solid @bordercolor;
 	a {
 		display: inline-block;
 		max-width: 100%;
@@ -998,7 +1000,7 @@ body.quickview {
 		float: right;
 		cursor: pointer;
 		text-align: center;
-		border-right: 1px solid @borderheader;
+		border-right: 1px solid @bordercolor;
 		-webkit-transition: all 0.4s ease 0s;
    		 transition: all 0.4s ease 0s;
 		&:hover{
@@ -1052,7 +1054,7 @@ body.quickview {
 		.currency{
 			select{
 				background: transparent;
-				border: 1px solid @borderheader;
+				border: 1px solid @bordercolor;
 				border-top: 0;
 				border-left: 0;
 				height: 40px;
@@ -1082,7 +1084,7 @@ body.quickview {
 					background: none;
 					line-height: 40px;
 					border: 0;
-					border-right: 1px solid @borderheader;
+					border-right: 1px solid @bordercolor;
 					color: #fff;
 					font-size: 13px;
 					padding-right: 5px;
@@ -1153,8 +1155,8 @@ body.quickview {
 				font-size: 20px;
 				cursor: pointer;
 				color: #fff;
-				border-right: 1px solid @borderheader;
-				border-left: 1px solid @borderheader;
+				border-right: 1px solid @bordercolor;
+				border-left: 1px solid @bordercolor;
 				-webkit-transition: all 0.4s ease 0s;
    				 transition: all 0.4s ease 0s;
 				&:hover{
@@ -1533,7 +1535,7 @@ body.quickview {
 		float: left;
 		min-height:50px;
 		width: 100%;
-		background: @bgheader;
+		background: @headerbg;
 		.horizontal-menu {
 			float: left;
 			padding: 21px 0 5px 15px;
@@ -2202,15 +2204,15 @@ body.quickview {
 				padding-left: 18px;
 				text-transform: uppercase;
 				width: 100%;
-				border-right: 1px solid @borderheader;
-				border-left: 1px solid @borderheader;
+				border-right: 1px solid @bordercolor;
+				border-left: 1px solid @bordercolor;
 				i {
 					float: right;
 					line-height: 80px;
 					height: 80px;
 					width: 80px;
 					text-align: center;
-					border-left: 1px solid @borderheader;
+					border-left: 1px solid @bordercolor;
 					font-size: 24px;
 					-webkit-transition: all 0.4s ease 0s;
    					transition: all 0.4s ease 0s;
@@ -2440,7 +2442,7 @@ body.quickview {
 									background-color: #fff;
 									background-image: none;
 									border-bottom: 1px solid @bordercolor;
-									color: @colorvmenu;
+									color: @vmenucolor;
 									display: block;
 									height: 48px;
 									line-height: 47px;
@@ -2453,7 +2455,7 @@ body.quickview {
 										height: 47px !important;
 										line-height: 47px !important;
 										padding-right: 15px;
-										color: @colorvmenu;
+										color: @vmenucolor;
 									}
 									.link_content {
 										height: 47px !important;
@@ -2461,7 +2463,7 @@ body.quickview {
 										margin: 0 !important;
 									}
 									.link_text {
-										color: @colorvmenu;
+										color: @vmenucolor;
 										font-family: @menufont;
 										font-size: 13px;
 										font-weight: bold;
@@ -2865,7 +2867,7 @@ body.quickview {
 }
 // Footer default
 .footer {
-	background:@bgfooter;
+	background:@footerbg;
     float: left;
     width: 100%;
 	
@@ -2943,7 +2945,7 @@ body.quickview {
 		}
 		.container-fluid{
 			.row > div{
-				border-right: 1px solid @borderfooter;
+				border-right: 1px solid @bordercolor;
 			}
 		}
 		.widget-payment{
@@ -3027,7 +3029,7 @@ body.quickview {
 	.footer-bottom {
 		float: left;
 		padding:15px 0;
-		border-top: 1px solid @borderfooter;
+		border-top: 1px solid @bordercolor;
 		width: 100%;
 		p {
 			margin: 0;
@@ -6790,7 +6792,7 @@ body.quickview {
 			padding: 0 0 60px;
 			h2{
 				color: #fff;
-				background: @bgfooter;
+				background: @footerbg;
 				margin: -1px -1px 0 -1px;
 				padding: 6px 10px;
 			}

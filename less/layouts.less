@@ -1,5 +1,7 @@
 /* Layouts */
 
+@import 'variables.less';
+
 //Home Blocks
 .heightzero {
     height: 0px;
@@ -32,54 +34,6 @@
 	.vc_column_container{
 		padding-right: 0;
 		padding-left: 0;
-	}
-}
-.header-container {
-	&.layout2{
-		.header{
-			border-bottom: 1px solid @borderheader;
-		}
-		.search-switcher{
-			position: relative;
-			width: 80px;
-			height: 80px;
-			float: right;
-			cursor: pointer;
-			text-align: center;
-			border-left: 1px solid @borderheader;
-			-webkit-transition: all 0.4s ease 0s;
-			transition: all 0.4s ease 0s;
-			&:hover{
-				background: @submenubg;
-			}
-			&:before{
-				content: "\f002";
-				font-family: FontAwesome;
-				line-height: 80px;
-				font-size: 24px;
-				color: #fff;
-			}
-			.header-search{
-				min-width: 500px;
-				margin: 0;
-				text-align: left;
-				position: absolute;
-				right: 0;
-				top: 120%;
-				opacity: 0;
-				visibility: hidden;
-				-webkit-transition: all 0.4s ease 0s;
-				transition: all 0.4s ease 0s;
-
-			}
-			&:hover{
-				.header-search{
-					top: 100%;
-					opacity: 1;
-					visibility: visible;
-				}
-			}
-		}
 	}
 }
 
@@ -716,7 +670,6 @@
 			font-size: 14px;
 			text-transform: uppercase;
 			padding: 20px 10px;
-			background: @bgelectronic;
 			font-weight: 700;
 			line-height: 27px;
 			margin-bottom: 0;
@@ -752,7 +705,6 @@
 						color: @greycolor;
 					}
 					&:hover{
-						background: @bgelectronic;
 						color: #fff;
 						&:before{
 							color: #fff;
@@ -763,41 +715,41 @@
 		}
 		&.skin1{
 			.widgettitle{
-				background: @bgfashion;
+
 			}
 			ul li a{
 				&:hover{
-					background: @bgfashion;
+
 				}
 			}
 		}
 		&.skin2{
 			.widgettitle{
-				background: @bgbeauty;
+
 			}
 			ul li a{
 				&:hover{
-					background: @bgbeauty;
+
 				}
 			}
 		}
 		&.skin3{
 			.widgettitle{
-				background: @bgfurniture;
+
 			}
 			ul li a{
 				&:hover{
-					background: @bgfurniture;
+
 				}
 			}
 		}
 		&.skin4{
 			.widgettitle{
-				background: @bggifts;
+
 			}
 			ul li a{
 				&:hover{
-					background: @bggifts;
+
 				}
 			}
 		}

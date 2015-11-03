@@ -1,20 +1,34 @@
 /* Less Variables */
+// Theme variables
+@import 'variables.less';
 
+
+	
 // HTML Elements
 body {
 	overflow-x: hidden;
 }
+/* Webkit */
+::selection {
+	background: @textselectedbg;
+	color: @textselectedcolor;
+}
+/* Gecko/Mozilla */
+::-moz-selection {
+	background: @textselectedbg;
+	color: @textselectedcolor;
+}
 a {
-	color: @textcolor;
+	color: @linkcolor;
 	-webkit-transition: all 0.4s ease 0s;
 	transition: all 0.4s ease 0s;
 	
 	&:hover {
-		color: @primarycolor;
+		color: @linkhovercolor;
 		text-decoration: none;
 	}
 	&:focus {
-		color: @primarycolor;
+		color: @linkhovercolor;
 		outline: none;
 		text-decoration: none;
 	}
@@ -26,7 +40,7 @@ img {
 h1, h2, h3, h4, h5, h6 {
 	color: @headingcolor;
 	font-family: @headingfont;
-	font-weight: 700;
+	font-weight: @headingfontweight;
 	line-height: 1.35;
 	margin: 0 0 5px;
 }

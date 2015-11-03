@@ -233,25 +233,51 @@ if (!class_exists('Road_Theme_Config')) {
                         'mode'      => false,
                         'desc'      => esc_html__('Upload favicon here.', 'roadthemes'),
                     ),
-                ),
-            );
-			// Background
-            $this->sections[] = array(
-                'title'     => esc_html__('Background', 'roadthemes'),
-                'desc'      => esc_html__('Use this section to upload background images, select background color', 'roadthemes'),
-                'icon'      => 'el-icon-picture',
-                'fields'    => array(
-					
 					array(
                         'id'        => 'background_opt',
                         'type'      => 'background',
                         'output'    => array('body'),
-                        'title'     => esc_html__('Body Background', 'roadthemes'),
-                        'subtitle'  => esc_html__('Body background with image, color. Only work with box layout', 'roadthemes'),
-						'default'   => '#ffffff',
+                        'title'     => esc_html__('Box layout background', 'roadthemes'),
+                        'subtitle'  => esc_html__('Upload image or select color. Only work with box layout', 'roadthemes'),
+						'default'   => '#f2f2f2',
+                    ),
+					array(
+                        'id'        => 'text_selected_bg',
+                        'type'      => 'color',
+                        'title'     => esc_html__('Text selected background', 'roadthemes'),
+                        'subtitle'  => esc_html__('Select background for selected text (default: #91b2c3).', 'roadthemes'),
+						'transparent' => false,
+                        'default'   => '#91b2c3',
+                        'validate'  => 'color',
+                    ),
+					array(
+                        'id'        => 'text_selected_color',
+                        'type'      => 'color',
+                        'title'     => esc_html__('Text selected color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Select color for selected text (default: #ffffff).', 'roadthemes'),
+						'transparent' => false,
+                        'default'   => '#ffffff',
+                        'validate'  => 'color',
+                    ),
+					array(
+                        'id'        => 'logo_error',
+                        'type'      => 'media',
+                        'title'     => esc_html__('Logo for error 404 page', 'roadthemes'),
+                        'compiler'  => 'true',
+                        'mode'      => false,
+                        'desc'      => esc_html__('Upload logo here.', 'roadthemes'),
+                    ),
+					array(
+                        'id'        => 'background_error',
+                        'type'      => 'background',
+                        'output'    => array('body.error404'),
+                        'title'     => esc_html__('Error 404 background', 'roadthemes'),
+                        'subtitle'  => esc_html__('Upload image or select color.', 'roadthemes'),
+						'default'   => '#f2f2f2',
                     ),
                 ),
             );
+			
 			// Colors
             $this->sections[] = array(
                 'title'     => esc_html__('Colors', 'roadthemes'),
@@ -327,22 +353,98 @@ if (!class_exists('Road_Theme_Config')) {
                         'id'        => 'welcome_message',
                         'type'      => 'text',
                         'title'     => esc_html__('Welcome message', 'roadthemes'),
-                        'default'   => 'Deal of the day SOZO? '
+                        'default'   => 'Welcome to RoadThemes'
                     ),
 					array(
-                        'id'        => 'images_top_bar',
-                        'type'      => 'media',
-                        'title'     => esc_html__('Images Top Bar', 'roadthemes'),
-                        'compiler'  => 'true',
-                        'mode'      => false,
-                        'desc'      => esc_html__('Upload image here.', 'roadthemes'),
+                        'id'        => 'header_bg',
+                        'type'      => 'background',
+                        'output'    => array('.header'),
+                        'title'     => esc_html__('Header background', 'roadthemes'),
+                        'subtitle'  => esc_html__('Upload image or select color.', 'roadthemes'),
+						'default'   => '#333',
                     ),
 					array(
-                        'id'        => 'images_top_bar_link',
-                        'type'      => 'text',
-                        'title'     => esc_html__('Link for image on top bar', 'roadthemes'),
-                        'default'   => '#'
+                        'id'        => 'header_color',
+                        'type'      => 'color',
+						'output'    => array('.header'),
+                        'title'     => esc_html__('Header text color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for top bar text color (default: #eee).', 'roadthemes'),
+						'transparent' => false,
+                        'default'   => '#eee',
+                        'validate'  => 'color',
                     ),
+					array(
+                        'id'        => 'header_link_color',
+                        'type'      => 'color',
+						'output'    => array('.header a'),
+                        'title'     => esc_html__('Header link color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for header link color (default: #eee).', 'roadthemes'),
+						'transparent' => false,
+                        'default'   => '#eee',
+                        'validate'  => 'color',
+                    ),
+					array(
+                        'id'        => 'header_link_hover_color',
+                        'type'      => 'color',
+						'output'    => array('.header a:hover'),
+                        'title'     => esc_html__('Header link hover color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for header link hover color (default: #6A97AE).', 'roadthemes'),
+						'transparent' => false,
+                        'default'   => '#6A97AE',
+                        'validate'  => 'color',
+                    ),
+                ),
+            );
+			$this->sections[] = array(
+				'icon'       => 'el-icon-website',
+				'title'      => esc_html__( 'Top Bar', 'roadthemes' ),
+				'subsection' => true,
+				'fields'     => array(
+					array(
+                        'id'        => 'topbar_bg',
+                        'type'      => 'background',
+                        'output'    => array('.top-bar'),
+                        'title'     => esc_html__('Top bar background', 'roadthemes'),
+                        'subtitle'  => esc_html__('Upload image or select color.', 'roadthemes'),
+						'default'   => '#333',
+                    ),
+					array(
+                        'id'        => 'topbar_color',
+                        'type'      => 'color',
+						'output'    => array('.top-bar'),
+                        'title'     => esc_html__('Top bar text color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for top bar text color (default: #eee).', 'roadthemes'),
+						'transparent' => false,
+                        'default'   => '#eee',
+                        'validate'  => 'color',
+                    ),
+					array(
+                        'id'        => 'topbar_link_color',
+                        'type'      => 'color',
+						'output'    => array('.top-bar a'),
+                        'title'     => esc_html__('Top bar link color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for top bar link color (default: #eee).', 'roadthemes'),
+						'transparent' => false,
+                        'default'   => '#eee',
+                        'validate'  => 'color',
+                    ),
+					array(
+                        'id'        => 'topbar_link_hover_color',
+                        'type'      => 'color',
+						'output'    => array('.top-bar a:hover'),
+                        'title'     => esc_html__('Top bar link hover color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for top bar link hover color (default: #6A97AE).', 'roadthemes'),
+						'transparent' => false,
+                        'default'   => '#6A97AE',
+                        'validate'  => 'color',
+                    ),
+				)
+			);
+			$this->sections[] = array(
+				'icon'       => 'el-icon-website',
+				'title'      => esc_html__( 'Menu', 'roadthemes' ),
+				'subsection' => true,
+				'fields'     => array(
 					array(
 						'id'       => 'top_menu',
 						'type'     => 'select',
@@ -351,21 +453,68 @@ if (!class_exists('Road_Theme_Config')) {
 						'subtitle' => esc_html__( 'Select a menu', 'roadthemes' ),
 					),
 					array(
-						'id'=>'header_shipping',
-						'type' => 'textarea',
-						'title' => esc_html__('Header Shipping', 'roadthemes'), 
-						'subtitle'         => esc_html__('HTML tags allowed: a, img, br, em, strong, p, ul, li', 'roadthemes'),
-						'default' => '',
-					),
-					array(
-                        'id'        => 'categories_menu_label',
+                        'id'        => 'mobile_menu_label',
                         'type'      => 'text',
-                        'title'     => esc_html__('Categories menu label', 'roadthemes'),
-						'subtitle'     => esc_html__('The label for categories menu', 'roadthemes'),
+                        'title'     => esc_html__('Mobile menu label', 'roadthemes'),
+						'subtitle'     => esc_html__('The label for mobile menu (example: Menu, Go to...', 'roadthemes'),
+                        'default'   => 'Menu'
+                    ),
+					array(
+                        'id'        => 'sub_menu_bg',
+                        'type'      => 'color',
+                        //'output'    => array(),
+                        'title'     => esc_html__('Submenu background', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for sub menu bg (default: #f2f2f2).', 'roadthemes'),
+						'transparent' => false,
+                        'default'   => '#f2f2f2',
+                        'validate'  => 'color',
+                    ),
+					array(
+                        'id'        => 'sub_menu_color',
+                        'type'      => 'color',
+                        //'output'    => array(),
+                        'title'     => esc_html__('Submenu color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for sub menu color (default: #666666).', 'roadthemes'),
+						'transparent' => false,
+                        'default'   => '#666666',
+                        'validate'  => 'color',
+                    ),
+				)
+			);
+			$this->sections[] = array(
+				'icon'       => 'el-icon-website',
+				'title'      => esc_html__( 'Vertical Menu', 'roadthemes' ),
+				'subsection' => true,
+				'fields'     => array(
+					array(
+                        'id'        => 'vsub_menu_bg',
+                        'type'      => 'color',
+                        //'output'    => array(),
+                        'title'     => esc_html__('Vertical Submenu background', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for sub menu bg (default: #f2f2f2).', 'roadthemes'),
+						'transparent' => false,
+                        'default'   => '#f2f2f2',
+                        'validate'  => 'color',
+                    ),
+					array(
+                        'id'        => 'vsub_menu_color',
+                        'type'      => 'color',
+                        //'output'    => array(),
+                        'title'     => esc_html__('Vertical Submenu color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for sub menu color (default: #666666).', 'roadthemes'),
+						'transparent' => false,
+                        'default'   => '#666666',
+                        'validate'  => 'color',
+                    ),
+					array(
+                        'id'        => 'vertical_menu_label',
+                        'type'      => 'text',
+                        'title'     => esc_html__('Vertical menu label', 'roadthemes'),
+						'subtitle'     => esc_html__('The label for vertical menu', 'roadthemes'),
                         'default'   => 'Category'
                     ),
 					array(
-						'id'        => 'categories_menu_items',
+						'id'        => 'vertical_menu_items',
 						'type'      => 'slider',
 						'title'     => esc_html__('Number of items', 'roadthemes'),
 						'desc'      => esc_html__('Number of menu items level 1 to show, default value: 8', 'roadthemes'),
@@ -376,58 +525,81 @@ if (!class_exists('Road_Theme_Config')) {
 						'display_value' => 'text'
 					),
 					array(
-                        'id'        => 'categories_more_label',
+                        'id'        => 'vertical_more_label',
                         'type'      => 'text',
-                        'title'     => esc_html__('More Categories label', 'roadthemes'),
-						'subtitle'     => esc_html__('The label for more categories button', 'roadthemes'),
-                        'default'   => 'More Categories'
+                        'title'     => esc_html__('More items label', 'roadthemes'),
+						'subtitle'     => esc_html__('The label for more items button', 'roadthemes'),
+                        'default'   => 'More'
                     ),
 					array(
-                        'id'        => 'categories_less_label',
+                        'id'        => 'vertical_less_label',
                         'type'      => 'text',
-                        'title'     => esc_html__('Less Categories label', 'roadthemes'),
-						'subtitle'     => esc_html__('The label for less categories button', 'roadthemes'),
+                        'title'     => esc_html__('Less items label', 'roadthemes'),
+						'subtitle'     => esc_html__('The label for less items button', 'roadthemes'),
                         'default'   => 'Close Menu'
                     ),
 					array(
-                        'id'        => 'categories_menu_home',
+                        'id'        => 'vertical_menu_home',
                         'type'      => 'switch',
-                        'title'     => esc_html__('Home Categories Menu', 'roadthemes'),
-						'subtitle'     => esc_html__('Always show categories menu on home page', 'roadthemes'),
+                        'title'     => esc_html__('Home Vertical Menu', 'roadthemes'),
+						'subtitle'     => esc_html__('Always show vertical menu on home page', 'roadthemes'),
 						'default'   => true,
                     ),
 					array(
-                        'id'        => 'categories_menu_sub',
+                        'id'        => 'vertical_menu_sub',
                         'type'      => 'switch',
-                        'title'     => esc_html__('Inner Categories Menu', 'roadthemes'),
-						'subtitle'     => esc_html__('Always show categories menu on inner pages', 'roadthemes'),
+                        'title'     => esc_html__('Inner Vertical Menu', 'roadthemes'),
+						'subtitle'     => esc_html__('Always show vertical menu on inner pages', 'roadthemes'),
 						'default'   => false,
                     ),
-					array(
-                        'id'        => 'mobile_menu_label',
-                        'type'      => 'text',
-                        'title'     => esc_html__('Mobile menu label', 'roadthemes'),
-						'subtitle'     => esc_html__('The label for mobile menu (example: Menu, Go to...', 'roadthemes'),
-                        'default'   => 'Menu'
-                    ),
-					array(
-                        'id'        => 'countdown_date',
-                        'type'      => 'text',
-                        'title'     => esc_html__('Countdown Date', 'roadthemes'),
-						'subtitle'     => esc_html__('Enter date for the countdown (format: Y/m/d. Example: 2016/08/15', 'roadthemes'),
-                        'default'   => ''
-                    ),
-                ),
-            );
-			
+				)
+			);
 			//Footer
 			$this->sections[] = array(
                 'title'     => esc_html__('Footer', 'roadthemes'),
                 'desc'      => esc_html__('Footer options', 'roadthemes'),
                 'icon'      => 'el-icon-cog',
                 'fields'    => array(
-
-					 array(
+					
+					array(
+                        'id'        => 'footer_bg',
+                        'type'      => 'background',
+                        'output'    => array('.footer'),
+                        'title'     => esc_html__('Footer background', 'roadthemes'),
+                        'subtitle'  => esc_html__('Upload image or select color.', 'roadthemes'),
+						'default'   => '#333',
+                    ),
+					array(
+                        'id'        => 'footer_color',
+                        'type'      => 'color',
+						'output'    => array('.footer'),
+                        'title'     => esc_html__('Footer text color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for top bar text color (default: #eee).', 'roadthemes'),
+						'transparent' => false,
+                        'default'   => '#eee',
+                        'validate'  => 'color',
+                    ),
+					array(
+                        'id'        => 'footer_link_color',
+                        'type'      => 'color',
+						'output'    => array('.footer a'),
+                        'title'     => esc_html__('Footer link color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for footer link color (default: #eee).', 'roadthemes'),
+						'transparent' => false,
+                        'default'   => '#eee',
+                        'validate'  => 'color',
+                    ),
+					array(
+                        'id'        => 'footer_link_hover_color',
+                        'type'      => 'color',
+						'output'    => array('.footer a:hover'),
+                        'title'     => esc_html__('Footer link hover color', 'roadthemes'),
+                        'subtitle'  => esc_html__('Pick a color for footer link hover color (default: #6A97AE).', 'roadthemes'),
+						'transparent' => false,
+                        'default'   => '#6A97AE',
+                        'validate'  => 'color',
+                    ),
+					array(
                         'id'        => 'logo_footer',
                         'type'      => 'media',
                         'title'     => esc_html__('Footer Logo', 'roadthemes'),
@@ -588,7 +760,7 @@ if (!class_exists('Road_Theme_Config')) {
                         'title'         => esc_html__('Body font', 'roadthemes'),
                         //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
                         'google'        => true,    // Disable google fonts. Won't work if you haven't defined your google api key
-                        'font-backup'   => true,    // Select a backup non-google font in addition to a google font
+                        'font-backup'   => false,    // Select a backup non-google font in addition to a google font
                         //'font-style'    => false, // Includes font-style and weight. Can use font-style or font-weight to declare
                         'subsets'       => false, // Only appears if google is true and subsets not set to false
 						'text-align'   => false,
@@ -662,13 +834,62 @@ if (!class_exists('Road_Theme_Config')) {
                         'units'         => 'px', // Defaults to px
                         'subtitle'      => esc_html__('Menu font.', 'roadthemes'),
                         'default'       => array(
-                            'color'         => '#fff',
+                            'color'         => '#666',
                             'font-weight'    => '700',
                             'font-family'   => 'Roboto',
 							'font-size'     => '15px',
                             'google'        => true,
 						),
                     ),
+					array(
+                        'id'            => 'vmenufont',
+                        'type'          => 'typography',
+                        'title'         => esc_html__('Vertical Menu font', 'roadthemes'),
+                        //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
+                        'google'        => true,    // Disable google fonts. Won't work if you haven't defined your google api key
+                        'font-backup'   => false,    // Select a backup non-google font in addition to a google font
+                        //'font-style'    => false, // Includes font-style and weight. Can use font-style or font-weight to declare
+                        'subsets'       => false, // Only appears if google is true and subsets not set to false
+                        'font-size'     => true,
+                        'line-height'   => false,
+						'text-align'   => false,
+                        //'word-spacing'  => true,  // Defaults to false
+                        //'letter-spacing'=> true,  // Defaults to false
+                        //'color'         => false,
+                        //'preview'       => false, // Disable the previewer
+                        'all_styles'    => true,    // Enable all Google Font style/weight variations to be added to the page
+                        //'output'        => array('h1, h2, h3, h4, h5, h6'), // An array of CSS selectors to apply this font style to dynamically
+                        //'compiler'      => array('h2.site-description-compiler'), // An array of CSS selectors to apply this font style to dynamically
+                        'units'         => 'px', // Defaults to px
+                        'subtitle'      => esc_html__('Menu font.', 'roadthemes'),
+                        'default'       => array(
+                            'color'         => '#666',
+                            'font-weight'    => '700',
+                            'font-family'   => 'Roboto',
+							'font-size'     => '15px',
+                            'google'        => true,
+						),
+                    ),
+					array(
+						'id'        => 'link_color',
+						'type'      => 'color',
+						//'output'    => array('a'),
+						'title'     => esc_html__('Link Color', 'roadthemes'),
+						'subtitle'  => esc_html__('Pick a color for link (default: #666).', 'roadthemes'),
+						'transparent' => false,
+						'default'   => '#666',
+						'validate'  => 'color',
+					),
+					array(
+						'id'        => 'link_hover_color',
+						'type'      => 'color',
+						//'output'    => array('a:hover'),
+						'title'     => esc_html__('Link hover color', 'roadthemes'),
+						'subtitle'  => esc_html__('Pick a color for link hover (default: #6A97AE).', 'roadthemes'),
+						'transparent' => false,
+						'default'   => '#6A97AE',
+						'validate'  => 'color',
+					),
                 ),
             );
 			

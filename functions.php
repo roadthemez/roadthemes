@@ -511,37 +511,82 @@ Class RoadThemes {
 		
 		if($road_opt['enable_less']){
 			$themevariables = array(
+				'body_font'=> $road_opt['bodyfont']['font-family'],
+				'text_color'=> $road_opt['bodyfont']['color'],
+				'text_selected_bg' => $road_opt['text_selected_bg'],
+				'text_selected_color' => $road_opt['text_selected_color'],
+				'text_size'=> $road_opt['bodyfont']['font-size'],
+				
 				'heading_font'=> $road_opt['headingfont']['font-family'],
+				'heading_color'=> $road_opt['headingfont']['color'],
+				'heading_font_weight'=> $road_opt['headingfont']['font-weight'],
+				
 				'menu_font'=> $road_opt['menufont']['font-family'],
+				'menu_color'=> $road_opt['menufont']['color'],
 				'menu_font_size'=> $road_opt['menufont']['font-size'],
 				'menu_font_weight'=> $road_opt['menufont']['font-weight'],
-				'body_font'=> $road_opt['bodyfont']['font-family'],
-				'heading_color'=> $road_opt['headingfont']['color'],
-				'menu_color'=> $road_opt['menufont']['color'],
-				'text_color'=> $road_opt['bodyfont']['color'],
+				'sub_menu_bg' => $road_opt['sub_menu_bg'],
+				'sub_menu_color' => $road_opt['sub_menu_color'],
+				
+				'vmenu_font'=> $road_opt['vmenufont']['font-family'],
+				'vmenu_color'=> $road_opt['vmenufont']['color'],
+				'vmenu_font_size'=> $road_opt['vmenufont']['font-size'],
+				'vmenu_font_weight'=> $road_opt['vmenufont']['font-weight'],
+				'vsub_menu_bg' => $road_opt['vsub_menu_bg'],
+				'vsub_menu_color' => $road_opt['vsub_menu_color'],
+				
+				'link_color' => $road_opt['link_color'],
+				'link_hover_color' => $road_opt['link_hover_color'],
+				
 				'primary_color' => $road_opt['primary_color'],
+				
 				'sale_color' => $road_opt['sale_color'],
 				'saletext_color' => $road_opt['saletext_color'],
 				'rate_color' => $road_opt['rate_color'],
+				
+				'topbar_bg' => $road_opt['topbar_bg'],
+				'topbar_color' => $road_opt['topbar_color'],
+				'topbar_link_color' => $road_opt['topbar_link_color'],
+				'topbar_link_hover_color' => $road_opt['topbar_link_hover_color'],
+				
+				'header_bg' => $road_opt['header_bg'],
+				'header_color' => $road_opt['header_color'],
+				'header_link_color' => $road_opt['header_link_color'],
+				'header_link_hover_color' => $road_opt['header_link_hover_color'],
+				
+				'footer_bg' => $road_opt['footer_bg'],
+				'footer_color' => $road_opt['footer_color'],
+				'footer_link_color' => $road_opt['footer_link_color'],
+				'footer_link_hover_color' => $road_opt['footer_link_hover_color'],
 			);
 			switch ($presetopt) {
 				case 2:
-					$themevariables['primary_color'] = '#229700';
+					$themevariables['primary_color'] = '#00A800';
+				break;
+				case 3:
+					$themevariables['primary_color'] = '#964B4B';
 				break;
 			}
 			if(function_exists('compileLessFile')){
-				compileLessFile('theme.less', 'theme'.$presetopt.'.css', $themevariables);
+				compileLessFile('reset.less', 'reset'.$presetopt.'.css', $themevariables);
+				compileLessFile('global.less', 'global'.$presetopt.'.css', $themevariables);
+				compileLessFile('woocommerce.less', 'woocommerce'.$presetopt.'.css', $themevariables);
+				compileLessFile('layouts.less', 'layouts'.$presetopt.'.css', $themevariables);
+				compileLessFile('responsive.less', 'responsive'.$presetopt.'.css', $themevariables);
 				compileLessFile('ie.less', 'ie'.$presetopt.'.css', $themevariables);
 			}
 		}
 		
-		// Load main theme css style
-		wp_enqueue_style( 'roadthemes-css', get_template_directory_uri() . '/css/theme'.$presetopt.'.css', array(), '1.0.0' );
-		//Compare CSS
-		wp_enqueue_style( 'roadthemes-css', get_template_directory_uri() . '/css/compare'.$presetopt.'.css', array(), '1.0.0' );
+		// Load main theme css style files
+		wp_enqueue_style( 'roadcss-reset', get_template_directory_uri() . '/css/reset'.$presetopt.'.css', array(), '1.0.0' );
+		wp_enqueue_style( 'roadcss-global', get_template_directory_uri() . '/css/global'.$presetopt.'.css', array('roadcss-reset'), '1.0.0' );
+		wp_enqueue_style( 'roadcss-woocommerce', get_template_directory_uri() . '/css/woocommerce'.$presetopt.'.css', array('roadcss-global'), '1.0.0' );
+		wp_enqueue_style( 'roadcss-layouts', get_template_directory_uri() . '/css/layouts'.$presetopt.'.css', array('roadcss-woocommerce'), '1.0.0' );
+		wp_enqueue_style( 'roadcss-responsive', get_template_directory_uri() . '/css/responsive'.$presetopt.'.css', array('roadcss-layouts'), '1.0.0' );
+		
 		// Loads the Internet Explorer specific stylesheet.
-		wp_enqueue_style( 'roadthemes-ie', get_template_directory_uri() . '/css/ie'.$presetopt.'.css', array( 'roadthemes-style' ), '20121010' );
-		$wp_styles->add_data( 'roadthemes-ie', 'conditional', 'lte IE 9' );
+		wp_enqueue_style( 'roadcss-ie', get_template_directory_uri() . '/css/ie'.$presetopt.'.css', array('roadcss-responsive'), '1.0.0' );
+		$wp_styles->add_data( 'roadcss-ie', 'conditional', 'lte IE 9' );
 		
 		if($road_opt['enable_sswitcher']){
 		// Add styleswitcher.js file
@@ -587,7 +632,7 @@ Class RoadThemes {
 			<?php } ?>
 		var	road_testipause = <?php if(isset($road_opt['testipause'])) { echo esc_js($road_opt['testipause']); } else { echo '3000'; } ?>,
 			road_testianimate = <?php if(isset($road_opt['testianimate'])) { echo esc_js($road_opt['testianimate']); } else { echo '700'; } ?>;
-		var road_menu_number = <?php if(isset($road_opt['categories_menu_items'])) { echo esc_js((int)$road_opt['categories_menu_items']+1); } else { echo '9';} ?>;
+		var road_menu_number = <?php if(isset($road_opt['vertical_menu_items'])) { echo esc_js((int)$road_opt['vertical_menu_items']+1); } else { echo '9';} ?>;
 		</script>
 		<?php
 	}

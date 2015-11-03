@@ -3,9 +3,9 @@
         <key name="road_opt">
 			<key name="header_email" />
 			<key name="header_phone" />
-			<key name="categories_menu_label" />
-			<key name="categories_more_label" />
-			<key name="categories_less_label" />
+			<key name="vertical_menu_label" />
+			<key name="vertical_more_label" />
+			<key name="vertical_less_label" />
 			<key name="mobile_menu_label" />
 			<key name="copyright" />
 			<key name="newsletter_title" />

@@ -53,7 +53,7 @@ var road_blogscroll = <?php echo esc_js($road_opt['blogscroll'])==1 ? 'true': 'f
 var road_testiscroll = <?php echo esc_js($road_opt['testiscroll'])==1 ? 'true': 'false'; ?>,
 	road_testipause = <?php if(isset($road_opt['testipause'])) { echo esc_js($road_opt['testipause']); } else { echo '3000'; } ?>,
 	road_testianimate = <?php if(isset($road_opt['testianimate'])) { echo esc_js($road_opt['testianimate']); } else { echo '700'; } ?>;
-var road_menu_number = <?php if(isset($road_opt['categories_menu_items'])) { echo esc_js((int)$road_opt['categories_menu_items']+1); } else { echo '9';} ?>;
+var road_menu_number = <?php if(isset($road_opt['vertical_menu_items'])) { echo esc_js((int)$road_opt['vertical_menu_items']+1); } else { echo '9';} ?>;
 </script>
 <?php wp_head(); ?>
 </head>
@@ -104,19 +104,19 @@ var road_menu_number = <?php if(isset($road_opt['categories_menu_items'])) { ech
 								<div class="nav-categories">
 									<?php
 									$cat_menu_class = '';
-									if(isset($road_opt['categories_menu_home']) && $road_opt['categories_menu_home']) {
+									if(isset($road_opt['vertical_menu_home']) && $road_opt['vertical_menu_home']) {
 										//$cat_menu_class .=' show_home';
 									}
-									if(isset($road_opt['categories_menu_sub']) && $road_opt['categories_menu_sub']) {
+									if(isset($road_opt['vertical_menu_sub']) && $road_opt['vertical_menu_sub']) {
 										//$cat_menu_class .=' show_inner';
 									}
 									?>
 									<div class="categories-menu visible-large <?php echo esc_attr($cat_menu_class); ?>">
-										<div class="catemenu-toggler"><span><?php if(isset($road_opt)) { echo esc_html($road_opt['categories_menu_label']); } else { esc_html_e('Category', 'roadthemes'); } ?></span><i class="fa fa-align-left"></i></div>
+										<div class="catemenu-toggler"><span><?php if(isset($road_opt)) { echo esc_html($road_opt['vertical_menu_label']); } else { esc_html_e('Category', 'roadthemes'); } ?></span><i class="fa fa-align-left"></i></div>
 										<?php wp_nav_menu( array( 'theme_location' => 'categories', 'container_class' => 'categories-menu-container', 'menu_class' => 'categories-menu' ) ); ?>
 										<div class="morelesscate">
-											<span class="morecate"><i class="fa fa-plus"></i><?php if ( isset($road_opt['categories_more_label']) && $road_opt['categories_more_label']!='' ) { echo esc_html($road_opt['categories_more_label']); } else { esc_html_e('More Categories', 'roadthemes'); } ?></span>
-											<span class="lesscate"><i class="fa fa-minus"></i><?php if ( isset($road_opt['categories_less_label']) && $road_opt['categories_less_label']!='' ) { echo esc_html($road_opt['categories_less_label']); } else { esc_html_e('Close Menu', 'roadthemes'); } ?></span>
+											<span class="morecate"><i class="fa fa-plus"></i><?php if ( isset($road_opt['vertical_more_label']) && $road_opt['vertical_more_label']!='' ) { echo esc_html($road_opt['vertical_more_label']); } else { esc_html_e('More Categories', 'roadthemes'); } ?></span>
+											<span class="lesscate"><i class="fa fa-minus"></i><?php if ( isset($road_opt['vertical_less_label']) && $road_opt['vertical_less_label']!='' ) { echo esc_html($road_opt['vertical_less_label']); } else { esc_html_e('Close Menu', 'roadthemes'); } ?></span>
 										</div>
 									</div>
 								</div>		
