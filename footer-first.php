@@ -15,7 +15,7 @@
 	
 		<?php if(isset($road_opt)) { ?>
 		<div class="footer-top">
-			<div class="container-fluid">
+			<div class="container">
 				<div class="row">	
 					<?php
 					if( isset($road_opt['footer_menu1']) && $road_opt['footer_menu1']!='' ) {
@@ -120,7 +120,7 @@
 		</div>
 		<?php } ?>
 		<div class="footer-bottom">
-			<div class="container-fluid">
+			<div class="container">
 				<div class="row">
 					<div class="col-lg-8 col-md-8 col-sm-8">
 						<?php if( isset($road_opt['logo_footer']['url']) ){ ?>

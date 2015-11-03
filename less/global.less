@@ -29,9 +29,9 @@
 // Front page
 .front-page {
 	.wpb_content_element {
-		margin-bottom: 30px;
 		
 		.wpb_wrapper {
+		
 			& > h3 {
 				font-size:18px;
 				line-height: 1;
@@ -42,6 +42,7 @@
 				text-transform: uppercase;
 				padding: 0 0 15px;
 				font-family: @headingfont;
+				
 				&:after{
 					content: "";
 					display: block;
@@ -57,23 +58,14 @@
 		}
 	}
 	.vc_row {
-		margin-bottom: 40px;
 		
 		.row-container {
 			display: block;
 			margin: 0 auto;
 			max-width: 100%;
-			width: 100%;
+			width: 1170px;
 			padding-right: 15px;
 			padding-left: 15px;
-			&:after{
-				clear: both;
-			    content: ".";
-			    display: block;
-			    height: 0;
-			    line-height: 0;
-			    visibility: hidden;
-			}
 		}
 	}
 	.alignnone {
@@ -1406,15 +1398,20 @@ body.quickview {
 			
 			ul.product-categories {
 				background: #fff;
-				display: none;
 				max-height: 300px;
 				margin: 0;
 				overflow-y: auto;
 				padding: 5px 0;
 				min-width: 200px;
 				box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.14);
+				opacity: 0;
+				visibility: hidden;
+				-webkit-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+				
 				&.open {
-					display: block;
+					opacity: 1;
+					visibility: visible;
 				}
 				li {
 					list-style: none;

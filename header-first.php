@@ -17,7 +17,7 @@ if(is_ssl()){
 		<div class="header-container">
 			<?php if(isset($road_opt)) { ?>
 				<div class="top-bar">
-					<div class="container-fluid">
+					<div class="container">
 							<?php if( isset($road_opt['images_top_bar']['url']) ){ ?>
 								<div class="images-top-bar"><a href="<?php echo esc_attr($road_opt['images_top_bar_link']);?>"><img src="<?php echo esc_url($road_opt['images_top_bar']['url']); ?>" alt="" /></a></div>
 							<?php } ?>
@@ -32,8 +32,8 @@ if(is_ssl()){
 					</div>
 				</div>
 			<?php } ?>
-			<div class="header clearfix">
-				<div class="container-fluid">
+			<div class="header">
+				<div class="container">
 					<div class="row">
 						<div class="col-xs-12 col-lg-7 col-lg-push-2 f-logo">
 							<?php if( isset($road_opt['logo_main']['url']) ){ ?>
@@ -111,7 +111,7 @@ if(is_ssl()){
 				</div>
 
 			</div>
-			<div class="container-fluid">
+			<div class="container">
 				<div class="row">
 					<div class="col-lg-offset-2 col-xs-12">
 						<?php if( class_exists('WC_Widget_Product_Categories') && class_exists('WC_Widget_Product_Search') ) { ?>
