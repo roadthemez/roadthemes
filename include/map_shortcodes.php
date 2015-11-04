@@ -69,6 +69,27 @@ function road_vc_shortcodes() {
 				"param_name" => "length",
 				"value" => esc_html__( "20", "roadthemes" ),
 			),
+			array(
+				"type" => "dropdown",
+				"holder" => "div",
+				"class" => "",
+				"heading" => esc_html__( "Number of rows", "mirano" ),
+				"param_name" => "rowsnumber",
+				"value" => array(
+						'1'	=> '1',
+						'2'	=> '2',
+						'3'	=> '3',
+						'4'	=> '4',
+					),
+			),
+			array(
+				"type" => "textfield",
+				"holder" => "div",
+				"class" => "",
+				"heading" => esc_html__( "Number of columns", "roadthemes" ),
+				"param_name" => "colsnumber",
+				"value" => esc_html__( "4", "roadthemes" ),
+			),
 		)
 	) );
 	

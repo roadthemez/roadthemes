@@ -1,15 +1,16 @@
 <?php
 function road_latestposts_shortcode( $atts ) {
 	global $road_opt;
-	
+	$post_index = 0;
 	$atts = shortcode_atts( array(
 		'posts_per_page' => 5,
 		'order' => 'DESC',
 		'orderby' => 'post_date',
 		'image' => 'wide', //square
-		'length' => 20
+		'length' => 20,
+		'rowsnumber' => '1',
+		'colsnumber' => '4',
 	), $atts, 'latestposts' );
-
 	
 	if($atts['image']=='wide'){
 		$imagesize = 'sozo-post-thumbwide';
@@ -37,9 +38,13 @@ function road_latestposts_shortcode( $atts ) {
 	
 	$postslist = get_posts( $postargs );
 
-	$html.='<div class="posts-carousel">';
+	$html.='<div class="posts-carousel" data-col="'.$atts['colsnumber'].'">';
 
 			foreach ( $postslist as $post ) {
+				$post_index ++;
+				if ( (0 == ( $post_index - 1 ) % $atts['rowsnumber'] ) || $post_index == 1) {
+					$html .= '<div class="group">';
+				}
 				$html.='<div class="item-col">';
 					$html.='<div class="post-wrapper">';
 						
@@ -61,7 +66,9 @@ function road_latestposts_shortcode( $atts ) {
 
 					$html.='</div>';
 				$html.='</div>';
-
+				if ( ( ( 0 == $post_index % $atts['rowsnumber'] || $atts['posts_per_page'] == $post_index ))  ) {
+					$html .= '</div>';
+				}
 			}
 	$html.='</div>';
 

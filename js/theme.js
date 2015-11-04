@@ -505,11 +505,12 @@
 		});
 		
 		//Latest posts carousel
+		var road_postcols = jQuery('.posts-carousel').attr('data-col');
 		jQuery('.posts-carousel').slick({
 			infinite: true,
 			arrows: true,
 			dots: true,
-			slidesToShow: 4,
+			slidesToShow: road_postcols,
 			slidesToScroll: 1,
 			speed: road_bloganimate,
 			easing: 'linear',
