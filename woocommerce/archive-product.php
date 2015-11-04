@@ -54,7 +54,7 @@ if(isset($_GET['view']) && $_GET['view']=='list-view'){
 ?>
 <div class="main-container">
 	<div class="page-content">
-		<div class="container-fluid">
+		<div class="container">
 			<?php
 				/**
 				 * woocommerce_before_main_content hook
@@ -66,7 +66,7 @@ if(isset($_GET['view']) && $_GET['view']=='list-view'){
 			?>
 		</div>
 		<div class="shop_content">
-			<div class="container-fluid">
+			<div class="container">
 				<div class="row">
 					<?php if( $shopsidebar == 'left' ) :?>
 						<?php get_sidebar('shop'); ?>

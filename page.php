@@ -20,7 +20,7 @@ get_header();
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header>
 	<div class="clearfix"></div>
-	<div class="container-fluid">
+	<div class="container">
 		<?php RoadThemes::road_breadcrumb(); ?>
 		
 		<div class="row">

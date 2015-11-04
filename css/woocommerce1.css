@@ -45,8 +45,9 @@
 .woocommerce-page .woocommerce-product-rating .star-rating {
   display: inline-block;
   float: none;
+  font-size: 12px;
   height: 15px;
-  width: 68px;
+  width: 65px;
   margin: 0;
 }
 .woocommerce .ratings .star-rating: before,

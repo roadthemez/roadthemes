@@ -4,21 +4,24 @@ function road_brands_shortcode( $atts ) {
 	$brand_index = 0;
 	$brandfound=count($road_opt['brand_logos']);
 	
-	$atts = shortcode_atts( array(), $atts, 'ourbrands' );
-	
+	$atts = shortcode_atts( array(
+							'rowsnumber' => '1',
+							'colsnumber' => '6',
+							), $atts, 'ourbrands' );
+							
 	$rowsnumber = $atts['rowsnumber'];
 	$colsnumber = $atts['colsnumber'];
 	
 	$html = '';
 	
 	if($road_opt['brand_logos']) {
-		$html .= '<div class="brands-carousel">';
+		$html .= '<div class="brands-carousel" data-col="'.$colsnumber.'">';
 			foreach($road_opt['brand_logos'] as $brand) {
 				if(is_ssl()){
 					$brand['image'] = str_replace('http:', 'https:', $brand['image']);
 				}
 				$brand_index ++;
-				if ( (0 == ( $brand_index - 1 ) % 2 ) || $brand_index == 1) {
+				if ( (0 == ( $brand_index - 1 ) % $rowsnumber ) || $brand_index == 1) {
 					$html .= '<div class="group">';
 				}
 				$html .= '<div>';
@@ -26,7 +29,7 @@ function road_brands_shortcode( $atts ) {
 					$html .= '<img src="'.$brand['image'].'" alt="'.$brand['title'].'" />';
 				$html .= '</a>';
 				$html .= '</div>';
-				if ( ( ( 0 == $brand_index % 2 || $brandfound == $brand_index ))  ) {
+				if ( ( ( 0 == $brand_index % $rowsnumber || $brandfound == $brand_index ))  ) {
 					$html .= '</div>';
 				}
 			}

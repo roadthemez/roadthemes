@@ -43,11 +43,7 @@
 	.top-bar {
 		min-height: 40px;
 		color: #fff;
-		
-		.container-fluid{
-			padding-left: 0 ;
-			padding-right: 0;
-		}
+	
 		.top-message{
 			line-height: 40px;
 		}
@@ -427,12 +423,25 @@
 			font-family: @headingfont;
 			font-size: 16px;
 			font-weight: normal;
-			height: 50px;
-			line-height: 50px;
+			height: 46px;
+			line-height: 46px;
 			padding: 0 34px 0 20px;
 			position: relative;
 			text-transform: capitalize;
+			max-width: 200px;
+			overflow: hidden;
+			white-space: nowrap;
 			
+			&:before {
+				background: #fff;
+				content: "";
+				display: block;
+				height: 46px;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 34px;
+			}
 			&:after {
 				border-left: 5px solid transparent;
 				border-right: 5px solid transparent;
@@ -447,6 +456,7 @@
 			}
 		}
 		.widget_product_categories {
+			height: 0;
 			left: 0;
 			position: absolute;
 			top: 100%;
@@ -1387,10 +1397,11 @@
 			width: 100%;
 			z-index: 10000;
 			display: none;
+			
 			span {
-				background-color: @primarycolor !important;
+				background-color: @primarycolor;
 				background-image: none;
-				color: @menucolor;
+				color: #fff;
 				cursor: pointer;
 				display: block;
 				font-family: @menufont;
@@ -1410,7 +1421,7 @@
 					height: 47px;
 					line-height: 47px;
 					padding-right: 15px;
-					color: @menucolor;
+					color: #fff;
 				}
 				&.lesscate {
 					display: none;
@@ -1423,7 +1434,7 @@
 			
 			& > .menu_holder {
 				width: 100%;
-				border: 1px solid @bordercolor;
+				
 				.menu_inner {
 					width: 100%;
 					
@@ -1922,7 +1933,10 @@
 		font-size: 15px;
 		font-weight: bold;
 	}
-	.widget_menu{
+	.widget_nav_menu {
+		width: 33.33%;
+		float: left;
+		
 		ul{
 			list-style: none;
 			margin: 0;
@@ -1955,7 +1969,7 @@
 	.footer-bottom {
 		float: left;
 		padding: 15px 0;
-		border-top: 1px solid @bordercolor;
+		border-top: 1px solid lighten(@footerbg, 5%);
 		width: 100%;
 	}
 	div.widget_contact_us{
@@ -1996,11 +2010,6 @@
 					}
 				}
 			}
-		}
-	}
-	.container-fluid{
-		.row > div{
-			border-right: 1px solid @bordercolor;
 		}
 	}
 	.widget-payment{
@@ -2092,13 +2101,17 @@
 		float: right;
 		margin-right: 15px;
 		margin-top: 10px;
+		
 		.social-icons{
 			margin: 0;
 			padding: 0;
 			list-style: none;
+			
 			li{
 				display: inline-block;
+				margin: 0 3px;
 				position: relative;
+				
 				.roadtip{
 					top: -40px;
 				}
@@ -2108,9 +2121,9 @@
 					height: 30px;
 					text-align: center;
 					line-height: 30px;
-					border: 2px solid #555555;
-					margin-left: 10px;
+					border: 2px solid lighten(@footerbg, 5%);
 					border-radius: 100%;
+					
 					&:hover{
 						background: @primarycolor;
 						color: #fff;
@@ -2303,14 +2316,9 @@
 	}
 }
 .main-container .home-tabs {
+	
 	.wpb_content_element {
-		margin-bottom: 0;
-		
-		.wpb_wrapper {
-			& > h3 {
-				display: none;
-			}
-		}
+		display: none;
 	}
 	.tab-title-container {
 		padding: 0 15px;

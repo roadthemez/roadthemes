@@ -52,7 +52,7 @@ switch($bloglayout) {
 ?>
 <div class="main-container">
 
-	<div class="container-fluid">
+	<div class="container">
 		<?php RoadThemes::road_breadcrumb(); ?>
 		
 		<header class="entry-header">

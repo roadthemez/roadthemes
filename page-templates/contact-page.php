@@ -18,7 +18,7 @@ get_header();
 ?>
 <div class="main-container contact-page">
 	<div class="page-content">
-		<div class="container-fluid">	
+		<div class="container">	
 			<?php while ( have_posts() ) : the_post(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					

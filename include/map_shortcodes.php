@@ -18,10 +18,10 @@ function road_vc_shortcodes() {
 				"heading" => esc_html__( "Number of rows", "mirano" ),
 				"param_name" => "rowsnumber",
 				"value" => array(
-						'one'	=> 'one',
-						'two'	=> 'two',
-						'three'	=> 'three',
-						'four'	=> 'four',
+						'1'	=> '1',
+						'2'	=> '2',
+						'3'	=> '3',
+						'4'	=> '4',
 					),
 			),
 			array(

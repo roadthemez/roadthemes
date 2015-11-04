@@ -18,7 +18,7 @@ get_header( 'shop' ); ?>
 	<div class="page-content">
 	
 		<div class="product-page">
-			<div class="container-fluid">
+			<div class="container">
 				<?php do_action( 'woocommerce_before_main_content' ); ?>
 			</div>
 			<div class="product-view">

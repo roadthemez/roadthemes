@@ -35,27 +35,9 @@
 		.wpb_wrapper {
 		
 			& > h3 {
-				font-size: 18px;
-				line-height: 1;
-				font-weight: 500;
-				margin: 0;
 				display: inline-block;
 				position: relative;
 				text-transform: uppercase;
-				padding: 0 0 15px;
-				font-family: @headingfont;
-				
-				&:after{
-					content: "";
-					display: block;
-					border-bottom: 3px solid @primarycolor;
-					position: absolute;
-					left: 0;
-					width: 100%;
-					bottom: -1px;
-					-webkit-transition: all 0.4s ease 0s;
-					transition: all 0.4s ease 0s;
-				}
 			}
 		}
 	}
@@ -249,7 +231,8 @@
 }
 //Tooltip
 .roadtip {
-    background: @primarycolor;
+    background: rgba(0,0,0,0.8);
+	border-radius: 3px;
     color: #fff;
     display: block;
     float: left;
@@ -262,11 +245,12 @@
     width: auto;
     z-index: 2;
 	line-height: 2;
+	
 	&:after {
 		background: none;
 		border-left: 5px solid transparent;
 		border-right: 5px solid transparent;
-		border-top: 6px solid @primarycolor;
+		border-top: 6px solid rgba(0,0,0,0.8);
 		bottom: -6px;
 		content: "";
 		display: block;
@@ -2443,21 +2427,22 @@
 }
 #back-top {
     background: url("../images/back-top.png") no-repeat center center @greycolor;
-    bottom: -38px;
+	border-radius: 100%;
+    bottom: 0;
     cursor: pointer;
-    height: 35px;
+    height: 50px;
     opacity: 0;
     position: fixed;
-    right: 12px;
+    right: 20px;
     transition: all 0.3s ease 0s;
     visibility: hidden;
-    width: 35px;
+    width: 50px;
     z-index: 9999;
 	-webkit-transition: all 0.4s ease;
 	transition: all 0.4s ease;
 	
 	&.show {
-		bottom: 100px;
+		bottom: 20px;
 		opacity: 1;
 		visibility: visible;
 	}

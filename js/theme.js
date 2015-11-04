@@ -90,30 +90,6 @@
 			});
 		});
 		
-		//Category Menu
-		jQuery('.catemenu-toggler').on('click', function(){
-			if(jQuery('#mega_main_menu').css('display')=='none'){
-				jQuery('#mega_main_menu').css('display', 'block');
-				if(!jQuery('.morelesscate').hasClass('alwayshide')){
-					jQuery('.morelesscate').css('display', 'block');
-				}
-			} else {
-				jQuery('#mega_main_menu').css('display', 'none');
-				jQuery('.morelesscate').css('display', 'none');
-			}
-			//for default wordpress menu (not selected menu location)
-			if(jQuery('.categories-menu > ul').css('display')=='none'){
-				jQuery('.categories-menu > ul').css('display', 'block');
-			} else {
-				jQuery('.categories-menu > ul').css('display', 'none');
-			}
-			// for default wordpress menu (selected menu location)
-			if(jQuery('.categories-menu-container').css('display')=='none'){
-				jQuery('.categories-menu-container').css('display', 'block');
-			} else {
-				jQuery('.categories-menu-container').css('display', 'none');
-			}
-		});
 		//Horizontal dropdown menu
 			//default, not selected locations
 		jQuery('.horizontal-menu .nav-menu > ul').superfish({
@@ -132,7 +108,7 @@
 			var linkItem = jQuery(this).find('a').first();
 			linkItem.after('<i class="fa fa-angle-right"></i>');
 		});
-		//calculate the init height of menu
+			//calculate the init height of menu
 		var totalMenuLevelFirst = jQuery('.mobile-menu-container .nav-menu > li').length;
 		var mobileMenuH = totalMenuLevelFirst*40 + 10; //40 is height of one item, 10 is padding-top + padding-bottom;
 		
@@ -277,9 +253,10 @@
 		jQuery('.toolbar .orderby').chosen({disable_search: true, width: "auto"});
 		
 		//Brand logos carousel
+		var road_brandcols = jQuery('.brands-carousel').attr('data-col');
 		jQuery('.brands-carousel').slick({
 			infinite: true,
-			slidesToShow: road_brandnumber,
+			slidesToShow: road_brandcols,
 			slidesToScroll: road_brandscrollnumber,
 			speed: road_brandanimate,
 			easing: 'linear',
@@ -340,13 +317,13 @@
 		window.setTimeout(function(){
 			var tabCount = 1;
 			var tabTotal = jQuery('.home-tabs.layout1 .wpb_content_element').length;
-			jQuery('.home-tabs.layout1').prepend('<div class="container-fluid"><ul class="home-tabs-title"></ul></div>');
+			jQuery('.home-tabs.layout1').prepend('<div class="container"><ul class="home-tabs-title"></ul></div>');
 			var tabTitle = jQuery('.home-tabs.layout1 .home-tabs-title');
 			jQuery('.home-tabs.layout1 .wpb_content_element').each(function(){
 				var tabClass = '';
 				var tabLinkClass = '';
-				var tabWidget = jQuery(this);
-				var widgetTitle = tabWidget.find('h3').html();
+				var tabWidget = jQuery(this).next('.woocommerce');
+				var widgetTitle = jQuery(this).find('h3').html();
 				tabWidget.attr('id', 'wpb_content_element-'+tabCount);
 				
 				if(tabCount==1) {
@@ -356,9 +333,9 @@
 					tabWidget.addClass('active');
 					
 					//first tab carousel
-					roadtabCarousel('#wpb_content_element-'+tabCount+' .shop-products', 5);
+					roadtabCarousel('#wpb_content_element-'+tabCount+' .shop-products', 5, 3, 3, 2, 1);
 				} else {
-					jQuery(this).addClass('heightzero');
+					tabWidget.addClass('heightzero');
 				}
 				if(tabCount == tabTotal) {
 					tabClass = 'last';
@@ -377,38 +354,36 @@
 						jQuery('.home-tabs.layout1 .tab-link').removeClass('active');
 						jQuery(this).addClass('active');
 						
-						//jQuery('.home-tabs.layout1 .wpb_content_element.active').fadeOut('fast', function(){
-							jQuery('.home-tabs.layout1 .wpb_content_element').addClass('heightzero');
+						//jQuery('.home-tabs.layout1 .woocommerce.active').fadeOut('fast', function(){
+							jQuery('.home-tabs.layout1 .woocommerce').addClass('heightzero');
 							jQuery('#'+tabRel).removeClass('heightzero');
 							
-							jQuery('.home-tabs.layout1 .wpb_content_element').removeClass('active');
+							jQuery('.home-tabs.layout1 .woocommerce').removeClass('active');
 							jQuery('#'+tabRel).addClass('active');
 							
 							//make carousel
-							roadtabCarousel('#'+tabRel+' .shop-products', 5);
+							roadtabCarousel('#'+tabRel+' .shop-products', 5, 3, 3, 2, 1);
 							
 							//show again
-							//jQuery('.home-tabs.layout1 .wpb_content_element').css('display', 'block');
+							//jQuery('.home-tabs.layout1 .woocommerce').css('display', 'block');
 						//});
 					});
 				});
 			});
-			
 		}, 1000 );
-		
 		
 		//Product Tabs - layout 2
 		window.setTimeout(function(){
 			var tabCount = 1;
 			var tabTotal = jQuery('.home-tabs.layout2 .wpb_content_element').length;
-			jQuery('.home-tabs.layout2').prepend('<div class="container-fluid"><ul class="home-tabs-title"></ul></div>');
+			jQuery('.home-tabs.layout2').prepend('<div class="container"><ul class="home-tabs-title"></ul></div>');
 			var tabTitle = jQuery('.home-tabs.layout2 .home-tabs-title');
 			jQuery('.home-tabs.layout2 .wpb_content_element').each(function(){
 				var tabClass = '';
 				var tabLinkClass = '';
-				var tabWidget = jQuery(this);
-				var widgetTitle = tabWidget.find('h3').html();
-				tabWidget.attr('id', 'wpb_content_element-'+tabCount);
+				var tabWidget = jQuery(this).next('.woocommerce');
+				var widgetTitle = jQuery(this).find('h3').html();
+				tabWidget.attr('id', 'wpb_content_element2-'+tabCount);
 				
 				if(tabCount==1) {
 					tabClass = 'first';
@@ -417,15 +392,15 @@
 					tabWidget.addClass('active');
 					
 					//first tab carousel
-					roadtabCarousel('#wpb_content_element-'+tabCount+' .shop-products', 6);
+					roadtabCarousel('#wpb_content_element2-'+tabCount+' .shop-products', 4, 3, 3, 2, 1);
 				} else {
-					jQuery(this).addClass('heightzero');
+					tabWidget.addClass('heightzero');
 				}
 				if(tabCount == tabTotal) {
 					tabClass = 'last';
 				}
 				
-				tabTitle.append('<li class="'+tabClass+'"><a class="tab-link '+tabLinkClass+'" href="#" rel="wpb_content_element-'+tabCount+'">'+widgetTitle+'</a></li>');
+				tabTitle.append('<li class="'+tabClass+'"><a class="tab-link '+tabLinkClass+'" href="#" rel="wpb_content_element2-'+tabCount+'">'+widgetTitle+'</a></li>');
 				
 				tabCount++;
 				
@@ -438,23 +413,22 @@
 						jQuery('.home-tabs.layout2 .tab-link').removeClass('active');
 						jQuery(this).addClass('active');
 						
-						//jQuery('.home-tabs.layout2 .wpb_content_element.active').fadeOut('fast', function(){
-							jQuery('.home-tabs.layout2 .wpb_content_element').addClass('heightzero');
+						//jQuery('.home-tabs.layout2 .woocommerce.active').fadeOut('fast', function(){
+							jQuery('.home-tabs.layout2 .woocommerce').addClass('heightzero');
 							jQuery('#'+tabRel).removeClass('heightzero');
 							
-							jQuery('.home-tabs.layout2 .wpb_content_element').removeClass('active');
+							jQuery('.home-tabs.layout2 .woocommerce').removeClass('active');
 							jQuery('#'+tabRel).addClass('active');
 							
 							//make carousel
-							roadtabCarousel('#'+tabRel+' .shop-products', 6);
+							roadtabCarousel('#'+tabRel+' .shop-products', 4, 3, 3, 2, 1);
 							
 							//show again
-							//jQuery('.home-tabs.layout2 .wpb_content_element').css('display', 'block');
+							//jQuery('.home-tabs.layout2 .woocommerce').css('display', 'block');
 						//});
 					});
 				});
 			});
-			
 		}, 1000 );
 		
 		//Products carousel
@@ -538,67 +512,18 @@
 			
 		});
 		
-		//Latest posts carousel - layout 1
-		jQuery('.latest-posts .posts-carousel').slick({
-			infinite: false,
+		//Latest posts carousel
+		jQuery('.posts-carousel').slick({
+			infinite: true,
 			arrows: true,
-			dots: false,
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			speed: road_bloganimate,
-			easing: 'linear',
-			autoplay: road_blogscroll,
-			autoplaySpeed: road_blogpause,
-			responsive: [
-				{
-				  breakpoint: 1200,
-				  settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				  }
-				},
-				{
-				  breakpoint: 960,
-				  settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
-				  }
-				},
-				{
-				  breakpoint: 760,
-				  settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
-				  }
-				},
-				{
-				  breakpoint: 600,
-				  settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				  }
-				},
-				{
-				  breakpoint: 480,
-				  settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				  }
-				}
-			]
-		});
-		
-		//Latest posts carousel - layout 2
-		jQuery('.latest-posts2 .posts-carousel').slick({
-			infinite: false,
-			arrows: true,
-			dots: false,
+			dots: true,
 			slidesToShow: 4,
 			slidesToScroll: 1,
 			speed: road_bloganimate,
 			easing: 'linear',
 			autoplay: road_blogscroll,
 			autoplaySpeed: road_blogpause,
+			swipeToSlide: true,
 			responsive: [
 				{
 				  breakpoint: 1200,
@@ -636,6 +561,20 @@
 				  }
 				}
 			]
+		});
+		
+		//Testimonials carousel
+		jQuery('.testimonials-list').slick({
+			arrows: true,
+			dots: true,
+			infinite: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			speed: road_testianimate,
+			easing: 'linear',
+			autoplay: road_testiscroll,
+			swipeToSlide: true,
+			autoplaySpeed: road_testipause
 		});
 		
 		//Cross-sells Products carousel
@@ -961,7 +900,7 @@
 			jQuery('.morelesscate').addClass('alwayshide');
 		}
 		
-		//More categories click
+		//init height
 		oldCateMenuH = road_menu_number * jQuery('#mega_main_menu ul.mega_main_menu_ul > li.menu-item').outerHeight() + jQuery('.catemenu-toggler').outerHeight();
 		realMMH = jQuery('#mega_main_menu ul.mega_main_menu_ul > li.menu-item').length * jQuery('#mega_main_menu ul.mega_main_menu_ul > li.menu-item').outerHeight();
 		realCateMenuH = jQuery('.catemenu-toggler').outerHeight() + realMMH + jQuery('.morelesscate').outerHeight();
@@ -975,14 +914,36 @@
 		//For closed menu, have to re-calculate height of elements
 		jQuery('.catemenu-toggler').on('click', function(){
 			
+			if(jQuery('#mega_main_menu').css('display')=='none'){
+				jQuery('#mega_main_menu').css('display', 'block');
+				if(!jQuery('.morelesscate').hasClass('alwayshide')){
+					jQuery('.morelesscate').css('display', 'block');
+				}
+			} else {
+				jQuery('#mega_main_menu').css('display', 'none');
+				jQuery('.morelesscate').css('display', 'none');
+			}
+			//for default wordpress menu (not selected menu location)
+			if(jQuery('.categories-menu > ul').css('display')=='none'){
+				jQuery('.categories-menu > ul').css('display', 'block');
+			} else {
+				jQuery('.categories-menu > ul').css('display', 'none');
+			}
+			// for default wordpress menu (selected menu location)
+			if(jQuery('.categories-menu-container').css('display')=='none'){
+				jQuery('.categories-menu-container').css('display', 'block');
+			} else {
+				jQuery('.categories-menu-container').css('display', 'none');
+			}
+			
 			oldCateMenuH = road_menu_number * jQuery('#mega_main_menu ul.mega_main_menu_ul > li.menu-item').outerHeight() + jQuery('.catemenu-toggler').outerHeight();
 			realMMH = jQuery('#mega_main_menu ul.mega_main_menu_ul > li.menu-item').length * jQuery('#mega_main_menu ul.mega_main_menu_ul > li').outerHeight();
 			realCateMenuH = jQuery('.catemenu-toggler').outerHeight() + realMMH + jQuery('.morelesscate').outerHeight();
 			
 			if(jQuery('.morecate').css('display')=='none'){
-				jQuery('.categories-menu').css('height', realCateMenuH);
+				jQuery('.categories-menu').css({'height': realCateMenuH});
 			} else {
-				jQuery('.categories-menu').css('height', oldCateMenuH);
+				jQuery('.categories-menu').css({'height': oldCateMenuH});
 			}
 		});
 			//hide items out of height
@@ -1069,11 +1030,11 @@ function RoadgetParameterByName(name, string) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 //Product tabs carousel
-function roadtabCarousel(element, itemnumber) {
+function roadtabCarousel(element, itemnumbers1, itemnumbers2, itemnumbers3, itemnumbers4, itemnumbers5 ) {
 	//jQuery(element).unslick();
 	jQuery(element).slick({
 		infinite: false,
-		slidesToShow: itemnumber,
+		slidesToShow: itemnumbers1,
 		slidesToScroll: 1,
 		speed: 700,
 		easing: 'linear',
@@ -1082,28 +1043,28 @@ function roadtabCarousel(element, itemnumber) {
 			{
 			  breakpoint: 1200,
 			  settings: {
-				slidesToShow: 3,
+				slidesToShow: itemnumbers2,
 				slidesToScroll: 1
 			  }
 			},
 			{
 			  breakpoint: 960,
 			  settings: {
-				slidesToShow: 3,
+				slidesToShow: itemnumbers3,
 				slidesToScroll: 1
 			  }
 			},
 			{
 			  breakpoint: 760,
 			  settings: {
-				slidesToShow: 2,
+				slidesToShow: itemnumbers4,
 				slidesToScroll: 1
 			  }
 			},
 			{
 			  breakpoint: 600,
 			  settings: {
-				slidesToShow: 1,
+				slidesToShow: itemnumbers5,
 				slidesToScroll: 1
 			  }
 			}

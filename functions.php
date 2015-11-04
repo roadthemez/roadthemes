@@ -561,13 +561,13 @@ Class RoadThemes {
 				'saletext_color' => $road_opt['saletext_color'],
 				'rate_color' => $road_opt['rate_color'],
 				
-				'topbar_bg' => $road_opt['topbar_bg'],
+				'topbar_bg' => $road_opt['topbar_bg']['background-color'],
 				'topbar_color' => $road_opt['topbar_color'],
 				'topbar_link_color' => $road_opt['topbar_link_color']['regular'],
 				'topbar_link_hover_color' => $road_opt['topbar_link_color']['hover'],
 				'topbar_link_active_color' => $road_opt['topbar_link_color']['active'],
 				
-				'header_bg' => $road_opt['header_bg'],
+				'header_bg' => $road_opt['header_bg']['background-color'],
 				'header_color' => $road_opt['header_color'],
 				'header_link_color' => $road_opt['header_link_color']['regular'],
 				'header_link_hover_color' => $road_opt['header_link_color']['hover'],
@@ -575,7 +575,7 @@ Class RoadThemes {
 				
 				'header_sticky_bg' => $road_opt['header_sticky_bg']['rgba'],
 				
-				'footer_bg' => $road_opt['footer_bg'],
+				'footer_bg' => $road_opt['footer_bg']['background-color'],
 				'footer_color' => $road_opt['footer_color'],
 				'footer_link_color' => $road_opt['footer_link_color']['regular'],
 				'footer_link_hover_color' => $road_opt['footer_link_color']['hover'],
@@ -643,8 +643,7 @@ Class RoadThemes {
 		<?php } ?>
 		<style><?php echo '.container, .wrapper.box-layout {max-width: '.$road_opt['box_layout_width'].'px;}'; ?></style>
 		<script type="text/javascript">
-		var road_brandnumber = <?php if(isset($road_opt['brandnumber'])) { echo esc_js($road_opt['brandnumber']); } else { echo '6'; } ?>,
-			road_brandscrollnumber = <?php if(isset($road_opt['brandscrollnumber'])) { echo esc_js($road_opt['brandscrollnumber']); } else { echo '2';} ?>,
+		var road_brandscrollnumber = <?php if(isset($road_opt['brandscrollnumber'])) { echo esc_js($road_opt['brandscrollnumber']); } else { echo '2';} ?>,
 			road_brandpause = <?php if(isset($road_opt['brandpause'])) { echo esc_js($road_opt['brandpause']); } else { echo '3000'; } ?>,
 			road_brandanimate = <?php if(isset($road_opt['brandanimate'])) { echo esc_js($road_opt['brandanimate']); } else { echo '700';} ?>;
 		var road_brandscroll = 'false';

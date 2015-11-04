@@ -65,7 +65,7 @@ var road_menu_number = <?php if(isset($road_opt['vertical_menu_items'])) { echo 
 			<div class="header-container layout2 second">
 				<?php if(isset($road_opt)) { ?>
 					<div class="top-bar">
-						<div class="container-fluid">
+						<div class="container">
 								<?php if( isset($road_opt['images_top_bar']['url']) ){ ?>
 									<div class="images-top-bar"><a href="<?php echo esc_attr($road_opt['images_top_bar_link']);?>"><img src="<?php echo esc_url($road_opt['images_top_bar']['url']); ?>" alt="" /></a></div>
 								<?php } ?>
@@ -81,7 +81,7 @@ var road_menu_number = <?php if(isset($road_opt['vertical_menu_items'])) { echo 
 					</div>
 				<?php } ?>
 				<div class="header clearfix">
-					<div class="container-fluid">
+					<div class="container">
 						<div class="row">
 							<div class="col-xs-12 col-lg-7 col-lg-push-2 f-logo">
 								<?php if( isset($road_opt['logo_main']['url']) ){ ?>

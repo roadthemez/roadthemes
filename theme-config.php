@@ -563,7 +563,7 @@ if (!class_exists('Road_Theme_Config')) {
                         'type'      => 'text',
                         'title'     => esc_html__('Less items label', 'roadthemes'),
 						'subtitle'     => esc_html__('The label for less items button', 'roadthemes'),
-                        'default'   => 'Close Menu'
+                        'default'   => 'Less'
                     ),
 					array(
                         'id'        => 'vertical_menu_home',
@@ -985,17 +985,6 @@ if (!class_exists('Road_Theme_Config')) {
                 'desc'      => esc_html__('Upload brand logos and links', 'roadthemes'),
                 'icon'      => 'el-icon-briefcase',
                 'fields'    => array(
-					array(
-						'id'        => 'brandnumber',
-						'type'      => 'slider',
-						'title'     => esc_html__('Number of logos per page', 'roadthemes'),
-						'desc'      => esc_html__('Number of logos per page, default value: 6', 'roadthemes'),
-						"default"   => 6,
-						"min"       => 1,
-						"step"      => 1,
-						"max"       => 12,
-						'display_value' => 'text'
-					),
 					array(
 						'id'       => 'brandscroll',
 						'type'     => 'switch',

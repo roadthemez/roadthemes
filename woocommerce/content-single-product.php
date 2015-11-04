@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ?>
 <?php global $road_opt, $road_secondimage; ?>
 
-<div class="container-fluid">
+<div class="container">
 <?php
 	/**
 	 * woocommerce_before_single_product hook
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ?>
 </div>
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-md-4">
 				<div class="single-product-image">
@@ -71,7 +71,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		</div>
 	</div>
 	
-	<div class="container-fluid">
+	<div class="container">
 		<?php
 			/**
 			 * woocommerce_after_single_product_summary hook
