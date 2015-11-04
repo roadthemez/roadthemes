@@ -163,24 +163,8 @@
 		width: 100%;
 		
 		.button {
-			background: @primarycolor;
-			border: none;
-			border-radius: 0;
-			box-shadow: none;
-			color: #fff;
-			display: inline-block;
+			.buttonMixin();
 			float: right;
-			font-weight: 400;
-			height: 30px;
-			line-height: 30px;
-			padding: 0 20px;
-			text-shadow: none;
-			text-transform: uppercase;
-	
-			&:hover {
-				background: darken(@primarycolor, 10%);
-				color: #fff;
-			}
 		}
 	}
 }

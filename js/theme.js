@@ -323,6 +323,7 @@
 				var tabClass = '';
 				var tabLinkClass = '';
 				var tabWidget = jQuery(this).next('.woocommerce');
+				tabWidget.addClass('product-tabs');
 				var widgetTitle = jQuery(this).find('h3').html();
 				tabWidget.attr('id', 'wpb_content_element-'+tabCount);
 				
@@ -354,19 +355,14 @@
 						jQuery('.home-tabs.layout1 .tab-link').removeClass('active');
 						jQuery(this).addClass('active');
 						
-						//jQuery('.home-tabs.layout1 .woocommerce.active').fadeOut('fast', function(){
-							jQuery('.home-tabs.layout1 .woocommerce').addClass('heightzero');
-							jQuery('#'+tabRel).removeClass('heightzero');
-							
-							jQuery('.home-tabs.layout1 .woocommerce').removeClass('active');
-							jQuery('#'+tabRel).addClass('active');
-							
-							//make carousel
-							roadtabCarousel('#'+tabRel+' .shop-products', 5, 3, 3, 2, 1);
-							
-							//show again
-							//jQuery('.home-tabs.layout1 .woocommerce').css('display', 'block');
-						//});
+						jQuery('.home-tabs.layout1 .product-tabs').addClass('heightzero');
+						jQuery('#'+tabRel).removeClass('heightzero');
+						
+						jQuery('.home-tabs.layout1 .product-tabs').removeClass('active');
+						jQuery('#'+tabRel).addClass('active');
+						
+						//make carousel
+						roadtabCarousel('#'+tabRel+' .shop-products', 5, 3, 3, 2, 1);
 					});
 				});
 			});
@@ -382,6 +378,7 @@
 				var tabClass = '';
 				var tabLinkClass = '';
 				var tabWidget = jQuery(this).next('.woocommerce');
+				tabWidget.addClass('product-tabs');
 				var widgetTitle = jQuery(this).find('h3').html();
 				tabWidget.attr('id', 'wpb_content_element2-'+tabCount);
 				
@@ -413,19 +410,14 @@
 						jQuery('.home-tabs.layout2 .tab-link').removeClass('active');
 						jQuery(this).addClass('active');
 						
-						//jQuery('.home-tabs.layout2 .woocommerce.active').fadeOut('fast', function(){
-							jQuery('.home-tabs.layout2 .woocommerce').addClass('heightzero');
-							jQuery('#'+tabRel).removeClass('heightzero');
-							
-							jQuery('.home-tabs.layout2 .woocommerce').removeClass('active');
-							jQuery('#'+tabRel).addClass('active');
-							
-							//make carousel
-							roadtabCarousel('#'+tabRel+' .shop-products', 4, 3, 3, 2, 1);
-							
-							//show again
-							//jQuery('.home-tabs.layout2 .woocommerce').css('display', 'block');
-						//});
+						jQuery('.home-tabs.layout2 .product-tabs').addClass('heightzero');
+						jQuery('#'+tabRel).removeClass('heightzero');
+						
+						jQuery('.home-tabs.layout2 .product-tabs').removeClass('active');
+						jQuery('#'+tabRel).addClass('active');
+						
+						//make carousel
+						roadtabCarousel('#'+tabRel+' .shop-products', 4, 3, 3, 2, 1);
 					});
 				});
 			});

@@ -92,6 +92,9 @@
   float: right;
   height: 40px;
 }
+.header-container .switcher .currency {
+  float: right;
+}
 .header-container .switcher .currency select {
   background: transparent;
   border: 1px solid #e5e5e5;
@@ -113,6 +116,7 @@
   background: transparent;
   height: auto;
   font-family: Roboto, Arial, Helvetica, sans-serif;
+  float: right;
 }
 .header-container .switcher #lang_sel li {
   width: auto;
@@ -332,9 +336,30 @@
   text-align: center;
 }
 .header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content .buttons a {
-  width: 100%;
+  background: #999999;
+  border: none;
+  border-radius: 3px;
+  box-shadow: none;
+  color: #fff;
+  display: inline-block;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 20px;
+  text-shadow: none;
   text-transform: uppercase;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
   border: 1px solid #e5e5e5;
+}
+.header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content .buttons a:hover {
+  background: #ff7572;
+  color: #fff;
+  text-shadow: none;
 }
 .header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content ul.cart_empty {
   margin: 0;

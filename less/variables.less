@@ -70,3 +70,29 @@
 @greycolor: #999999;
 @lightgreycolor: #bababa;
 @bordercolor: #e5e5e5;
+
+.buttonMixin() {
+	background: @greycolor;
+	border: none;
+	border-radius: 3px;
+	box-shadow: none;
+	color: #fff;
+	display: inline-block;
+	font-family: @headingfont;
+	font-size: 14px;
+	font-weight: bold;
+	height: 35px;
+	line-height: 35px;
+	padding: 0 20px;
+	text-shadow: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	
+	&:hover {
+		background: @primarycolor;
+		color: #fff;
+		text-shadow: none;
+	}
+}

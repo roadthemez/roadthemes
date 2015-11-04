@@ -161,23 +161,29 @@
   width: 100%;
 }
 .atc-notice-wrapper .buttons .button {
-  background: #ff7572;
+  background: #999999;
   border: none;
-  border-radius: 0;
+  border-radius: 3px;
   box-shadow: none;
   color: #fff;
   display: inline-block;
-  float: right;
-  font-weight: 400;
-  height: 30px;
-  line-height: 30px;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  height: 35px;
+  line-height: 35px;
   padding: 0 20px;
   text-shadow: none;
   text-transform: uppercase;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  float: right;
 }
 .atc-notice-wrapper .buttons .button:hover {
-  background: #ff433f;
+  background: #ff7572;
   color: #fff;
+  text-shadow: none;
 }
 body.quickview {
   overflow: hidden;
@@ -436,6 +442,30 @@ body.quickview {
   font-weight: normal;
   height: 43px;
   width: 50px;
+}
+.quickview-wrapper #quickview-content .product-info .quick-add-to-cart .cart .button {
+  background: #999999;
+  border: none;
+  border-radius: 3px;
+  box-shadow: none;
+  color: #fff;
+  display: inline-block;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 20px;
+  text-shadow: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.quickview-wrapper #quickview-content .product-info .quick-add-to-cart .cart .button:hover {
+  background: #ff7572;
+  color: #fff;
+  text-shadow: none;
 }
 .quickview-wrapper #quickview-content .product-info .quick-add-to-cart .cart .variations {
   float: left;
@@ -1811,6 +1841,30 @@ body.quickview {
 .main-container .product-view .product .woocommerce-tabs #tab-reviews #reviews #review_form_wrapper .comment-form .stars a.active:after,
 .main-container .product-view .product .woocommerce-tabs #tab-reviews #reviews #review_form_wrapper .comment-form .stars a:hover:after {
   color: #e74c3c;
+}
+.main-container .product-view .product .woocommerce-tabs #tab-reviews #reviews #review_form_wrapper .comment-form .form-submit #submit {
+  background: #999999;
+  border: none;
+  border-radius: 3px;
+  box-shadow: none;
+  color: #fff;
+  display: inline-block;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 20px;
+  text-shadow: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.main-container .product-view .product .woocommerce-tabs #tab-reviews #reviews #review_form_wrapper .comment-form .form-submit #submit:hover {
+  background: #ff7572;
+  color: #fff;
+  text-shadow: none;
 }
 .main-container .product-view .upsells_products_widget {
   float: left;

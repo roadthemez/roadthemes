@@ -526,6 +526,34 @@
   max-width: 100%;
   padding: 10px;
 }
+.main-container .page-content .button,
+.main-container .page-content .button.alt,
+.main-container .page-content #submit {
+  background: #999999;
+  border: none;
+  border-radius: 3px;
+  box-shadow: none;
+  color: #fff;
+  display: inline-block;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 20px;
+  text-shadow: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.main-container .page-content .button:hover,
+.main-container .page-content .button.alt:hover,
+.main-container .page-content #submit:hover {
+  background: #ff7572;
+  color: #fff;
+  text-shadow: none;
+}
 .main-container .page-content .button.alt,
 .main-container .page-content .button.alt.alt,
 .main-container .page-content #submit.alt {
