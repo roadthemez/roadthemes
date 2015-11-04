@@ -48,12 +48,11 @@
 		.star-rating {
 			display: inline-block;
 			float: none;
-			font-size: 12px;
 			height: 15px;
-			width: 65px;
+			width: 68px;
 			margin: 0;
 			
-			&: before {
+			&:before {
 				content: "\f005\f005\f005\f005\f005";
 				font-family: FontAwesome;
 				font-size: 12px;
@@ -64,7 +63,7 @@
 				height: 21px;
 				width: 120px;
 				
-				&: before {
+				&:before {
 					color: @ratecolor;
 					content: "\f005\f005\f005\f005\f005";
 					font-family: FontAwesome;
@@ -107,7 +106,7 @@
 		-webkit-transition: color 0.3s ease;
 		transition: color 0.3s ease;
 		
-		&: hover {
+		&:hover {
 			color: @primarycolor;
 		}
 	}
@@ -178,7 +177,7 @@
 			text-shadow: none;
 			text-transform: uppercase;
 	
-			&: hover {
+			&:hover {
 				background: darken(@primarycolor, 10%);
 				color: #fff;
 			}
@@ -230,7 +229,7 @@ body.quickview {
 		-webkit-transition: all 0.3s ease;
 		transition: all 0.3s ease;
 	
-		&: hover {
+		&:hover {
 			background: @primarycolor;
 		}
 		&.qvnext {
@@ -284,7 +283,7 @@ body.quickview {
 			-webkit-transition: all 0.3s ease;
 			transition: all 0.3s ease;
 			
-			&: hover {
+			&:hover {
 				border: 1px solid @primarycolor;
 				color: @primarycolor;
 			}
@@ -331,10 +330,10 @@ body.quickview {
 							visibility: visible;
 							width: 100%;
 
-							&: hover{
+							&:hover{
 								background: @bordercolor;
 							}
-							&: before {
+							&:before {
 								display: none;
 							}
 						}
@@ -386,11 +385,11 @@ body.quickview {
 				p {
 					margin: 0;
 				}
-				.special-price {
+				ins {
 					color: @primarycolor;
 					font-size: 24px;
 				}
-				.old-price {
+				del {
 					display: none;
 				}
 			}
@@ -401,7 +400,7 @@ body.quickview {
 				text-decoration: underline;
 				width: 100%;
 				
-				&: hover {
+				&:hover {
 					color: @primarycolor;
 				}
 			}
@@ -428,7 +427,7 @@ body.quickview {
 						margin-right: 5px;
 						margin-top: 3px;
 						
-						&: before {
+						&:before {
 							color: #b7b7b7;
 						}
 					}
@@ -439,7 +438,7 @@ body.quickview {
 						line-height: 14px;
 						text-decoration: underline;
 						
-						&: hover {
+						&:hover {
 							color: @primarycolor;
 						}
 					}
@@ -541,7 +540,7 @@ body.quickview {
 						float: left;
 						text-decoration: underline;
 						
-						&: hover {
+						&:hover {
 							color: @primarycolor;
 						}
 					}
@@ -565,7 +564,7 @@ body.quickview {
 						list-style: none;
 						margin: 0 0 5px;
 						
-						&: before {
+						&:before {
 							content: "\f00c";
 							display: inline-block;
 							font-family: FontAwesome;
@@ -609,41 +608,41 @@ body.quickview {
 						text-align: center;
 						width: 40px;
 						
-						&: hover {
+						&:hover {
 							color: #fff;
 						}
 						&.facebook {
-							&: hover {
+							&:hover {
 								background: #3B579D;
 								border: 1px solid #3B579D;
 							}
 						}
 						&.twitter {
-							&: hover {
+							&:hover {
 								background: #3ACAFF;
 								border: 1px solid #3ACAFF;
 							}
 						}
 						&.pinterest {
-							&: hover {
+							&:hover {
 								background: #CB2027;
 								border: 1px solid #CB2027;
 							}
 						}
 						&.tumblr {
-							&: hover {
+							&:hover {
 								background: #304E6C;
 								border: 1px solid #304E6C;
 							}
 						}
 						&.gplus {
-							&: hover {
+							&:hover {
 								background: #D11717;
 								border: 1px solid #D11717;
 							}
 						}
 						&.linkedin {
-							&: hover {
+							&:hover {
 								background: #0097BD;
 								border: 1px solid #0097BD;
 							}
@@ -684,7 +683,7 @@ body.quickview {
 				text-align: center;
 				line-height: 40px;
 				border: 1px solid @bordercolor;
-				&: hover, &.active {
+				&:hover, &.active {
 					color: #fff;
 					background: @primarycolor;
 					border-color: @primarycolor;
@@ -740,7 +739,7 @@ body.quickview {
 							b {
 								background: none;
 								
-								&: before {
+								&:before {
 									content: "\f107";
 									font-family: FontAwesome;
 									font-size: 16px;
@@ -812,14 +811,14 @@ body.quickview {
 							font-weight: 700;
 							background-color: @primarycolor;
 						}
-						&: hover {
+						&:hover {
 							color: #fff;
 							background-color: @primarycolor;
 						}
 						&.next, &.prev {
 							position: relative;
 							
-							&: before {
+							&:before {
 								background: #fff;
 								content: "\f054";
 								font-family: FontAwesome;
@@ -831,12 +830,12 @@ body.quickview {
 								top: 0;
 								width: 100%;
 							}
-							&: hover {
+							&:hover {
 								color: @headingcolor;
 							}
 						}
 						&.prev {
-							&: before {
+							&:before {
 								content: "\f053";
 							}
 						}
@@ -850,6 +849,7 @@ body.quickview {
 		padding: 0;
 		margin-right: -10px;
 		margin-left: -10px;
+		
 		.product-category {
 			float: left;
 			width: 100%;
@@ -882,7 +882,7 @@ body.quickview {
 					text-decoration: underline;
 					text-transform: uppercase;
 					
-					&: hover {
+					&:hover {
 						text-decoration: none;
 					}
 				}
@@ -909,7 +909,8 @@ body.quickview {
 				border: 1px solid @bordercolor;
 				padding: 8px 10px;
 				text-align: left;
-				&: hover {
+				
+				&:hover {
 					border: 1px solid @primarycolor;
 					.product-image {
 						a {
@@ -968,17 +969,17 @@ body.quickview {
 					position: relative;
 					z-index: 2;
 					
-					.special-price {
+					ins {
 						display: inline-block;
+						text-decoration: none;
 					}
-					.old-price {
+					del {
 						display: inline-block;
 						
 						.amount {
 							color: @greycolor;
-							font-size: 17px;
+							font-size: 14px;
 							margin-left: 10px;
-							font-weight: 500;
 							text-decoration: line-through;
 						}
 					}
@@ -1002,6 +1003,7 @@ body.quickview {
 					.add-to-cart {
 						float: left;
 						margin: 0 7px 5px 0;
+						
 						.add_to_cart_inline {
 							border: none !important;
 							float: left;
@@ -1009,7 +1011,7 @@ body.quickview {
 							padding: 0 !important;
 							position: relative;
 							
-							.special-price, .old-price {
+							del, ins, .amount {
 								display: none;
 							}
 							a.button {
@@ -1020,12 +1022,12 @@ body.quickview {
 								color: @textcolor;
 								font-size: 12px;
 								padding: 0 10px 0 0;
-								&: before{
+								&:before{
 									content: "\f07a";
 									font-family: FontAwesome;
 									margin: 0 5px 0 10px;
 								}
-								&: hover, &.added {
+								&:hover, &.added {
 									background: @primarycolor;
 									border-color: @primarycolor;
 									color: #fff;
@@ -1066,7 +1068,7 @@ body.quickview {
 								    margin: 0 7px 5px 0;
 								    border-radius: 0;
 								    color: @textcolor;
-								    &: before{
+								    &:before{
 										content: "\f08a";
 										font-family: FontAwesome;
 										font-size: 15px;
@@ -1078,7 +1080,7 @@ body.quickview {
 										bottom: 0;
 										margin: auto;
 								    }
-								&: hover {
+								&:hover {
 									color: #fff;
 									background: @primarycolor;
 									border-color: @primarycolor;
@@ -1087,7 +1089,7 @@ body.quickview {
 							.yith-wcwl-wishlistexistsbrowse, .yith-wcwl-wishlistaddedbrowse {
 								a {
 									color: @primarycolor;
-									&: hover {
+									&:hover {
 										color: #fff;
 										background: @primarycolor;
 										border-color: @primarycolor;
@@ -1113,7 +1115,7 @@ body.quickview {
 							    border-radius: 0;
 							    background: none;
 							    color: @textcolor;
-							    &: before{
+							    &:before{
 									content: "\f080";
 									font-family: FontAwesome;
 									font-size: 15px;
@@ -1126,14 +1128,14 @@ body.quickview {
 									margin: auto;
 							    }
 								
-								&: hover {
+								&:hover {
 									color: #fff;
 									background: @primarycolor;
 									border-color: @primarycolor;
 								}
 								&.added {
 									color: @primarycolor;
-									&: hover {
+									&:hover {
 										color: #fff;
 										background: @primarycolor;
 										border-color: @primarycolor;
@@ -1148,7 +1150,7 @@ body.quickview {
 		&.grid-view {
 			.item-col {
 				.product-wrapper {
-					&: hover {
+					&:hover {
 						.quickviewbtn{
 							.quickview{
 								-moz-transform: translateY(0px);
@@ -1187,10 +1189,10 @@ body.quickview {
 							transform: translateY(-50px);
 							visibility: hidden;
 							opacity: 0;
-							&: hover{
+							&:hover{
 								background: darken(@primarycolor, 10%);
 							}
-						    &: before{
+						    &:before{
 								font-size: 15px;
 								text-indent: 0;
 								position: absolute;
@@ -1248,12 +1250,12 @@ body.quickview {
 										    border-radius: 0;
 										    background: none;
 										    color: @textcolor;
-										    &: hover {
+										    &:hover {
 												color: #fff;
 												background: @primarycolor;
 												border-color: @primarycolor;
 											}
-										    &: before{
+										    &:before{
 												font-size: 15px;
 												text-indent: 0;
 												position: absolute;
@@ -1313,14 +1315,14 @@ body.quickview {
 						right: 25px;
 						left: auto;
 					}
-					&: hover{
+					&:hover{
 						border-color: @bordercolor;
 					}
-					&: before {
+					&:before {
 						display: none;
 					}
 				}
-				&: hover{
+				&:hover{
 					button.slick-prev{
 						left: 25px;
 					}
@@ -1377,7 +1379,7 @@ body.quickview {
 					-webkit-transition: all 0.4s ease;
 					transition: all 0.4s ease;
 					
-					&: hover {
+					&:hover {
 						border: 1px solid darkien(@primarycolor, 10%);
 						color: darkien(@primarycolor, 10%);
 					}
@@ -1434,7 +1436,7 @@ body.quickview {
 					transition: all 0.4s ease;
 					top: 40px;
 					left: 15px;
-					&: hover {
+					&:hover {
 						background: @primarycolor;
 						color: #fff;
 					}
@@ -1470,10 +1472,11 @@ body.quickview {
 					font-size: 24px;
 					font-weight: 500;
 					margin: 0;
-					.special-price {
+					
+					ins {
 						display: inline-block;
 					}
-					.old-price {
+					del {
 						display: inline-block;
 						color: @greycolor;
 						font-size: 18px;
@@ -1548,7 +1551,7 @@ body.quickview {
 						float: left;
 						margin-top: 10px;
 						
-						&: hover {
+						&:hover {
 							color: @primarycolor;
 						}
 					}
@@ -1622,7 +1625,7 @@ body.quickview {
 					background: @primarycolor;
 					font-size: 24px;
 					font-weight: 700;
-					&: hover{
+					&:hover{
 						background: @greycolor;
 					}
 				}
@@ -1656,12 +1659,12 @@ body.quickview {
 				text-transform: capitalize;
 				font-weight: normal;
 				color: @textcolor;
-				&: before{
+				&:before{
 					content: "\f080";
 					font-family: FontAwesome;
 					margin-right: 5px;
 				}
-				&: hover{
+				&:hover{
 					background-color: @primarycolor;
 					color: #fff;
 					border-color: @primarycolor;
@@ -1682,12 +1685,12 @@ body.quickview {
 					padding: 0 10px;
 					border-radius: 0;
 					font-weight: normal;
-					&: before{
+					&:before{
 						content: "\f08a";
 						font-family: FontAwesome;
 						margin-right: 5px;
 					}
-					&: hover{
+					&:hover{
 						background-color: @primarycolor;
 						color: #fff;
 						border-color: @primarycolor;
@@ -1749,7 +1752,7 @@ body.quickview {
 					margin: 0;
 					width: 25%;
 					padding: 0;
-					&: before {
+					&:before {
 						display: none;
 					}
 					
@@ -1766,7 +1769,7 @@ body.quickview {
 						padding: 15px;
 						border-bottom: 1px solid @bordercolor;
 						text-align: right;
-						&: before, &: after {
+						&:before, &:after {
 							display: none;
 						}
 						a {
@@ -1777,7 +1780,7 @@ body.quickview {
 							text-decoration: none;
 							text-shadow: none;
 							text-transform: uppercase;
-							&: hover {
+							&:hover {
 								color: @primarycolor;
 							}
 						}
@@ -1862,7 +1865,7 @@ body.quickview {
 										margin-left: 80px;
 										position: relative;
 										
-										&: before {
+										&:before {
 											background: #fff;
 											border-bottom: 1px solid @bordercolor;
 											border-left: 1px solid @bordercolor;
@@ -1917,38 +1920,38 @@ body.quickview {
 										border: none;
 										line-height: 14px;
 										
-										&: after {
+										&:after {
 											color: @lightgreycolor;
 											font-family: FontAwesome;
 											font-weight: normal;
 										}
 										&.star-1 {
-											&: after {
+											&:after {
 												content: "\f006";
 											}
 										}
 										&.star-2 {
-											&: after {
+											&:after {
 												content: "\f006\f006";
 											}
 										}
 										&.star-3 {
-											&: after {
+											&:after {
 												content: "\f006\f006\f006";
 											}
 										}
 										&.star-4 {
-											&: after {
+											&:after {
 												content: "\f006\f006\f006\f006";
 											}
 										}
 										&.star-5 {
-											&: after {
+											&:after {
 												content: "\f006\f006\f006\f006\f006";
 											}
 										}
-										&.active, &: hover {
-											&: after {
+										&.active, &:hover {
+											&:after {
 												color: @ratecolor;
 											}
 										}
@@ -1978,7 +1981,7 @@ body.quickview {
 					padding: 0 0 10px;
 					font-size: 18px;
 					font-weight: 500;
-					&: after{
+					&:after{
 						content: "";
 						position: absolute;
 						width: 100px;
@@ -2020,7 +2023,7 @@ body.quickview {
 					padding: 0 0 10px;
 					font-size: 18px;
 					font-weight: 500;
-					&: after{
+					&:after{
 						content: "";
 						position: absolute;
 						width: 100px;
@@ -2064,7 +2067,7 @@ body.quickview {
 							}
 						}
 					}
-					&: last-child{
+					&:last-child{
 						border-bottom: 0;
 						margin: 0;
 						padding: 0;
@@ -2208,7 +2211,7 @@ body.quickview {
 			display: inline-block;
 			font-size: 20px;
 			
-			&: hover {
+			&:hover {
 				color: @primarycolor !important;
 			}
 		}
@@ -2371,7 +2374,7 @@ body.quickview {
 				padding: 0 30px;
 				text-transform: none;
 				
-				&: hover {
+				&:hover {
 					background: darken(@primarycolor, 10%);
 				}
 			}
@@ -2589,7 +2592,7 @@ body.quickview {
 					text-shadow: none;
 					width: 100%;
 					
-					&: after {
+					&:after {
 						display: none;
 					}
 				}
@@ -2610,7 +2613,7 @@ body.quickview {
 					padding: 0;
 					width: 100%;
 					
-					&: hover {
+					&:hover {
 						background: darken(@primarycolor, 10%);
 					}
 				}
@@ -2637,7 +2640,7 @@ body.quickview {
 			color: #fff;
 			margin-left: 6px;
 			
-			&: hover {
+			&:hover {
 				background: darken(@headingcolor, 10%);
 			}
 		}
@@ -2683,7 +2686,7 @@ body.quickview {
 			font-weight: 700;
 			line-height: 1.35;
 			
-			&: before {
+			&:before {
 				content: "\f00c";
 				display: inline-block;
 				font-family: FontAwesome;
