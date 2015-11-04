@@ -595,6 +595,7 @@ Class RoadThemes {
 			if(function_exists('compileLessFile')){
 				compileLessFile('reset.less', 'reset'.$presetopt.'.css', $themevariables);
 				compileLessFile('global.less', 'global'.$presetopt.'.css', $themevariables);
+				compileLessFile('pages.less', 'pages'.$presetopt.'.css', $themevariables);
 				compileLessFile('woocommerce.less', 'woocommerce'.$presetopt.'.css', $themevariables);
 				compileLessFile('portfolio.less', 'portfolio'.$presetopt.'.css', $themevariables);
 				compileLessFile('layouts.less', 'layouts'.$presetopt.'.css', $themevariables);
@@ -606,7 +607,8 @@ Class RoadThemes {
 		// Load main theme css style files
 		wp_enqueue_style( 'roadcss-reset', get_template_directory_uri() . '/css/reset'.$presetopt.'.css', array(), '1.0.0' );
 		wp_enqueue_style( 'roadcss-global', get_template_directory_uri() . '/css/global'.$presetopt.'.css', array('roadcss-reset'), '1.0.0' );
-		wp_enqueue_style( 'roadcss-woocommerce', get_template_directory_uri() . '/css/woocommerce'.$presetopt.'.css', array('roadcss-global'), '1.0.0' );
+		wp_enqueue_style( 'roadcss-pages', get_template_directory_uri() . '/css/pages'.$presetopt.'.css', array('roadcss-global'), '1.0.0' );
+		wp_enqueue_style( 'roadcss-woocommerce', get_template_directory_uri() . '/css/woocommerce'.$presetopt.'.css', array('roadcss-pages'), '1.0.0' );
 		wp_enqueue_style( 'roadcss-portfolio', get_template_directory_uri() . '/css/portfolio'.$presetopt.'.css', array('roadcss-woocommerce'), '1.0.0' );
 		wp_enqueue_style( 'roadcss-layouts', get_template_directory_uri() . '/css/layouts'.$presetopt.'.css', array('roadcss-portfolio'), '1.0.0' );
 		wp_enqueue_style( 'roadcss-responsive', get_template_directory_uri() . '/css/responsive'.$presetopt.'.css', array('roadcss-layouts'), '1.0.0' );
