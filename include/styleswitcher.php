@@ -73,18 +73,16 @@ function style_switcher() { ?>
 					</ul>
 				</div>
 				<button type="button" id="resetpreview" class="btn btn-primary">Reset</button>
-				<!--<div class="presets">
+				<div class="presets">
 					<h2>Preset Switcher</h2>
 					<ul id="preset" class="preset">
 						<li><a class="preset1" href="?preset=1">Preset 1</a></li>
 						<li><a class="preset2" href="?preset=2">Preset 2</a></li>
 						<li><a class="preset3" href="?preset=3">Preset 3</a></li>
 						<li><a class="preset4" href="?preset=4">Preset 4</a></li>
-						<li><a class="preset5" href="?preset=5">Preset 5</a></li>
-						<li><a class="preset6" href="?preset=6">Preset 6</a></li>
 					</ul>
-				</div>-->
-				<!--<div class="home-layouts">
+				</div>
+				<div class="home-layouts">
 					<h2>Home Layouts</h2>
 					<div class="layout-scroll scrollbar-outer">
 						
@@ -98,7 +96,7 @@ function style_switcher() { ?>
 								<li><a href="<?php echo get_site_url().'/home-shop-7/'; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/screenshots/home7.png" alt="" /><span>Home 7</span></a></li>
 							</ul>
 					</div>
-				</div>-->
+				</div>
 			</form>
 		</div>
 	</div>

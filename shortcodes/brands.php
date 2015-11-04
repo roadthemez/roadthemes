@@ -3,7 +3,11 @@ function road_brands_shortcode( $atts ) {
 	global $road_opt;
 	$brand_index = 0;
 	$brandfound=count($road_opt['brand_logos']);
+	
 	$atts = shortcode_atts( array(), $atts, 'ourbrands' );
+	
+	$rowsnumber = $atts['rowsnumber'];
+	$colsnumber = $atts['colsnumber'];
 	
 	$html = '';
 	

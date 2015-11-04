@@ -120,5 +120,7 @@
 			jQuery('.slayout').val('');
 			setCookie('page_layout', '', 1);
 		});
+		//Scroll bar
+		jQuery('.scrollbar-outer').scrollbar();
 	});
 })(jQuery);

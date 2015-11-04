@@ -9,112 +9,82 @@
  * @since Road Themes 1.0
  */
 ?>
-<?php global $road_opt; ?>
+<?php global $road_opt;
 
+$ft_col_class = '';
+?>
 	<div class="footer">
-	
+		
 		<?php if(isset($road_opt)) { ?>
-		<div class="footer-top">
+		<div class="footer-widgets">
 			<div class="container">
-				<div class="row">	
+				<div class="row">
 					<?php
-					if( isset($road_opt['footer_menu1']) && $road_opt['footer_menu1']!='' ) {
-						$menu1_object = wp_get_nav_menu_object( $road_opt['footer_menu1'] );
-						$menu1_args = array(
-							'menu_class'      => 'nav_menu',
-							'menu'         => $road_opt['footer_menu1'],
-						); ?>
-						<div class="col-sm-6  col-md-2 col-lg-2">
-							<div class="widget widget_menu">
-								<h3 class="widget-title"><?php echo esc_html($menu1_object->name); ?></h3>
-								<?php wp_nav_menu( $menu1_args ); ?>
-							</div>
-						</div>
-					<?php }
-					if( isset($road_opt['footer_menu2']) && $road_opt['footer_menu2']!='' ) {
-						$menu2_object = wp_get_nav_menu_object( $road_opt['footer_menu2'] );
-						$menu2_args = array(
-							'menu_class'      => 'nav_menu',
-							'menu'         => $road_opt['footer_menu2'],
-						); ?>
-						<div class="col-sm-6  col-md-2 col-lg-2">
-							<div class="widget widget_menu">
-								<h3 class="widget-title"><?php echo esc_html($menu2_object->name); ?></h3>
-								<?php wp_nav_menu( $menu2_args ); ?>
-							</div>
-						</div>
-					<?php }
-					if( isset($road_opt['footer_menu3']) && $road_opt['footer_menu3']!='' ) {
-						$menu3_object = wp_get_nav_menu_object( $road_opt['footer_menu3'] );
-						$menu3_args = array(
-							'menu_class'      => 'nav_menu',
-							'menu'         => $road_opt['footer_menu3'],
-						); ?>
-						<div class="col-sm-6  col-md-2 col-lg-2">
-							<div class="widget widget_menu">
-								<h3 class="widget-title"><?php echo esc_html($menu3_object->name); ?></h3>
-								<?php wp_nav_menu( $menu3_args ); ?>
-							</div>
-						</div>
-					<?php } ?>
-					
-					
-					<?php if(isset($road_opt['contact_us']) && $road_opt['contact_us']!=''){ ?>
-					<div class="col-sm-6  col-md-3 col-lg-3">
-						<div class="widget widget_contact_us">
-						<?php echo wp_kses($road_opt['contact_us'], array(
-								'a' => array(
-									'href' => array(),
-									'title' => array()
-								),
-								'img' => array(
-									'src' => array(),
-									'alt' => array()
-								),
-								'ul' => array(),
-								'li' => array(),
-								'i' => array(
-									'class' => array()
-								),
-								'br' => array(),
-								'em' => array(),
-								'strong' => array(),
-								'p' => array(),
-							)); ?>
-						</div>
-					</div>
-					<?php } ?>
-
-					<div class="col-sm-6  col-md-3 col-lg-3">
-						<?php
-						if ( isset($road_opt['newsletter_form']) ) {
-							if(class_exists( 'WYSIJA_NL_Widget' )){
-								the_widget('WYSIJA_NL_Widget', array(
-									'title' => esc_html($road_opt['newsletter_title']),
-									'form' => (int)$road_opt['newsletter_form'],
-									'id_form' => 'newsletter1',
-									'success' => '',
-								));
-							}
+					if(isset($road_opt['widget_columns'])){
+						switch ($road_opt['widget_columns']) {
+							case '1':
+								echo '<div class="col-xs-12">';
+								dynamic_sidebar('footer-widget1');
+								echo '</div>';
+								break;
+							case '2':
+								echo '<div class="col-xs-12 col-md-6">';
+								dynamic_sidebar('footer-widget1');
+								echo '</div>';
+								echo '<div class="col-xs-12 col-md-6">';
+								dynamic_sidebar('footer-widget2');
+								echo '</div>';
+								break;
+							case '31':
+								echo '<div class="col-xs-12 col-md-3">';
+								dynamic_sidebar('footer-widget1');
+								echo '</div>';
+								echo '<div class="col-xs-12 col-md-3">';
+								dynamic_sidebar('footer-widget2');
+								echo '</div>';
+								echo '<div class="col-xs-12 col-md-6">';
+								dynamic_sidebar('footer-widget3');
+								echo '</div>';
+								break;
+							case '32':
+								echo '<div class="col-xs-12 col-md-3">';
+								dynamic_sidebar('footer-widget1');
+								echo '</div>';
+								echo '<div class="col-xs-12 col-md-6">';
+								dynamic_sidebar('footer-widget2');
+								echo '</div>';
+								echo '<div class="col-xs-12 col-md-3">';
+								dynamic_sidebar('footer-widget3');
+								echo '</div>';
+								break;
+							case '33':
+								echo '<div class="col-xs-12 col-md-6">';
+								dynamic_sidebar('footer-widget1');
+								echo '</div>';
+								echo '<div class="col-xs-12 col-md-3">';
+								dynamic_sidebar('footer-widget2');
+								echo '</div>';
+								echo '<div class="col-xs-12 col-md-3">';
+								dynamic_sidebar('footer-widget3');
+								echo '</div>';
+								break;
+							case '4':
+								echo '<div class="col-xs-12 col-md-3">';
+								dynamic_sidebar('footer-widget1');
+								echo '</div>';
+								echo '<div class="col-xs-12 col-md-3">';
+								dynamic_sidebar('footer-widget2');
+								echo '</div>';
+								echo '<div class="col-xs-12 col-md-3">';
+								dynamic_sidebar('footer-widget3');
+								echo '</div>';
+								echo '<div class="col-xs-12 col-md-3">';
+								dynamic_sidebar('footer-widget4');
+								echo '</div>';
+								break;
 						}
-						?>
-						
-						<div class="widget-payment">
-							<?php if(isset($road_opt['payment_icons']) && $road_opt['payment_icons']!='' ) {
-								echo wp_kses($road_opt['payment_icons'], array(
-									'a' => array(
-										'href' => array(),
-										'title' => array()
-									),
-									'img' => array(
-										'src' => array(),
-										'alt' => array()
-									),
-								)); 
-							} ?>
-						</div>
-
-					</div>
+					}
+					?>
 				</div>
 			</div>
 		</div>

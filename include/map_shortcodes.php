@@ -6,11 +6,33 @@ function road_vc_shortcodes() {
 	
 	//Brand logos
 	vc_map( array(
-		"name" => esc_html__( "Brand Logos", "roadthemes" ),
+		"name" => esc_html__( "Brand Logos", "mirano" ),
 		"base" => "ourbrands",
 		"class" => "",
-		"category" => esc_html__( "RoadThemes", "roadthemes"),
-		"params" => array()
+		"category" => esc_html__( "RoadThemes", "mirano"),
+		"params" => array(
+			array(
+				"type" => "dropdown",
+				"holder" => "div",
+				"class" => "",
+				"heading" => esc_html__( "Number of rows", "mirano" ),
+				"param_name" => "rowsnumber",
+				"value" => array(
+						'one'	=> 'one',
+						'two'	=> 'two',
+						'three'	=> 'three',
+						'four'	=> 'four',
+					),
+			),
+			array(
+				"type" => "textfield",
+				"holder" => "div",
+				"class" => "",
+				"heading" => esc_html__( "Number of columns", "roadthemes" ),
+				"param_name" => "colsnumber",
+				"value" => esc_html__( "6", "roadthemes" ),
+			),
+		)
 	) );
 	
 	//Latest posts

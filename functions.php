@@ -37,6 +37,9 @@ if ( file_exists( get_template_directory().'/include/blogsharing.php' ) ) {
 if ( file_exists( get_template_directory().'/include/productsharing.php' ) ) {
 	require_once( get_template_directory().'/include/productsharing.php' );
 }
+if ( file_exists( get_template_directory().'/shortcodes/shortcodes.php' ) ) {
+	require_once( get_template_directory().'/shortcodes/shortcodes.php' );
+}
 	
 Class RoadThemes {
 	/**
@@ -548,8 +551,9 @@ Class RoadThemes {
 				'vsub_menu_bg' => $road_opt['vsub_menu_bg'],
 				'vsub_menu_color' => $road_opt['vsub_menu_color'],
 				
-				'link_color' => $road_opt['link_color'],
-				'link_hover_color' => $road_opt['link_hover_color'],
+				'link_color' => $road_opt['link_color']['regular'],
+				'link_hover_color' => $road_opt['link_color']['hover'],
+				'link_active_color' => $road_opt['link_color']['active'],
 				
 				'primary_color' => $road_opt['primary_color'],
 				
@@ -559,31 +563,40 @@ Class RoadThemes {
 				
 				'topbar_bg' => $road_opt['topbar_bg'],
 				'topbar_color' => $road_opt['topbar_color'],
-				'topbar_link_color' => $road_opt['topbar_link_color'],
-				'topbar_link_hover_color' => $road_opt['topbar_link_hover_color'],
+				'topbar_link_color' => $road_opt['topbar_link_color']['regular'],
+				'topbar_link_hover_color' => $road_opt['topbar_link_color']['hover'],
+				'topbar_link_active_color' => $road_opt['topbar_link_color']['active'],
 				
 				'header_bg' => $road_opt['header_bg'],
 				'header_color' => $road_opt['header_color'],
-				'header_link_color' => $road_opt['header_link_color'],
-				'header_link_hover_color' => $road_opt['header_link_hover_color'],
+				'header_link_color' => $road_opt['header_link_color']['regular'],
+				'header_link_hover_color' => $road_opt['header_link_color']['hover'],
+				'header_link_active_color' => $road_opt['header_link_color']['active'],
+				
+				'header_sticky_bg' => $road_opt['header_sticky_bg']['rgba'],
 				
 				'footer_bg' => $road_opt['footer_bg'],
 				'footer_color' => $road_opt['footer_color'],
-				'footer_link_color' => $road_opt['footer_link_color'],
-				'footer_link_hover_color' => $road_opt['footer_link_hover_color'],
+				'footer_link_color' => $road_opt['footer_link_color']['regular'],
+				'footer_link_hover_color' => $road_opt['footer_link_color']['hover'],
+				'footer_link_active_color' => $road_opt['footer_link_color']['active'],
 			);
 			switch ($presetopt) {
 				case 2:
-					$themevariables['primary_color'] = '#00A800';
+					$themevariables['primary_color'] = '#5ed9e7';
 				break;
 				case 3:
-					$themevariables['primary_color'] = '#964B4B';
+					$themevariables['primary_color'] = '#00B92F';
+				break;
+				case 3:
+					$themevariables['primary_color'] = '#FFB548';
 				break;
 			}
 			if(function_exists('compileLessFile')){
 				compileLessFile('reset.less', 'reset'.$presetopt.'.css', $themevariables);
 				compileLessFile('global.less', 'global'.$presetopt.'.css', $themevariables);
 				compileLessFile('woocommerce.less', 'woocommerce'.$presetopt.'.css', $themevariables);
+				compileLessFile('portfolio.less', 'portfolio'.$presetopt.'.css', $themevariables);
 				compileLessFile('layouts.less', 'layouts'.$presetopt.'.css', $themevariables);
 				compileLessFile('responsive.less', 'responsive'.$presetopt.'.css', $themevariables);
 				compileLessFile('ie.less', 'ie'.$presetopt.'.css', $themevariables);
@@ -594,7 +607,8 @@ Class RoadThemes {
 		wp_enqueue_style( 'roadcss-reset', get_template_directory_uri() . '/css/reset'.$presetopt.'.css', array(), '1.0.0' );
 		wp_enqueue_style( 'roadcss-global', get_template_directory_uri() . '/css/global'.$presetopt.'.css', array('roadcss-reset'), '1.0.0' );
 		wp_enqueue_style( 'roadcss-woocommerce', get_template_directory_uri() . '/css/woocommerce'.$presetopt.'.css', array('roadcss-global'), '1.0.0' );
-		wp_enqueue_style( 'roadcss-layouts', get_template_directory_uri() . '/css/layouts'.$presetopt.'.css', array('roadcss-woocommerce'), '1.0.0' );
+		wp_enqueue_style( 'roadcss-portfolio', get_template_directory_uri() . '/css/portfolio'.$presetopt.'.css', array('roadcss-woocommerce'), '1.0.0' );
+		wp_enqueue_style( 'roadcss-layouts', get_template_directory_uri() . '/css/layouts'.$presetopt.'.css', array('roadcss-portfolio'), '1.0.0' );
 		wp_enqueue_style( 'roadcss-responsive', get_template_directory_uri() . '/css/responsive'.$presetopt.'.css', array('roadcss-layouts'), '1.0.0' );
 		
 		// Loads the Internet Explorer specific stylesheet.
@@ -602,10 +616,13 @@ Class RoadThemes {
 		$wp_styles->add_data( 'roadcss-ie', 'conditional', 'lte IE 9' );
 		
 		if($road_opt['enable_sswitcher']){
-		// Add styleswitcher.js file
-		wp_enqueue_script( 'styleswitcher-js', get_template_directory_uri() . '/js/styleswitcher.js', array(), '20140826', true );
-		// Load styleswitcher css style
-		wp_enqueue_style( 'styleswitcher-css', get_template_directory_uri() . '/css/styleswitcher.css', array(), '1.0.0' );
+			// Add styleswitcher.js file
+			wp_enqueue_script( 'styleswitcher-js', get_template_directory_uri() . '/js/styleswitcher.js', array(), '20140826', true );
+			// Load styleswitcher css style
+			wp_enqueue_style( 'styleswitcher-css', get_template_directory_uri() . '/css/styleswitcher.css', array(), '1.0.0' );
+			// Load scroll bar js
+			wp_enqueue_script( 'scrollbar-js', get_template_directory_uri() . '/js/jquery.scrollbar.min.js', array('jquery'), '0.2.8', true );
+			wp_enqueue_style( 'scrollbar-css', get_template_directory_uri() . '/css/scrollbar.css', array(), '1.0.0' );
 		}
 	}
 	//add custom css, sharing code to header
@@ -622,8 +639,9 @@ Class RoadThemes {
 			));
 		}
 		if ( isset($road_opt['custom_css']) && $road_opt['custom_css']!='') { ?>
-			<style><?php echo esc_html($road_opt['custom_css']); ?></style>
+			<style><?php echo ''.$road_opt['custom_css']; ?></style>
 		<?php } ?>
+		<style><?php echo '.container, .wrapper.box-layout {max-width: '.$road_opt['box_layout_width'].'px;}'; ?></style>
 		<script type="text/javascript">
 		var road_brandnumber = <?php if(isset($road_opt['brandnumber'])) { echo esc_js($road_opt['brandnumber']); } else { echo '6'; } ?>,
 			road_brandscrollnumber = <?php if(isset($road_opt['brandscrollnumber'])) { echo esc_js($road_opt['brandscrollnumber']); } else { echo '2';} ?>,
@@ -681,6 +699,46 @@ Class RoadThemes {
 			'name' => esc_html__( 'Pages Sidebar', 'roadthemes' ),
 			'id' => 'sidebar-page',
 			'description' => esc_html__( 'Sidebar on content pages', 'roadthemes' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title"><span>',
+			'after_title' => '</span></h3>',
+		) );
+		
+		register_sidebar( array(
+			'name' => esc_html__( 'Footer 1', 'roadthemes' ),
+			'id' => 'footer-widget1',
+			'description' => esc_html__( 'Footer column #1', 'roadthemes' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title"><span>',
+			'after_title' => '</span></h3>',
+		) );
+		
+		register_sidebar( array(
+			'name' => esc_html__( 'Footer 2', 'roadthemes' ),
+			'id' => 'footer-widget2',
+			'description' => esc_html__( 'Footer column #2', 'roadthemes' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title"><span>',
+			'after_title' => '</span></h3>',
+		) );
+		
+		register_sidebar( array(
+			'name' => esc_html__( 'Footer 3', 'roadthemes' ),
+			'id' => 'footer-widget3',
+			'description' => esc_html__( 'Footer column #3', 'roadthemes' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title"><span>',
+			'after_title' => '</span></h3>',
+		) );
+		
+		register_sidebar( array(
+			'name' => esc_html__( 'Footer 4', 'roadthemes' ),
+			'id' => 'footer-widget4',
+			'description' => esc_html__( 'Footer column #4', 'roadthemes' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title"><span>',
