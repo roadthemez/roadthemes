@@ -110,22 +110,68 @@
 		
 		.currency{
 			float: right;
-			
-			select{
-				background: transparent;
-				border: 1px solid @bordercolor;
-				border-top: 0;
-				border-left: 0;
-				height: 40px;
-				line-height: 40px;
-				padding: 0 10px;
-				min-width: 100px;
-				font-size: 12px;
-				color: #fff;
-				cursor: pointer;
-				position: relative;
-				option{
-					color: @textcolor;
+
+			.chosen-container {
+				float: left;
+				font-family: @bodyfont;
+				height: 44px;
+				line-height: 44px;
+				margin: 0 0 0 10px;
+				text-transform: uppercase;
+				
+				.chosen-single {
+					background: none;
+					border: none;
+					border-radius: 0;
+					box-shadow: none;
+					color: @headercolor;
+					font-size: 13px;
+					height: 44px;
+					line-height: 44px;
+					padding: 0;
+					
+					span {
+						margin-right: 18px;
+					}
+					div b {
+						background: none;
+						
+						&:before {
+							content: "\f107";
+							font-family: FontAwesome;
+							font-size: 16px;
+							margin-left: 5px;
+						}
+					}
+				}
+				&.chosen-with-drop {
+					.chosen-drop {
+						left: 0;
+						right: auto;
+					}
+				}
+				.chosen-drop {
+					border: 1px solid @bordercolor;
+					border-radius: 2px;
+					box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+					font-family: @bodyfont;
+					
+					ul {
+						margin: 10px 0;
+						padding: 0;
+						
+						li {
+							margin: 0;
+							min-width: 90px;
+							padding: 10px 24px 10px 10px;
+							text-align: left;
+							white-space: nowrap;
+							
+							&.highlighted {
+								background: @primarycolor;
+							}
+						}
+					}
 				}
 			}
 		}

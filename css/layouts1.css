@@ -95,22 +95,60 @@
 .header-container .switcher .currency {
   float: right;
 }
-.header-container .switcher .currency select {
-  background: transparent;
-  border: 1px solid #e5e5e5;
-  border-top: 0;
-  border-left: 0;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 10px;
-  min-width: 100px;
-  font-size: 12px;
-  color: #fff;
-  cursor: pointer;
-  position: relative;
+.header-container .switcher .currency .chosen-container {
+  float: left;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  height: 44px;
+  line-height: 44px;
+  margin: 0 0 0 10px;
+  text-transform: uppercase;
 }
-.header-container .switcher .currency select option {
-  color: #6e6e6e;
+.header-container .switcher .currency .chosen-container .chosen-single {
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  color: #eeeeee;
+  font-size: 13px;
+  height: 44px;
+  line-height: 44px;
+  padding: 0;
+}
+.header-container .switcher .currency .chosen-container .chosen-single span {
+  margin-right: 18px;
+}
+.header-container .switcher .currency .chosen-container .chosen-single div b {
+  background: none;
+}
+.header-container .switcher .currency .chosen-container .chosen-single div b:before {
+  content: "\f107";
+  font-family: FontAwesome;
+  font-size: 16px;
+  margin-left: 5px;
+}
+.header-container .switcher .currency .chosen-container.chosen-with-drop .chosen-drop {
+  left: 0;
+  right: auto;
+}
+.header-container .switcher .currency .chosen-container .chosen-drop {
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+.header-container .switcher .currency .chosen-container .chosen-drop ul {
+  margin: 10px 0;
+  padding: 0;
+}
+.header-container .switcher .currency .chosen-container .chosen-drop ul li {
+  margin: 0;
+  min-width: 90px;
+  padding: 10px 24px 10px 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+.header-container .switcher .currency .chosen-container .chosen-drop ul li.highlighted {
+  background: #ff7572;
 }
 .header-container .switcher #lang_sel {
   background: transparent;

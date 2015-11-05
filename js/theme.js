@@ -13,6 +13,12 @@
 			}
 		}
 		
+		container = jQuery('.categories-menu');
+		if (!container.is(e.target) && container.has(e.target).length === 0 ) {
+			jQuery('#mega_main_menu').css('display', 'none');
+			jQuery('.morelesscate').css('display', 'none');
+		}
+		
 		container = jQuery('.atc-notice-wrapper');
 		if (!container.is(e.target) && container.has(e.target).length === 0 ) {
 			jQuery('.atc-notice-wrapper').fadeOut();
@@ -251,6 +257,13 @@
 		
 		// Shop toolbar sort
 		jQuery('.toolbar .orderby').chosen({disable_search: true, width: "auto"});
+		
+		//currency switcher
+		jQuery('.wcml_currency_switcher').chosen({disable_search: true, width: "auto"});
+		jQuery('.chosen-container').on('mouseover', function(){
+			
+		   jQuery(this).click();
+		});
 		
 		//Brand logos carousel
 		var road_brandcols = jQuery('.brands-carousel').attr('data-col');
@@ -827,7 +840,7 @@
 			jQuery("html, body").animate({ scrollTop: 0 }, "slow");
 		});
 		
-		//Vertical menu on home 6
+		//Vertical menu
 		jQuery('.collapse-menu .menu li.menu-item-has-children > a').each(function(){
 			jQuery(this).after('<i class="fa fa-angle-down"></i>');
 		});
@@ -850,7 +863,10 @@
 				}
 			});
 		});
-		//end - vertical menu on home 6
+		//end - vertical menu
+		
+		//Convert currency switcher dropdown into list
+
 	});
 
 	// Scroll
@@ -908,13 +924,38 @@
 		jQuery('.catemenu-toggler').on('click', function(){
 			
 			if(jQuery('#mega_main_menu').css('display')=='none'){
+				jQuery('#mega_main_menu').css('opacity', 0);
 				jQuery('#mega_main_menu').css('display', 'block');
-				if(!jQuery('.morelesscate').hasClass('alwayshide')){
-					jQuery('.morelesscate').css('display', 'block');
-				}
+				jQuery('#mega_main_menu').animate({'opacity': 1}, 100, function(){
+					if(!jQuery('.morelesscate').hasClass('alwayshide')){
+						jQuery('.morelesscate').fadeIn('fast');
+					}
+					//update height
+					oldCateMenuH = road_menu_number * jQuery('#mega_main_menu ul.mega_main_menu_ul > li.menu-item').outerHeight() + jQuery('.catemenu-toggler').outerHeight();
+					realMMH = jQuery('#mega_main_menu ul.mega_main_menu_ul > li.menu-item').length * jQuery('#mega_main_menu ul.mega_main_menu_ul > li').outerHeight();
+					realCateMenuH = jQuery('.catemenu-toggler').outerHeight() + realMMH + jQuery('.morelesscate').outerHeight();
+					
+					if(jQuery('.morecate').css('display')=='none'){
+						jQuery('.categories-menu').css({'height': realCateMenuH});
+					} else {
+						jQuery('.categories-menu').css({'height': oldCateMenuH});
+					}
+				});
 			} else {
-				jQuery('#mega_main_menu').css('display', 'none');
-				jQuery('.morelesscate').css('display', 'none');
+				jQuery('#mega_main_menu').animate({'opacity': 0}, 200, function(){
+					jQuery('#mega_main_menu').css('display', 'none');
+					jQuery('.morelesscate').css('display', 'none');
+					//update height
+					oldCateMenuH = road_menu_number * jQuery('#mega_main_menu ul.mega_main_menu_ul > li.menu-item').outerHeight() + jQuery('.catemenu-toggler').outerHeight();
+					realMMH = jQuery('#mega_main_menu ul.mega_main_menu_ul > li.menu-item').length * jQuery('#mega_main_menu ul.mega_main_menu_ul > li').outerHeight();
+					realCateMenuH = jQuery('.catemenu-toggler').outerHeight() + realMMH + jQuery('.morelesscate').outerHeight();
+					
+					if(jQuery('.morecate').css('display')=='none'){
+						jQuery('.categories-menu').css({'height': realCateMenuH});
+					} else {
+						jQuery('.categories-menu').css({'height': oldCateMenuH});
+					}
+				});
 			}
 			//for default wordpress menu (not selected menu location)
 			if(jQuery('.categories-menu > ul').css('display')=='none'){
@@ -927,16 +968,6 @@
 				jQuery('.categories-menu-container').css('display', 'block');
 			} else {
 				jQuery('.categories-menu-container').css('display', 'none');
-			}
-			
-			oldCateMenuH = road_menu_number * jQuery('#mega_main_menu ul.mega_main_menu_ul > li.menu-item').outerHeight() + jQuery('.catemenu-toggler').outerHeight();
-			realMMH = jQuery('#mega_main_menu ul.mega_main_menu_ul > li.menu-item').length * jQuery('#mega_main_menu ul.mega_main_menu_ul > li').outerHeight();
-			realCateMenuH = jQuery('.catemenu-toggler').outerHeight() + realMMH + jQuery('.morelesscate').outerHeight();
-			
-			if(jQuery('.morecate').css('display')=='none'){
-				jQuery('.categories-menu').css({'height': realCateMenuH});
-			} else {
-				jQuery('.categories-menu').css({'height': oldCateMenuH});
 			}
 		});
 			//hide items out of height
