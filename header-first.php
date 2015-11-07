@@ -31,25 +31,29 @@ if(is_ssl()){
 				</div>
 			<?php } ?>
 			<div class="header">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-12 col-md-3">
-							<?php if( isset($road_opt['logo_main']['url']) ){ ?>
-								<div class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url($road_opt['logo_main']['url']); ?>" alt="" /></a></div>
-							<?php
-							} else { ?>
-								<h1 class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<div class="<?php if(isset($road_opt['sticky_header']) && $road_opt['sticky_header']) {echo 'header-sticky';} ?> <?php if ( is_admin_bar_showing() ) {echo 'with-admin-bar';} ?>">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12 col-md-3">
+								<?php if( isset($road_opt['logo_main']['url']) ){ ?>
+									<div class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url($road_opt['logo_main']['url']); ?>" alt="" /></a></div>
 								<?php
-							} ?>
-						</div>
-						<div class="col-xs-12 col-md-9">
-							<div class="horizontal-menu visible-large">
-								<div class="visible-large">
-									<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'primary-menu-container', 'menu_class' => 'nav-menu' ) ); ?>
+								} else { ?>
+									<h1 class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+									<?php
+								} ?>
+							</div>
+							<div class="col-xs-12 col-md-9">
+								<div class="horizontal-menu visible-large">
+									<div class="visible-large">
+										<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'primary-menu-container', 'menu_class' => 'nav-menu' ) ); ?>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="container">
 					<div class="visible-small mobile-menu">
 						<div class="row">
 							<div class="col-xs-12">

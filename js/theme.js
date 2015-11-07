@@ -260,10 +260,6 @@
 		
 		//currency switcher
 		jQuery('.wcml_currency_switcher').chosen({disable_search: true, width: "auto"});
-		jQuery('.chosen-container').on('mouseover', function(){
-			
-		   jQuery(this).click();
-		});
 		
 		//Brand logos carousel
 		var road_brandcols = jQuery('.brands-carousel').attr('data-col');
@@ -865,30 +861,46 @@
 		});
 		//end - vertical menu
 		
-		//Convert currency switcher dropdown into list
-
+		//Sticky header
+			//add a space for header
+		if(road_sticky_header){
+			var headerSpaceH = jQuery('.header-sticky').height();
+			jQuery('.header-sticky').after('<div class="headerSpace" style="height: '+headerSpaceH+'px;"></div>');
+		}
 	});
 
 	// Scroll
 	var currentP = 0;
+	var stickyOffset = jQuery('.header-sticky').offset().top;
+	stickyOffset += jQuery('.header-sticky').outerHeight();
+	
 	jQuery(window).scroll(function(){
 		var headerH = jQuery('.header-container').height();
 		var scrollP = jQuery(window).scrollTop();
 		
-		if(jQuery(window).width() > 1200){
+		if(jQuery(window).width() > 1024){
 			if(scrollP != currentP){
 				//Back to top
 				if(scrollP >= headerH){
 					jQuery('#back-top').addClass('show');
-					jQuery('.header').addClass('ontop');
-					jQuery('.headerSpace').addClass('show');
 				} else {
 					jQuery('#back-top').removeClass('show');
-					jQuery('.header').removeClass('ontop show');
-					jQuery('.headerSpace').removeClass('show');
 				}
-				if(scrollP >= (headerH+50)){
-					jQuery('.header').addClass('show');
+				//Sticky header
+				if(road_sticky_header){
+					
+					if(scrollP >= stickyOffset){
+						jQuery('#back-top').addClass('show');
+						jQuery('.header-sticky').addClass('ontop');
+						jQuery('.headerSpace').addClass('show');
+					} else {
+						jQuery('#back-top').removeClass('show');
+						jQuery('.header-sticky').removeClass('ontop show');
+						jQuery('.headerSpace').removeClass('show');
+					}
+					if(scrollP >= (stickyOffset+20)){
+						jQuery('.header-sticky').addClass('show');
+					}
 				}
 				currentP = jQuery(window).scrollTop();
 			}

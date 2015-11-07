@@ -665,6 +665,10 @@ Class RoadThemes {
 		var	road_testipause = <?php if(isset($road_opt['testipause'])) { echo esc_js($road_opt['testipause']); } else { echo '3000'; } ?>,
 			road_testianimate = <?php if(isset($road_opt['testianimate'])) { echo esc_js($road_opt['testianimate']); } else { echo '700'; } ?>;
 		var road_menu_number = <?php if(isset($road_opt['vertical_menu_items'])) { echo esc_js((int)$road_opt['vertical_menu_items']+1); } else { echo '9';} ?>;
+		var road_sticky_header = 'false';
+			<?php if(isset($road_opt['sticky_header'])){ ?>
+				road_sticky_header = <?php echo esc_js($road_opt['sticky_header'])==1 ? 'true': 'false'; ?>;
+			<?php } ?>
 		</script>
 		<?php
 	}

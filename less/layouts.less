@@ -36,6 +36,15 @@
 		float: left;
 		width: 100%;
 	}
+	.headerSpace {
+		display: none;
+		float: left;
+		width: 100%;
+		
+		&.show {
+			display: block;
+		}
+	}
 	.widget-title, .widgettitle {
 		display: none;
 	}
@@ -213,37 +222,6 @@
 					a{
 						min-width: 100px;
 					}
-				}
-			}
-		}
-	}
-	//Header shipping
-	.header-shipping{
-		float: left;
-		margin-left: 5%;
-		margin-top: 25px;
-		color: @darkcolor;
-		font-weight: 500;
-		ul{
-			list-style: none;
-			margin: 0;
-			padding: 0;
-			li{
-				float: left;
-				margin-right: 20px;
-				&:last-child{
-					margin-right: 0;
-				}
-				i{
-					width: 36px;
-					height: 36px;
-					text-align: center;
-					line-height: 36px;
-					border: 1px solid @primarycolor;
-					border-radius: 100%;
-					color: @primarycolor;
-					font-size: 18px;
-					margin-right: 5px;
 				}
 			}
 		}
@@ -481,6 +459,7 @@
 			max-width: 200px;
 			overflow: hidden;
 			white-space: nowrap;
+			.noneTextSelect();   
 			
 			&:before {
 				background: #fff;
@@ -501,7 +480,7 @@
 				height: 0;
 				position: absolute;
 				right: 10px;
-				top: 26px;
+				top: 50%;
 				width: 0;
 			}
 		}
@@ -609,7 +588,7 @@
 					font-family: @headingfont;
 					font-size: 13px;
 					height: 32px;
-					margin: 11px 0 0;
+					margin: 8px 0 0;
 					outline: none;
 					padding: 0 0 0 20px;
 					width: 60%;
@@ -650,6 +629,35 @@
 		min-height: 50px;
 		width: 100%;
 		background: @headerbg;
+		
+		.header-sticky {
+		
+			&.ontop {
+				left: 0;
+				min-height: 50px;
+				position: fixed;
+				top: -50px;
+				width: 100%;
+				-webkit-transition: all 0.5s ease;
+				transition: all 0.5s ease;
+				
+				&.show {
+					top: 0;
+					
+					&.with-admin-bar {
+						top: 32px;
+					}
+					.logo {
+						max-height: 50px;
+						padding: 10px 0;
+						
+						img {
+							max-height: 50px;
+						}
+					}
+				}
+			}
+		}
 		.horizontal-menu {
 			float: left;
 			padding: 21px 0 5px 15px;
@@ -1319,6 +1327,7 @@
 				padding-left: 18px;
 				text-transform: uppercase;
 				width: 100%;
+				.noneTextSelect();
 				
 				i {
 					float: right;
