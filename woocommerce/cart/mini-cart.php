@@ -15,12 +15,11 @@ global $woocommerce;
 ?>
 
 <?php do_action( 'woocommerce_before_mini_cart' ); ?>
-<div class="cart-toggler fa fa-shopping-cart">
-	<a href="<?php echo WC()->cart->get_cart_url(); ?>">
-		<!-- <span class="cart-quantity">
-			<?php //echo sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'woocorau'), $woocommerce->cart->cart_contents_count);?>
-		</span> -->
-	</a>
+<div class="cart-toggler">
+	<i class="fa fa-shopping-cart"></i>
+	<span class="cart-quantity">
+		<?php echo sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'woocorau'), $woocommerce->cart->cart_contents_count);?>
+	</span>
 </div>
 <div class="mini_cart_content">
 	<div class="mini_cart_inner">
@@ -70,8 +69,8 @@ global $woocommerce;
 			<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
 			<p class="buttons">
-				<a href="<?php echo WC()->cart->get_checkout_url(); ?>" class="button checkout wc-forward"><?php esc_html_e( 'Checkout', 'roadthemes' ); ?></a>
-				<!--<a href="<?php echo WC()->cart->get_cart_url(); ?>" class="button wc-forward"><?php esc_html_e( 'View Cart', 'roadthemes' ); ?></a>-->
+				<a href="<?php echo WC()->cart->get_cart_url(); ?>" class="button wc-forward"><?php _e( 'View Cart', 'woocommerce' ); ?></a>
+				<a href="<?php echo WC()->cart->get_checkout_url(); ?>" class="button checkout wc-forward"><?php _e( 'Checkout', 'woocommerce' ); ?></a>
 			</p>
 
 		<?php endif; ?>

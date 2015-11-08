@@ -297,19 +297,7 @@
 				}
 			]
 		});
-		
-		//Countdown
-		jQuery('.countdown').each(function(){
-			var countTime = jQuery(this).attr('data-time');
-			
-			jQuery(this).countdown(countTime, function(event) {
-				jQuery(this).html(
-					'<span class="timebox day"><strong>'+event.strftime('%D')+'</strong> : </span><span class="timebox hour"><strong>'+event.strftime('%H')+'</strong> : </span><span class="timebox minute"><strong>'+event.strftime('%M')+'</strong> : </span><span class="timebox second"><strong>'+event.strftime('%S')+'</strong></span>'
-				);
-			});
-			//jQuery(this).countdown('stop');
-		});
-
+		// Countdown
 		jQuery('.countbox.hastime').each(function(){
 			var countTime = jQuery(this).attr('data-time');
 			

@@ -116,9 +116,7 @@ $ft_col_class = '';
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-4">
-					
 						<div class="widget widget-social">
-							
 							<?php
 							if(isset($road_opt['social_icons'])) {
 								echo '<ul class="social-icons">';
@@ -135,7 +133,15 @@ $ft_col_class = '';
 							}
 							?>
 						</div>
-
+						<?php if( isset($road_opt['bottom_menu']) && $road_opt['bottom_menu']!='' ) {
+							$btmenu_args = array(
+								'menu_class'      => 'nav_menu',
+								'menu'         => $road_opt['bottom_menu'],
+							); ?>
+							<div class="bottom-menu">
+								<?php wp_nav_menu( $btmenu_args ); ?>
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>

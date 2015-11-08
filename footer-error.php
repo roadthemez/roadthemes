@@ -12,11 +12,9 @@
 <?php global $road_opt; ?>
 		</div><!-- .page -->
 	</div><!-- .wrapper -->
-	<!--<div class="road_loading"></div>-->
+	<?php if ( isset($road_opt['back_to_top']) && $road_opt['back_to_top'] ) { ?>
 	<div id="back-top" class="hidden-xs hidden-sm hidden-md"></div>
-	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/ie8.js" type="text/javascript"></script>
-	<![endif]-->
+	<?php } ?>
 	<?php wp_footer(); ?>
 </body>
 </html>

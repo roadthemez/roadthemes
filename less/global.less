@@ -2,31 +2,8 @@
 
 @import 'variables.less';
 
-//Page layout
-.wrapper {
-    margin: 0 auto;
-    position: relative;
-	
-	// Box layout
-	&.box-layout {
-		max-width: 1230px;
-		
-		&:after{
-			clear: both;
-		    content: "";
-		    display: block;
-		    height: 0;
-		    line-height: 0;
-		    visibility: hidden;
-		}
-	}
-	.page-wrapper {
-		float: left;
-		width: 100%;
-	}
-}
-.count-down{
-	display: none;
+.count-down {
+	//display: none;
 }
 // Front page
 .front-page {
@@ -39,17 +16,6 @@
 				position: relative;
 				text-transform: uppercase;
 			}
-		}
-	}
-	.vc_row {
-		
-		.row-container {
-			display: block;
-			margin: 0 auto;
-			max-width: 100%;
-			width: 1170px;
-			padding-right: 15px;
-			padding-left: 15px;
 		}
 	}
 	.alignnone {
@@ -73,10 +39,10 @@
 	display: table;
 	width: 100%;
 	
-	.global-row{
+	.global-row {
 		display: table-row;
 		
-		.global-cell{
+		.global-cell {
 			display: table-cell;
 			vertical-align: middle;
 		}
@@ -153,7 +119,7 @@
 				top: 0;
 				width: 100%;
 			}
-			&.slick-prev{
+			&.slick-prev {
 				right: 40px;
 				
 				&:before {
@@ -172,7 +138,7 @@
 				}
 			}
 		}
-		.slick-dots{
+		.slick-dots {
 			bottom: auto;
 			margin: 10px 0 0;
 			position: static;
@@ -180,13 +146,13 @@
 			list-style: none;
 			text-align: center;
 	
-			li{
+			li {
 				display: inline-block;
 				height: 13px;
 				margin: 0 2px;
 				width: 13px;
 				
-				button{
+				button {
 					background: none;
 					border: 2px solid @bordercolor;
 					border-radius: 100%;
@@ -200,15 +166,15 @@
 					visibility: visible;
 					width: 100%;
 
-					&:hover{
+					&:hover {
 						background: @bordercolor;
 					}
 					&:before {
 						display: none;
 					}
 				}
-				&.slick-active{
-					button{
+				&.slick-active {
+					button {
 						background: @bordercolor;
 					}
 				}
@@ -217,8 +183,6 @@
 	}
 }
 .logo {
-	padding: 25px 0;
-	
 	a {
 		display: inline-block;
 		max-width: 100%;
@@ -406,7 +370,7 @@
 		float: left;
 		margin: 0 0 40px;
 		width: 100%;
-		&.project{
+		&.project {
 			margin-top: 40px;
 		}
 		.entry-title {
@@ -771,21 +735,21 @@
 // Sidebars
 #secondary {
 	margin-bottom: 75px;
-	> aside{
+	> aside {
 		border: 1px solid @bordercolor;
 		padding: 15px;
 	}
 	//shop sidebar
 	&.sidebar-shop {
-		.widget{
+		.widget {
 			.widget-title {
 				font-size: 17px;
 				border-bottom: 1px solid @bordercolor;
-				span{
+				span {
 					position: relative;
 					display: inline-block;
 					padding: 0 0 5px;
-					&:after{
+					&:after {
 						content: "";
 						height: 2px;
 						width: 110%;
@@ -805,8 +769,8 @@
 				}
 			}
 			ul.product-categories, ul.menu {
-				li{
-					&:before{
+				li {
+					&:before {
 						content: "\f111";
 						font: normal normal normal 12px/1 FontAwesome;
 						margin-right: 10px;
@@ -826,7 +790,7 @@
 			text-align: center;
 			width: 100%;
 			
-			.widget{
+			.widget {
 				.widget-title {
 					font-size: 14px;
 					font-weight: 400;
@@ -1154,7 +1118,7 @@
 						float: left;
 						font-weight: 500;
 						margin: 0 5px; 10px 0;
-						span{
+						span {
 							padding: 5px 10px;
 							display: inline-block;
 							border: 1px solid @bordercolor;
@@ -1192,14 +1156,14 @@
 				padding-left: 10px;
 				text-align: left;
 				width: 75%;
-				.special-price{
+				.special-price {
 					font-size: 14px;
 					font-weight: 400;
 					color: @primarycolor;
 					display: block;
 					line-height: 1;
 				}
-				.old-price{
+				.old-price {
 					color: @greycolor;
 					font-size: 16px;
 					font-weight: 500;

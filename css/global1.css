@@ -1,37 +1,7 @@
-.wrapper {
-  margin: 0 auto;
-  position: relative;
-}
-.wrapper.box-layout {
-  max-width: 1230px;
-}
-.wrapper.box-layout:after {
-  clear: both;
-  content: "";
-  display: block;
-  height: 0;
-  line-height: 0;
-  visibility: hidden;
-}
-.wrapper .page-wrapper {
-  float: left;
-  width: 100%;
-}
-.count-down {
-  display: none;
-}
 .front-page .wpb_content_element .wpb_wrapper > h3 {
   display: inline-block;
   position: relative;
   text-transform: uppercase;
-}
-.front-page .vc_row .row-container {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  width: 1170px;
-  padding-right: 15px;
-  padding-left: 15px;
 }
 .front-page .alignnone {
   margin: 0;
@@ -176,9 +146,6 @@
 }
 .wrapper .slick-slider .slick-dots li.slick-active button {
   background: #e5e5e5;
-}
-.logo {
-  padding: 25px 0;
 }
 .logo a {
   display: inline-block;

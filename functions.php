@@ -549,7 +549,6 @@ Class RoadThemes {
 				'vmenu_font_size'=> $road_opt['vmenufont']['font-size'],
 				'vmenu_font_weight'=> $road_opt['vmenufont']['font-weight'],
 				'vsub_menu_bg' => $road_opt['vsub_menu_bg'],
-				'vsub_menu_color' => $road_opt['vsub_menu_color'],
 				
 				'link_color' => $road_opt['link_color']['regular'],
 				'link_hover_color' => $road_opt['link_color']['hover'],
@@ -643,7 +642,7 @@ Class RoadThemes {
 		if ( isset($road_opt['custom_css']) && $road_opt['custom_css']!='') { ?>
 			<style><?php echo ''.$road_opt['custom_css']; ?></style>
 		<?php } ?>
-		<style><?php echo '.container, .wrapper.box-layout {max-width: '.$road_opt['box_layout_width'].'px;}'; ?></style>
+		<style><?php echo '.wrapper.box-layout, .wrapper.box-layout .container, .wrapper.box-layout .row-container {max-width: '.$road_opt['box_layout_width'].'px;}'; ?></style>
 		<script type="text/javascript">
 		var road_brandscrollnumber = <?php if(isset($road_opt['brandscrollnumber'])) { echo esc_js($road_opt['brandscrollnumber']); } else { echo '2';} ?>,
 			road_brandpause = <?php if(isset($road_opt['brandpause'])) { echo esc_js($road_opt['brandpause']); } else { echo '3000'; } ?>,
