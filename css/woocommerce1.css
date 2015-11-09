@@ -2017,6 +2017,7 @@ body.quickview {
 .main-container .shop_table.cart th,
 .main-container .shop_table.cart td {
   border-right: none;
+  border-top: none;
   font-size: 14px;
   padding: 20px 0;
 }
@@ -2238,7 +2239,7 @@ body.quickview {
   background: #ff433f;
 }
 .main-container .shipping-calculator-form {
-  background: #f2f2f2;
+  border: 1px solid #e5e5e5;
   border-radius: 3px;
   float: right;
   margin-top: 20px;
@@ -2377,6 +2378,7 @@ body.quickview {
 .main-container #order_review .shop_table td {
   border-bottom: 1px solid #d8d8d8;
   border-right: none;
+  border-top: none;
   font-size: 14px;
   padding: 15px 0;
 }
@@ -2561,6 +2563,7 @@ body.quickview {
 .main-container .checkout-done .shop_table th,
 .main-container .checkout-done .shop_table td {
   border-right: none;
+  border-top: none;
   font-size: 15px;
   padding: 15px 0;
 }

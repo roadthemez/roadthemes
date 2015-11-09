@@ -114,8 +114,8 @@
 .header-container .switcher .currency .chosen-container {
   float: left;
   font-family: Roboto, Arial, Helvetica, sans-serif;
-  height: 44px;
-  line-height: 44px;
+  height: 40px;
+  line-height: 40px;
   margin: 0 0 0 10px;
   text-transform: uppercase;
 }
@@ -126,8 +126,8 @@
   box-shadow: none;
   color: #eeeeee;
   font-size: 13px;
-  height: 44px;
-  line-height: 44px;
+  height: 40px;
+  line-height: 40px;
   padding: 0;
 }
 .header-container .switcher .currency .chosen-container .chosen-single span {
@@ -587,6 +587,7 @@
   background: #eaeaea;
 }
 .header-container .header .header-sticky.ontop {
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
   left: 0;
   min-height: 50px;
   position: fixed;
@@ -599,7 +600,7 @@
   top: 0;
 }
 .header-container .header .header-sticky.ontop.show .global-table {
-  height: 55px;
+  height: 50px;
 }
 .header-container .header .header-sticky.ontop.show.with-admin-bar {
   top: 32px;
@@ -818,9 +819,9 @@
 }
 .header-container .header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul > li > a.item_link {
   background: none;
-  line-height: 44px;
+  line-height: 50px;
   margin-right: 1px;
-  min-height: 44px;
+  min-height: 50px;
   padding: 0 20px;
 }
 .header-container .header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul > li > a.item_link .link_text {
@@ -828,8 +829,8 @@
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  line-height: 44px;
-  min-height: 44px;
+  line-height: 50px;
+  min-height: 50px;
   text-transform: uppercase;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;

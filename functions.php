@@ -1247,6 +1247,11 @@ Class RoadThemes {
 				'required'  => false,
 			),
 			array(
+				'name'      => 'Rotating Tweets',
+				'slug'      => 'rotatingtweets',
+				'required'  => false,
+			),
+			array(
 				'name'      => 'Shortcodes Ultimate',
 				'slug'      => 'shortcodes-ultimate',
 				'required'  => false,
