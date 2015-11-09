@@ -12,6 +12,14 @@ function road_vc_shortcodes() {
 		'category' => esc_html__( 'Theme', 'roadthemes'),
 		'params' => array(
 			array(
+				'type' => 'textfield',
+				'holder' => 'div',
+				'class' => '',
+				'heading' => esc_html__( 'Number of columns', 'roadthemes' ),
+				'param_name' => 'colsnumber',
+				'value' => esc_html__( '6', 'roadthemes' ),
+			),
+			array(
 				'type' => 'dropdown',
 				'holder' => 'div',
 				'class' => '',
@@ -23,14 +31,6 @@ function road_vc_shortcodes() {
 						'3'	=> '3',
 						'4'	=> '4',
 					),
-			),
-			array(
-				'type' => 'textfield',
-				'holder' => 'div',
-				'class' => '',
-				'heading' => esc_html__( 'Number of columns', 'roadthemes' ),
-				'param_name' => 'colsnumber',
-				'value' => esc_html__( '6', 'roadthemes' ),
 			),
 		)
 	) );
@@ -89,6 +89,14 @@ function road_vc_shortcodes() {
 				'value' => esc_html__( '20', 'roadthemes' ),
 			),
 			array(
+				'type' => 'textfield',
+				'holder' => 'div',
+				'class' => '',
+				'heading' => esc_html__( 'Number of columns', 'roadthemes' ),
+				'param_name' => 'colsnumber',
+				'value' => esc_html__( '4', 'roadthemes' ),
+			),
+			array(
 				'type' => 'dropdown',
 				'holder' => 'div',
 				'class' => '',
@@ -100,14 +108,6 @@ function road_vc_shortcodes() {
 						'3'	=> '3',
 						'4'	=> '4',
 					),
-			),
-			array(
-				'type' => 'textfield',
-				'holder' => 'div',
-				'class' => '',
-				'heading' => esc_html__( 'Number of columns', 'roadthemes' ),
-				'param_name' => 'colsnumber',
-				'value' => esc_html__( '4', 'roadthemes' ),
 			),
 		)
 	) );
@@ -128,12 +128,55 @@ function road_vc_shortcodes() {
 				'value' => esc_html__( '10', 'roadthemes' ),
 			),
 			array(
+				'type' => 'dropdown',
+				'holder' => 'div',
+				'class' => '',
+				'heading' => esc_html__( 'Display Author', 'roadthemes' ),
+				'param_name' => 'display_author',
+				'value' => array(
+					'Yes'	=> 'true',
+					'No'	=> 'false',
+				),
+			),
+			array(
+				'type' => 'dropdown',
+				'holder' => 'div',
+				'class' => '',
+				'heading' => esc_html__( 'Display Avatar', 'roadthemes' ),
+				'param_name' => 'display_avatar',
+				'value' => array(
+					'Yes'	=> 'true',
+					'No'	=> 'false',
+				),
+			),
+			array(
 				'type' => 'textfield',
 				'holder' => 'div',
 				'class' => '',
-				'heading' => esc_html__( 'Image size', 'roadthemes' ),
+				'heading' => esc_html__( 'Avatar image size', 'roadthemes' ),
 				'param_name' => 'size',
-				'value' => esc_html__( '120', 'roadthemes' ),
+				'value' => esc_html__( '', 'roadthemes' ),
+				'description' => esc_html__( 'Avatar image size in pixels. Default is 50', 'roadthemes' ),
+			),
+			array(
+				'type' => 'dropdown',
+				'holder' => 'div',
+				'class' => '',
+				'heading' => esc_html__( 'Display URL', 'roadthemes' ),
+				'param_name' => 'display_url',
+				'value' => array(
+					'Yes'	=> 'true',
+					'No'	=> 'false',
+				),
+			),
+			array(
+				'type' => 'textfield',
+				'holder' => 'div',
+				'class' => '',
+				'heading' => esc_html__( 'Category', 'roadthemes' ),
+				'param_name' => 'category',
+				'value' => esc_html__( '0', 'roadthemes' ),
+				'description' => esc_html__( 'ID/slug of the category. Default is 0', 'roadthemes' ),
 			),
 		)
 	) );

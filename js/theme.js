@@ -262,41 +262,44 @@
 		jQuery('.wcml_currency_switcher').chosen({disable_search: true, width: "auto"});
 		
 		//Brand logos carousel
-		var road_brandcols = jQuery('.brands-carousel').attr('data-col');
-		jQuery('.brands-carousel').slick({
-			infinite: true,
-			slidesToShow: road_brandcols,
-			slidesToScroll: road_brandscrollnumber,
-			speed: road_brandanimate,
-			easing: 'linear',
-			dots: false,
-			arrows: true,
-			autoplay: road_brandscroll,
-			autoplaySpeed: road_brandpause,
-			responsive: [
-				{
-				  breakpoint: 1200,
-				  settings: {
-					slidesToShow: 5,
-					slidesToScroll: 1
-				  }
-				},
-				{
-				  breakpoint: 768,
-				  settings: {
-					slidesToShow: 3,
-					slidesToScroll: 1
-				  }
-				},
-				{
-				  breakpoint: 480,
-				  settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				  }
-				}
-			]
+		jQuery('.brands-carousel').each(function(){
+			var road_brandcols = jQuery(this).attr('data-col');
+			jQuery(this).slick({
+				infinite: true,
+				slidesToShow: road_brandcols,
+				slidesToScroll: road_brandscrollnumber,
+				speed: road_brandanimate,
+				easing: 'linear',
+				dots: false,
+				arrows: true,
+				autoplay: road_brandscroll,
+				autoplaySpeed: road_brandpause,
+				responsive: [
+					{
+					  breakpoint: 1200,
+					  settings: {
+						slidesToShow: 5,
+						slidesToScroll: 1
+					  }
+					},
+					{
+					  breakpoint: 768,
+					  settings: {
+						slidesToShow: 3,
+						slidesToScroll: 1
+					  }
+					},
+					{
+					  breakpoint: 480,
+					  settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					  }
+					}
+				]
+			});
 		});
+		
 		// Countdown
 		jQuery('.countbox.hastime').each(function(){
 			var countTime = jQuery(this).attr('data-time');
@@ -502,55 +505,57 @@
 		});
 		
 		//Latest posts carousel
-		var road_postcols = jQuery('.posts-carousel').attr('data-col');
-		jQuery('.posts-carousel').slick({
-			infinite: true,
-			arrows: true,
-			dots: true,
-			slidesToShow: road_postcols,
-			slidesToScroll: 1,
-			speed: road_bloganimate,
-			easing: 'linear',
-			autoplay: road_blogscroll,
-			autoplaySpeed: road_blogpause,
-			swipeToSlide: true,
-			responsive: [
-				{
-				  breakpoint: 1200,
-				  settings: {
-					slidesToShow: 4,
-					slidesToScroll: 1
-				  }
-				},
-				{
-				  breakpoint: 960,
-				  settings: {
-					slidesToShow: 3,
-					slidesToScroll: 1
-				  }
-				},
-				{
-				  breakpoint: 760,
-				  settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
-				  }
-				},
-				{
-				  breakpoint: 600,
-				  settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				  }
-				},
-				{
-				  breakpoint: 480,
-				  settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				  }
-				}
-			]
+		jQuery('.posts-carousel').each(function(){
+			var road_postcols = jQuery(this).attr('data-col');
+			jQuery(this).slick({
+				infinite: true,
+				arrows: true,
+				dots: true,
+				slidesToShow: road_postcols,
+				slidesToScroll: 1,
+				speed: road_bloganimate,
+				easing: 'linear',
+				autoplay: road_blogscroll,
+				autoplaySpeed: road_blogpause,
+				swipeToSlide: true,
+				responsive: [
+					{
+					  breakpoint: 1200,
+					  settings: {
+						slidesToShow: 4,
+						slidesToScroll: 1
+					  }
+					},
+					{
+					  breakpoint: 960,
+					  settings: {
+						slidesToShow: 3,
+						slidesToScroll: 1
+					  }
+					},
+					{
+					  breakpoint: 760,
+					  settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1
+					  }
+					},
+					{
+					  breakpoint: 600,
+					  settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					  }
+					},
+					{
+					  breakpoint: 480,
+					  settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					  }
+					}
+				]
+			});
 		});
 		
 		//Testimonials carousel
