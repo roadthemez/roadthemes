@@ -85,7 +85,7 @@ if(isset($_GET['view']) && $_GET['view']=='list-view'){
 									*/
 									do_action( 'woocommerce_show_message' );
 								?>
-								<div class="shop-products">
+								<div class="shop-products products">
 									<?php woocommerce_product_subcategories();
 									//reset loop
 									$woocommerce_loop['loop'] = 0; ?>
