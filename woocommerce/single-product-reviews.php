@@ -21,9 +21,9 @@ if ( ! comments_open() ) {
 	<div id="comments">
 		<h2><?php
 			if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' && ( $count = $product->get_review_count() ) )
-				printf( _n( '%s review for %s', '%s reviews for %s', $count, 'roadthemes' ), $count, get_the_title() );
+				printf( _n( '%s review for %s', '%s reviews for %s', $count, 'woocommerce' ), $count, get_the_title() );
 			else
-				esc_html_e( 'Reviews', 'roadthemes' );
+				esc_html_e( 'Reviews', 'woocommerce' );
 		?></h2>
 
 		<?php if ( have_comments() ) : ?>
@@ -44,7 +44,7 @@ if ( ! comments_open() ) {
 
 		<?php else : ?>
 
-			<p class="woocommerce-noreviews"><?php esc_html_e( 'There are no reviews yet.', 'roadthemes' ); ?></p>
+			<p class="woocommerce-noreviews"><?php esc_html_e( 'There are no reviews yet.', 'woocommerce' ); ?></p>
 
 		<?php endif; ?>
 	</div>
@@ -57,33 +57,33 @@ if ( ! comments_open() ) {
 					$commenter = wp_get_current_commenter();
 
 					$comment_form = array(
-						'title_reply'          => have_comments() ? esc_html__( 'Add a review', 'roadthemes' ) : esc_html__( 'Be the first to review', 'roadthemes' ) . ' &ldquo;' . get_the_title() . '&rdquo;',
-						'title_reply_to'       => esc_html__( 'Leave a Reply to %s', 'roadthemes' ),
+						'title_reply'          => have_comments() ? esc_html__( 'Add a review', 'woocommerce' ) : esc_html__( 'Be the first to review', 'woocommerce' ) . ' &ldquo;' . get_the_title() . '&rdquo;',
+						'title_reply_to'       => esc_html__( 'Leave a Reply to %s', 'woocommerce' ),
 						'comment_notes_before' => '',
 						'comment_notes_after'  => '',
 						'fields'               => array(
-							'author' => '<p class="comment-form-author">' . '<label for="author">' . esc_html__( 'Name', 'roadthemes' ) . ' <span class="required">*</span></label> ' .
+							'author' => '<p class="comment-form-author">' . '<label for="author">' . esc_html__( 'Name', 'woocommerce' ) . ' <span class="required">*</span></label> ' .
 							            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true" /></p>',
-							'email'  => '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'roadthemes' ) . ' <span class="required">*</span></label> ' .
+							'email'  => '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'woocommerce' ) . ' <span class="required">*</span></label> ' .
 							            '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" aria-required="true" /></p>',
 						),
-						'label_submit'  => esc_html__( 'Submit', 'roadthemes' ),
+						'label_submit'  => esc_html__( 'Submit', 'woocommerce' ),
 						'logged_in_as'  => '',
 						'comment_field' => ''
 					);
 
 					if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
-						$comment_form['comment_field'] = '<p class="comment-form-rating"><label for="rating">' . esc_html__( 'Your Rating', 'roadthemes' ) .'</label><select name="rating" id="rating">
-							<option value="">' . esc_html__( 'Rate&hellip;', 'roadthemes' ) . '</option>
-							<option value="5">' . esc_html__( 'Perfect', 'roadthemes' ) . '</option>
-							<option value="4">' . esc_html__( 'Good', 'roadthemes' ) . '</option>
-							<option value="3">' . esc_html__( 'Average', 'roadthemes' ) . '</option>
-							<option value="2">' . esc_html__( 'Not that bad', 'roadthemes' ) . '</option>
-							<option value="1">' . esc_html__( 'Very Poor', 'roadthemes' ) . '</option>
+						$comment_form['comment_field'] = '<p class="comment-form-rating"><label for="rating">' . esc_html__( 'Your Rating', 'woocommerce' ) .'</label><select name="rating" id="rating">
+							<option value="">' . esc_html__( 'Rate&hellip;', 'woocommerce' ) . '</option>
+							<option value="5">' . esc_html__( 'Perfect', 'woocommerce' ) . '</option>
+							<option value="4">' . esc_html__( 'Good', 'woocommerce' ) . '</option>
+							<option value="3">' . esc_html__( 'Average', 'woocommerce' ) . '</option>
+							<option value="2">' . esc_html__( 'Not that bad', 'woocommerce' ) . '</option>
+							<option value="1">' . esc_html__( 'Very Poor', 'woocommerce' ) . '</option>
 						</select></p>';
 					}
 
-					$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your Review', 'roadthemes' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>';
+					$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your Review', 'woocommerce' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>';
 
 					comment_form( apply_filters( 'woocommerce_product_review_comment_form_args', $comment_form ) );
 				?>
@@ -92,7 +92,7 @@ if ( ! comments_open() ) {
 
 	<?php else : ?>
 
-		<p class="woocommerce-verification-required"><?php esc_html_e( 'Only logged in customers who have purchased this product may leave a review.', 'roadthemes' ); ?></p>
+		<p class="woocommerce-verification-required"><?php esc_html_e( 'Only logged in customers who have purchased this product may leave a review.', 'woocommerce' ); ?></p>
 
 	<?php endif; ?>
 

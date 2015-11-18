@@ -23,15 +23,15 @@ $rating = intval( get_comment_meta( $comment->comment_ID, 'rating', true ) );
 
 			<?php if ( $rating && get_option( 'woocommerce_enable_review_rating' ) == 'yes' ) : ?>
 
-				<div class="star-rating" title="<?php echo sprintf( esc_html__( 'Rated %d out of 5', 'roadthemes' ), $rating ) ?>">
-					<span style="width:<?php echo ( $rating / 5 ) * 100; ?>%"><strong><?php echo ''.$rating; ?></strong> <?php esc_html_e( 'out of 5', 'roadthemes' ); ?></span>
+				<div class="star-rating" title="<?php echo sprintf( esc_html__( 'Rated %d out of 5', 'woocommerce' ), $rating ) ?>">
+					<span style="width:<?php echo ( $rating / 5 ) * 100; ?>%"><strong><?php echo ''.$rating; ?></strong> <?php esc_html_e( 'out of 5', 'woocommerce' ); ?></span>
 				</div>
 
 			<?php endif; ?>
 
 			<?php if ( $comment->comment_approved == '0' ) : ?>
 
-				<p class="meta"><em><?php esc_html_e( 'Your comment is awaiting approval', 'roadthemes' ); ?></em></p>
+				<p class="meta"><em><?php esc_html_e( 'Your comment is awaiting approval', 'woocommerce' ); ?></em></p>
 
 			<?php else : ?>
 
@@ -40,7 +40,7 @@ $rating = intval( get_comment_meta( $comment->comment_ID, 'rating', true ) );
 
 						if ( get_option( 'woocommerce_review_rating_verification_label' ) === 'yes' )
 							if ( wc_customer_bought_product( $comment->comment_author_email, $comment->user_id, $comment->comment_post_ID ) )
-								echo '<em class="verified">(' . esc_html__( 'verified owner', 'roadthemes' ) . ')</em> ';
+								echo '<em class="verified">(' . esc_html__( 'verified owner', 'woocommerce' ) . ')</em> ';
 
 					?>&ndash; <time datetime="<?php echo get_comment_date( 'c' ); ?>"><?php echo get_comment_date( get_option( 'date_format' )  ); ?></time>:
 				</p>

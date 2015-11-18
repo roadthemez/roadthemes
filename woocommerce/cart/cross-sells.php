@@ -38,7 +38,7 @@ if ( $products->have_posts() ) : ?>
 
 		<h3 class="widget-title"><?php echo esc_html($road_opt['crosssells_title']); ?></h3>
 		<!--<p><?php esc_html_e('Base on your selection, you may be interested in the 
-following items:', 'roadthemes');?></p>-->
+following items:', 'woocommerce');?></p>-->
 		<div class="cross-carousel">
 			<?php woocommerce_product_loop_start(); ?>
 

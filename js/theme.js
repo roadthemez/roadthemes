@@ -355,9 +355,11 @@
 						jQuery('.home-tabs.layout1 .tab-link').removeClass('active');
 						jQuery(this).addClass('active');
 						
-						jQuery('.home-tabs.layout1 .product-tabs').addClass('heightzero');
-						jQuery('#'+tabRel).removeClass('heightzero');
-						
+						jQuery('.home-tabs.layout1 .product-tabs.active').fadeOut(300, function(){
+							jQuery('.home-tabs.layout1 .product-tabs').addClass('heightzero');
+							jQuery('#'+tabRel).removeClass('heightzero');
+							jQuery(this).fadeIn(300);
+						});
 						jQuery('.home-tabs.layout1 .product-tabs').removeClass('active');
 						jQuery('#'+tabRel).addClass('active');
 						
@@ -410,9 +412,11 @@
 						jQuery('.home-tabs.layout2 .tab-link').removeClass('active');
 						jQuery(this).addClass('active');
 						
-						jQuery('.home-tabs.layout2 .product-tabs').addClass('heightzero');
-						jQuery('#'+tabRel).removeClass('heightzero');
-						
+						jQuery('.home-tabs.layout2 .product-tabs.active').fadeOut(300, function(){
+							jQuery('.home-tabs.layout2 .product-tabs').addClass('heightzero');
+							jQuery('#'+tabRel).removeClass('heightzero');
+							jQuery(this).fadeIn(300);
+						});
 						jQuery('.home-tabs.layout2 .product-tabs').removeClass('active');
 						jQuery('#'+tabRel).addClass('active');
 						

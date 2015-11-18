@@ -23,10 +23,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<thead>
 		<tr>
 			<th class="product-thumbnail"></th>
-			<th class="product-name"><?php esc_html_e( 'Product', 'roadthemes' ); ?></th>
-			<th class="product-price"><?php esc_html_e( 'Price', 'roadthemes' ); ?></th>
-			<th class="product-quantity"><?php esc_html_e( 'Quantity', 'roadthemes' ); ?></th>
-			<th class="product-subtotal"><?php esc_html_e( 'Total', 'roadthemes' ); ?></th>
+			<th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
+			<th class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
+			<th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
+			<th class="product-subtotal"><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
 			<th class="product-remove"></th>
 		</tr>
 	</thead>
@@ -78,7 +78,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 							// Backorder notification
 							if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) )
-								echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'roadthemes' ) . '</p>';
+								echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>';
 						?>
 					</td>
 
@@ -113,9 +113,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 					
 					<td class="product-remove">
 						<?php
-							//echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" class="remove" title="%s">&times;</a>', esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), esc_html__( 'Remove this item', 'roadthemes' ) ), $cart_item_key );
+							//echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" class="remove" title="%s">&times;</a>', esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), esc_html__( 'Remove this item', 'woocommerce' ) ), $cart_item_key );
 						?>
-						<?php echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" onclick="roadMiniCartRemove(\'%s\', \'%s\');return false;" class="remove" title="%s"><i class="fa fa-times-circle"></i></a>', esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), $cart_item_key, esc_html__( 'Remove this item', 'roadthemes' ) ), $cart_item_key ); ?>
+						<?php echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" onclick="roadMiniCartRemove(\'%s\', \'%s\');return false;" class="remove" title="%s"><i class="fa fa-times-circle"></i></a>', esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), $cart_item_key, esc_html__( 'Remove this item', 'woocommerce' ) ), $cart_item_key ); ?>
 					</td>
 				</tr>
 				<?php
@@ -131,17 +131,17 @@ do_action( 'woocommerce_before_cart' ); ?>
 <div class="row">
 	<div class="col-xs-12">
 		<div class="buttons-cart">
-			<input type="submit" class="button" name="update_cart" value="<?php esc_html_e( 'Update Cart', 'roadthemes' ); ?>" />
-			<a class="continue button" href="<?php echo get_permalink( wc_get_page_id( 'shop' ) );?>"><?php esc_html_e('Continue Shopping', 'roadthemes');?></a>
+			<input type="submit" class="button" name="update_cart" value="<?php esc_html_e( 'Update Cart', 'woocommerce' ); ?>" />
+			<a class="continue button" href="<?php echo get_permalink( wc_get_page_id( 'shop' ) );?>"><?php esc_html_e('Continue Shopping', 'woocommerce');?></a>
 		</div>
 	</div>
 	<div class="col-xs-12 col-md-4">
 		<?php if ( WC()->cart->coupons_enabled() ) { ?>
 			<div class="coupon">
-				<h3><?php esc_html_e( 'Coupon', 'roadthemes' ); ?></h3>
-				<p><?php esc_html_e('Enter your coupon code if you have one.', 'roadthemes');?></p>
-				<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_html_e( 'Coupon code', 'roadthemes' ); ?>" />
-				<input type="submit" class="button" name="apply_coupon" value="<?php esc_html_e( 'Apply Coupon', 'roadthemes' ); ?>" />
+				<h3><?php esc_html_e( 'Coupon', 'woocommerce' ); ?></h3>
+				<p><?php esc_html_e('Enter your coupon code if you have one.', 'woocommerce');?></p>
+				<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_html_e( 'Coupon code', 'woocommerce' ); ?>" />
+				<input type="submit" class="button" name="apply_coupon" value="<?php esc_html_e( 'Apply Coupon', 'woocommerce' ); ?>" />
 
 				<?php do_action( 'woocommerce_cart_coupon' ); ?>
 

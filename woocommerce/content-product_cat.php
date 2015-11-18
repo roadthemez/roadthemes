@@ -71,7 +71,7 @@ $woocommerce_loop['loop']++;
 		<h1><?php echo esc_html($category->name); ?></h1>
 		<div class="category-desc"><?php echo ''.$category->description; ?></div>
 		<a href="<?php echo get_term_link( $category->slug, 'product_cat' ); ?>">
-			<?php esc_html_e('Browse Category', 'roadthemes');?>
+			<?php esc_html_e('Browse Category', 'woocommerce');?>
 		</a>
 	</div>
 	<?php
